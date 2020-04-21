@@ -1,10 +1,8 @@
 import React from 'react';
-import RequestService from './RequestService'
-import "./RequestServices.css"
+import "./allTrainers.css"
 import { getRequestService, OnProgressService } from '../api';
-// import './SendTickets.css'; 
 import { getInfo } from '../login/decodeToken'
-export default class RequestServices extends React.Component {
+export default class allTrainers extends React.Component {
 
   constructor(props) {
     super(props)
