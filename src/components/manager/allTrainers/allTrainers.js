@@ -1,7 +1,7 @@
 import React from 'react';
 import "./allTrainers.css"
-import { getRequestService, OnProgressService } from '../api';
-import { getInfo } from '../login/decodeToken'
+// import { getRequestService, OnProgressService } from '../api';
+// import { getInfo } from '../login/decodeToken'
 export default class allTrainers extends React.Component {
 
   constructor(props) {

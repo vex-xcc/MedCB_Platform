@@ -1,9 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import "../../student/StudentHeader//header.css";
-import managerHome from '../managerHome/managerHome';
+import "../../student/StudentHeader/header.css";
+import ManagerHome from '../managerHome/ManagerHome';
 import {Navbar ,NavDropdown,Nav }from'react-bootstrap'
-export default class managerHeader extends React.Component{
+export default class ManagerHeader extends React.Component{
   render(){
     return(
       <div>
@@ -25,7 +25,7 @@ export default class managerHeader extends React.Component{
   </Navbar.Collapse>
 </Navbar>
 
-<managerHome/>
+<ManagerHome/>
 
       </div>
     );
