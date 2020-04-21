@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 // import { getRequestService, OnProgressService } from '../api';
 // import { getInfo } from '../login/decodeToken'
 import '../allTrainers/allTrainers.css'

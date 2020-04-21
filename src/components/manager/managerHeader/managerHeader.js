@@ -1,8 +1,8 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import React from "./node_modules/react";
+import './node_modules/bootstrap/dist/css/bootstrap.css';
 import "../../student/StudentHeader/header.css";
-import ManagerHome from '../managerHome/ManagerHome';
-import {Navbar ,NavDropdown,Nav }from'react-bootstrap'
+import ManagerHome from '../ManagerHome/ManagerHome.js';
+import {Navbar ,NavDropdown,Nav }from'./node_modules/react-bootstrap'
 export default class ManagerHeader extends React.Component{
   render(){
     return(
