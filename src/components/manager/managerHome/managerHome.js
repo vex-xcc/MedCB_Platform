@@ -2,7 +2,7 @@ import React from 'react';
 // import { getRequestService, OnProgressService } from '../api';
 // import { getInfo } from '../login/decodeToken'
 import '../allTrainers/allTrainers.css'
-export default class allTrainers extends React.Component {
+export default class ManagerHome extends React.Component {
 
   constructor(props) {
     super(props)
