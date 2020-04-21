@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-// import StudentHeader from './components/student/StudentHeader/StudentHeader'
-import ManagerHeader from './components/manager/managerHeader/ManagerHeader'
+import apiURL from'./APIconfig';
 
-function App() {
-  return (
-    <div className="App">
-      {/* <StudentHeader/> */}
-      <ManagerHeader/>
-    </div>
-  );
+// Components
+import StudentHeader from './components/student/StudentHeader/StudentHeader'
+
+export default class App extends React.Component {
+
+
+  render(){
+    return (
+      <StudentHeader/>
+
+    );
+  }
 }
-
-export default App;
