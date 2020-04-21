@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./header.css";
+import StudentHome from '../StudentHome/StudentHome.js';
 import {Navbar ,NavDropdown,Nav }from'react-bootstrap'
 export default class StudentHeader extends React.Component{
   render(){
@@ -23,6 +24,9 @@ export default class StudentHeader extends React.Component{
     </Nav>
   </Navbar.Collapse>
 </Navbar>
+
+<StudentHome/>
+
       </div>
     );
   }
