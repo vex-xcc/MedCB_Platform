@@ -40,11 +40,14 @@
     color: #ffffff;
     background: #ea6153;
   }
-  .row.green {
+  .row.head1 {
     background: #27ae60;
   }
-  .row.blue {
+  .row.head2 {
     background: #2980b9;
+  }
+  .row.head3 {
+    background: #8755af;
   }
   @media screen and (max-width: 580px) {
     .row {
