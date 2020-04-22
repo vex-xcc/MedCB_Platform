@@ -101,7 +101,7 @@ export default class Culture extends React.Component {
 
         <div class="table">
 
-          <div class="row head1">
+          <div class="row head head1">
             <div class="cell">
             اسم الدورة
               </div>

@@ -5,6 +5,7 @@ import ManagerHome from '../managerHome/ManagerHome';
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import allTrainers from "../allTrainers/allTrainers";
+import NewInstructor from '../addinstroctor/NewInstructor';
 export default class ManagerHeader extends React.Component{
   render(){
     return(
@@ -21,12 +22,13 @@ export default class ManagerHeader extends React.Component{
       <Link to="/ManagerHeader/trainers">
       <Nav.Link href="<allTrainers/>">المدربين</Nav.Link>
       </Link>
-      <NavDropdown  title="نجرب" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">واحد</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">اثنين</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">ثلاث</NavDropdown.Item>
+      <NavDropdown  title="المزيد" id="collasible-nav-dropdown">
+      <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+        <Link to="/ManagerHeader/AddInstructor">
+          <NavDropdown.Item href="<NewInstructor/>">اضافة مدرب</NavDropdown.Item>
+          </Link>
         <NavDropdown.Divider/>
-        <NavDropdown.Item href="#action/3.4">اربع</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
@@ -44,6 +46,11 @@ export default class ManagerHeader extends React.Component{
             
             path="/ManagerHeader/trainers"
             component={allTrainers}
+          ></Route>
+           <Route
+            
+            path="/ManagerHeader/AddInstructor"
+            component={NewInstructor}
           ></Route>
         </Switch>
       </BrowserRouter>
