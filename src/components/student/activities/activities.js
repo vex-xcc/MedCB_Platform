@@ -13,19 +13,40 @@ export default class Activities extends React.Component {
         this.state = {
             Activities: [
             {    
-                ServiceDescription : "i want to paint my room the size is 6 X 5",
-                ServiceState : "Waiting",
-                ServiceType : "Painter",
+                TargetAge: 16,
+                ClubName: " نادي ٢ ",
+                ActivityCreator: "عمر",
+                ActivityDescription: " ذكرى اليوم الوطني ",
+                ActivityName: "عاشت بلادي",
+                ActivityType: "ترفيهي",
+                ActivityState: "قيد التسجيل",
+                ActivityLocation: "مدارس الرواد",
+                StartDate: "يوم الاحد",
+                EndDate: "يوم الخميس",
             },
             {
-                ServiceDescription : "paint for the whole house",
-                ServiceState : "Waiting",
-                ServiceType : "Painter",
+                TargetAge: 16,
+                ClubName: " نادي ١ ",
+                ActivityCreator: "رنا",
+                ActivityDescription: " ذكرى اليوم الوطني ",
+                ActivityName: "عاشت بلادي",
+                ActivityType: "ترفيهي",
+                ActivityState: "قيد التسجيل",
+                ActivityLocation: "مدارس الرواد",
+                StartDate: "يوم الاحد",
+                EndDate: "يوم الخميس",
             },
             {
-                ServiceDescription : "i want to paint my room the size is 6 X 5",
-                ServiceState : "Waiting",
-                ServiceType : "Painter",
+                TargetAge: 16,
+                ClubName: " نادي ٣ ",
+                ActivityCreator: "رغد",
+                ActivityDescription: " ذكرى اليوم الوطني ",
+                ActivityName: "عاشت بلادي",
+                ActivityType: "ترفيهي",
+                ActivityState: "قيد التسجيل",
+                ActivityLocation: "مدارس الرواد",
+                StartDate: "يوم الاحد",
+                EndDate: "يوم الخميس",
             },
             ],
         };
@@ -43,7 +64,30 @@ export default class Activities extends React.Component {
     //         .catch((error) => {
     //         })
     // }
+    register = (id) => {
+        // Make an API Call to register a service
+
+        // console.log( `Make an API Call to register a service the ${id} `)
+        // registerOneService(id)
+        //    .then((res) => {
+        //        const History = this.state.History.filter((History) => {
+        //            return History._id !== id; 
+        //        });
+        //        Swal.fire(`The Service registerd`,"",'success')
+        //        this.setState({ History});
+        //    })
+        //    .catch((err) => {
+        //    })
+   }
+
+    registerClick = (e) => {
+        // e.preventDefault();
+        // console.log( `the ${this.props.id}Service  delet Click `)
+        // this.props.deletOneSerives(this.props.id);
+      }
+
     render() {
+
         // variable to show when there no Services in the array 
         let allActivities = <h3> No Received Services.. </h3>
         // if condtion to check the array is greater than zero return and pass the data to ReceivedService components 
@@ -54,13 +98,14 @@ export default class Activities extends React.Component {
                         <input className='radio' id={`work${index}`} name='works' type='radio'></input>
 
                         <div className="relative">
-                            <label htmlFor={`work${index}`} >{Services.ServiceType}</label>
-                            <span className='date'>{Services.ServiceState}</span>
+                            <label htmlFor={`work${index}`} >{Services.ActivityName}</label>
+                            <span className='date'>{Services.StartDate}</span>
                             <span className='circle'></span>
                         </div>
 
                         <div className='contents'>
-                            <p> {Services.ServiceDescription} </p>
+                            <p> {Services.ActivityDescription} </p>
+                            <p onClick={this.registerClick}> اشتراك</p>
                         </div>
                     </li>
                 );
