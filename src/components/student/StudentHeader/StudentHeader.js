@@ -25,12 +25,9 @@ export default class StudentHeader extends React.Component {
                   <Nav.Link href="<StudentHome/>">الرئيسية</Nav.Link>
                 </Link>
                 <Nav.Link href="#features">الدورات</Nav.Link>
-                <NavDropdown title="نجرب" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#">واحد</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">اثنين</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">ثلاث</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">اربع</NavDropdown.Item>
+                <NavDropdown title="المزيد" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#"><i class="material-icons md-36">portrait</i>معلوماتي</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
