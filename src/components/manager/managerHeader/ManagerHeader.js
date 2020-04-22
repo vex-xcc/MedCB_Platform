@@ -35,7 +35,7 @@ export default class ManagerHeader extends React.Component{
       </Link>
       <NavDropdown  title="المزيد" id="collasible-nav-dropdown">
         <Link to="/ManagerHeader/ManagerProfile">
-      <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+      <NavDropdown.Item href="<ManagerProfile/>">معلوماتي</NavDropdown.Item>
       </Link>
         <Link to="/ManagerHeader/AddInstructor">
           <NavDropdown.Item href="<NewInstructor/>">اضافة مدرب</NavDropdown.Item>

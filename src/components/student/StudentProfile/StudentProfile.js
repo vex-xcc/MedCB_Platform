@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../manager/managerProfile/profile.scss';
 import { getInfo } from "../../login/decodeToken";
-export default class ManagerProfile extends React.Component {
+export default class StudentProfile extends React.Component {
   
   render() {
     let info = getInfo().data;
@@ -12,7 +12,7 @@ export default class ManagerProfile extends React.Component {
     <div class="firstinfo"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/mrvanz/128.jpg"/>
       <div class="profileinfo">
         <h1 value={info.FullName}>Francesco Moustache</h1>
-        <h3 value={info.InstructorUserName}>Python Ninja</h3>
+        <h3 value={info.StudentUserName}>Python Ninja</h3>
         <p class="bio">Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.</p>
       </div>
     </div>

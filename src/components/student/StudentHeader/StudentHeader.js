@@ -4,6 +4,8 @@ import "./header.css";
 import StudentHome from "../StudentHome/StudentHome.js";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
+import StudentProfile from '../StudentProfile/StudentProfile';
+import DisplayTable from "../activitiesbystate/DisplayTable";
 export default class StudentHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -27,9 +29,13 @@ export default class StudentHeader extends React.Component {
                 <Link to="/StudentHeader/Home">
                   <Nav.Link href="<StudentHome/>">الرئيسية</Nav.Link>
                 </Link>
-                <Nav.Link href="#features">دوراتي</Nav.Link>
+                <Link to="/StudentHeader/StudentActivities">
+                <Nav.Link href="#<DisplayTable/>">دوراتي</Nav.Link>
+                </Link>
                 <NavDropdown title="المزيد" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+                <Link to="/StudentHeader/StudentProfile">
+                  <NavDropdown.Item href="<StudentProfile/>">معلوماتي</NavDropdown.Item>
+                  </Link>
                   <NavDropdown.Divider />
                   <Link onClick={(e) => this.logOut(e)}>
                   <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
@@ -45,7 +51,18 @@ export default class StudentHeader extends React.Component {
             path="/StudentHeader/Home"
             component={StudentHome}
           ></Route>
-
+             <Route
+            path="/StudentHeader/StudentProfile"
+            component={StudentProfile}
+          ></Route>
+          <Route
+            path="/StudentHeader/StudentProfile"
+            component={StudentHome}
+          ></Route>
+          <Route
+            path="/StudentHeader/StudentActivities"
+            component={DisplayTable}
+          ></Route>
         </Switch>
       </BrowserRouter>
     );
