@@ -9,24 +9,18 @@ export default class StudentHeader extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Navbar
-            dir="rtl"
-            lang="ar"
-            collapseOnSelect
-            expand="lg"
-            bg="dark"
-            variant="dark"
-          >
-            <Navbar.Brand href="#home">منصة الاندية</Navbar.Brand>
+        <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="m-auto">
                 <Link to="/StudentHeader/Home">
                   <Nav.Link href="<StudentHome/>">الرئيسية</Nav.Link>
                 </Link>
-                <Nav.Link href="#features">الدورات</Nav.Link>
+                <Nav.Link href="#features">دوراتي</Nav.Link>
                 <NavDropdown title="المزيد" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#"><i class="material-icons md-36">portrait</i>معلوماتي</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
