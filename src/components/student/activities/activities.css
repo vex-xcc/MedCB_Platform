@@ -16,8 +16,8 @@
   max-width: 1200px;
   padding: 0 5%;
   font-family: "Noto Sans", sans-serif;
-  color: #837EAD;
-  margin-left: 20%;
+  color: #77AA90;
+  margin-left: 40%;
   padding-top: 5%;
   font-size: 1.5em;
   letter-spacing: 2px;
@@ -31,9 +31,9 @@
   * ------------------------------------- */
  .timeline {
    list-style: none;
-   margin: 50px 0 30px 420px;
+   margin: 5% 0 1% 45%;
    padding-left: 30px;
-   border-left: 8px solid #C1BDC9;
+   border-left: 9px solid #77AA90;
  }
  .timeline >li {
    margin: 40px 0;
