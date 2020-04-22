@@ -1,7 +1,5 @@
-//Activities 
-
-import "./activities.css"
 import React from 'react';
+import "./activities.css"
 // import { getAllServiceInOnProgress } from '../api';
 // import { getInfo } from '../login/decodeToken'
 
