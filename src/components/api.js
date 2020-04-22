@@ -26,3 +26,22 @@ export const getAllActivity = () =>{
 
 
 //---------------The POST Request-------------------  
+  //Add new Employee
+  export const AddNewInstructor = req => {
+    return axios({
+      method: 'POST',
+      url: apiURL + '/instructor/register',
+      data:{
+        FullName:req.FullName,
+        InstructorUserName:req.InstructorUserName,
+        NationalId:req.NationalId,
+        Email:req.Email,
+        Phone:req.Phone,
+        password:req.password,
+        ClubName:req.ClubName,
+        InstructorRole:req.InstructorRole,
+        InstructorsType:req.InstructorsType
+      }
+      
+    })
+  }

@@ -99,7 +99,7 @@ export default class Education extends React.Component {
 
         <div class="table">
 
-          <div class="row head2">
+          <div class="row head head2">
             <div class="cell">
             اسم الدورة
               </div>

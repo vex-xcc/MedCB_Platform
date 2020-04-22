@@ -99,7 +99,7 @@ export default class Entertainment extends React.Component {
 
         <div class="table">
 
-          <div class="row head3">
+          <div class="row head head3">
             <div class="cell">
             اسم الدورة
               </div>
