@@ -210,10 +210,11 @@
   margin: 0;
   text-align: center;
   margin-top: 30px;
-  color: white;
+  color: #3F403F;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px;
+  font-size: 25px;
 }
 
 .card .text {
@@ -222,7 +223,7 @@
   font-size: 13px;
   text-align: center;
   margin-top: 20px;
-  color: white;
+  color: #3F403F;
   font-weight: 200;
   letter-spacing: 2px;
   opacity: 0;
