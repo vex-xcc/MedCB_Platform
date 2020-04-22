@@ -7,6 +7,7 @@ import AuthComponent from './components/login/AuthenticatedComponent';
 // import Login from './components/login/Login'
 import StudentHeader from './components/student/StudentHeader/StudentHeader'
 import ManagerHeader from './components/manager/managerHeader/ManagerHeader';
+import TrainerHeader from './components/trainer/trainerHeader/TrainerHeader';
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 
@@ -23,8 +24,9 @@ export default class App extends React.Component {
           render={() => <Register  history={this.props.history}  />}
         /> */}
     {/* <AuthComponent> */}
-    {/* <Route path={'/StudentHeader'} component={StudentHeader}/>  */}
-    <StudentHeader/>
+    <Route path={'/StudentHeader'} component={StudentHeader}/> 
+    <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
+    {/* <StudentHeader/> */}
       {/* </AuthComponent> */}
         </Switch>
       </BrowserRouter>
