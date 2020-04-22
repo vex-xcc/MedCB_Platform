@@ -12,7 +12,7 @@ class NewInstructor extends React.Component {
         Phone: "",
         password: "",
         ClubName: "",
-        InstructorRole: "",
+        InstructorRole: "Instructors",
         InstructorsType: ""
     };
     this.addInstructor = this.addInstructor.bind(this);
@@ -38,6 +38,7 @@ addInstructor = instructor => {
     const newInstructor = this.state;
      console.log(newInstructor, " NewInstructor");
     e.preventDefault();
+    this.props.history.push("/ManagerHeader/Home");
     this.addInstructor(newInstructor);
    };
   render() {
@@ -144,25 +145,8 @@ addInstructor = instructor => {
               />
             </div>
             <div>
-              <br />
-              <label className="to-the-right">منصب المدرب:</label>
-              <br />
-              <select
-                className="subscribe-input"
-                required
-                name="InstructorRole"
-                value={InstructorRole}
-                type="InstructorRole"
-                placeholder="منصب المدرب"
-                onChange={this.handleChange}
-              >
-                 <option className="dropdown-content" value="Instructors">مدرب</option>
-               <option className="dropdown-content" value="Manager">مدير</option>
-            </select>
-            </div>
-            <div>
               <br /><br/>
-              <label className="to-the-right">نوع التدريب:</label>
+              <label className="to-the-right">مجال التدريب:</label>
               <select
                 className="subscribe-input"
                 required
@@ -181,7 +165,6 @@ addInstructor = instructor => {
             <div className="submit-btn" onClick={e => this.formSubmit(e)}>
               Add
             </div>
-            <a href="/ManagerHeader"><i className="material-icons"> arrow_back </i></a>
           </div>
         </form>
       </div>
