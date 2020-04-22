@@ -6,7 +6,7 @@ import AuthComponent from './components/login/AuthenticatedComponent';
 // import Register from './components/login/Register'
 // import Login from './components/login/Login'
 import StudentHeader from './components/student/StudentHeader/StudentHeader'
-// import ManagerHeader from './components/manager/ManagerHeader/managerHeader'
+// import ManagerHeader from './components/manager/managerHeader/ManagerHeader';
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 
@@ -27,7 +27,6 @@ export default class App extends React.Component {
       {/* </AuthComponent> */}
         </Switch>
       </BrowserRouter>
-
 
     );
   }

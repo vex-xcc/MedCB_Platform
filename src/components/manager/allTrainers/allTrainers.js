@@ -1,6 +1,6 @@
 import React from 'react';
 import "./allTrainers.css"
-// import { getRequestService, OnProgressService } from '../api';
+import { getRequestService, getAllinstructor } from '../../api';
 // import { getInfo } from '../login/decodeToken'
 export default class allTrainers extends React.Component {
 
@@ -8,22 +8,16 @@ export default class allTrainers extends React.Component {
     super(props)
 
     this.state = {
-      cus_RequestServices: [],
+      all_instroctor: [],
     };
   }
 
   componentDidMount() {
-    // Mack API call 
-    let mId = getInfo().data._id
-    getRequestService(mId)
+    getAllinstructor()
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
-        const openServiecs = reponse.data.filter((Service) => {
-          if (Service.ServiceState === 'Open' || Service.ServiceState === 'Waiting') {
-            return reponse.data
-          }
-        });
-        this.setState({ cus_RequestServices: openServiecs })
+       
+        this.setState({ all_instroctor:reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
@@ -31,36 +25,36 @@ export default class allTrainers extends React.Component {
   }
 
 
-  changeStateToProgressService = (id) => {
-    // Make an API Call to onprogress a service
-    OnProgressService(id)
-    console.log(`Make an API Call to onprogress a service the ${id} `)
+  // changeStateToProgressService = (id) => {
+  //   // Make an API Call to onprogress a service
+  //   OnProgressService(id)
+  //   console.log(`Make an API Call to onprogress a service the ${id} `)
 
-    const newList = this.state.cus_RequestServices.filter((Service) => {
-      return Service._id !== id;
-    })
-    this.setState({ cus_RequestServices: newList });
+  //   const newList = this.state.cus_RequestServices.filter((Service) => {
+  //     return Service._id !== id;
+  //   })
+  //   this.setState({ cus_RequestServices: newList });
 
-  }
+  // }
 
   render() {
     let allServices = <h3> No Services! :( </h3>
 
-    if (this.state.cus_RequestServices.length > 0) {
-      allServices = this.state.cus_RequestServices.map((Services, index) => {
+    if (this.state.all_instroctor.length > 0) {
+      allServices = this.state.all_instroctor.map((Services, index) => {
         return (
       <div class="row">
-          <div class="cell" data-title="Name">
-          {Services.ServiceType}
+         <div class="cell" data-title="FullName">
+          {Services.FullName}
           </div>
-          <div class="cell" data-title="Age">
-          {Services.ServiceState}
+          <div class="cell" data-title="NationalId">
+          {Services.NationalId}
           </div>
-          <div class="cell" data-title="Occupation">
-          {Services.ServiceDescription}
+          <div class="cell" data-title="Email">
+          {Services.Email}
           </div>
-          <div class="cell" data-title="Location">
-          {Services.ServiceState}
+          <div class="cell" data-title="Phone">
+          {Services.Phone}
           </div>
       </div>
           // <RequestService
@@ -83,16 +77,16 @@ export default class allTrainers extends React.Component {
 
           <div class="row head">
             <div class="cell">
-              activity type
+            اسم المدرب
               </div>
             <div class="cell">
-              trainer name
+            رقم الهوية
               </div>
             <div class="cell">
-              location
+            البريد الإلكتروني
               </div>
             <div class="cell">
-              Status
+            رقم الجوال
               </div>
           </div>
           {allServices}
