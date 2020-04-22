@@ -5,6 +5,16 @@ import StudentHome from "../StudentHome/StudentHome.js";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
 export default class StudentHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  logOut = (e) => {
+    e.preventDefault();
+    this.props.history.push("/");
+    localStorage.clear("currentUser");
+  };
   render() {
     return (
       <BrowserRouter>
@@ -21,7 +31,9 @@ export default class StudentHeader extends React.Component {
                 <NavDropdown title="المزيد" id="collasible-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
                   <NavDropdown.Divider />
+                  <Link onClick={(e) => this.logOut(e)}>
                   <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
+                  </Link>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>

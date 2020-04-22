@@ -6,7 +6,18 @@ import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import allTrainers from "../allTrainers/allTrainers";
 import NewInstructor from '../addinstroctor/NewInstructor';
+import ManagerProfile from "../managerProfile/ManagerProfile";
 export default class ManagerHeader extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  logOut = (e) => {
+    e.preventDefault();
+    this.props.history.push("/");
+    localStorage.clear("currentUser");
+  };
   render(){
     return(
       <BrowserRouter>
@@ -23,12 +34,16 @@ export default class ManagerHeader extends React.Component{
       <Nav.Link href="<allTrainers/>">المدربين</Nav.Link>
       </Link>
       <NavDropdown  title="المزيد" id="collasible-nav-dropdown">
+        <Link to="/ManagerHeader/ManagerProfile">
       <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+      </Link>
         <Link to="/ManagerHeader/AddInstructor">
           <NavDropdown.Item href="<NewInstructor/>">اضافة مدرب</NavDropdown.Item>
           </Link>
         <NavDropdown.Divider/>
+        <Link onClick={(e) => this.logOut(e)}>
         <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
+        </Link>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
@@ -42,15 +57,20 @@ export default class ManagerHeader extends React.Component{
             path="/ManagerHeader/Home"
             component={ManagerHome}
           ></Route>
-  <Route
-            
+
+           <Route
             path="/ManagerHeader/trainers"
             component={allTrainers}
           ></Route>
+
            <Route
-            
             path="/ManagerHeader/AddInstructor"
             component={NewInstructor}
+          ></Route>
+
+          <Route
+            path="/ManagerHeader/ManagerProfile"
+            component={ManagerProfile}
           ></Route>
         </Switch>
       </BrowserRouter>
