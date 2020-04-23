@@ -5,14 +5,15 @@ import { getInfo } from "./decodeToken";
 import { Route, BrowserRouter, Link } from "react-router-dom";
 import "./login.css";
 import Register from './Register'
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      Username: "",
-      password: ""
+      UserName: "",
+      password: "",
+    
     };
 
     this.change = this.change.bind(this);
@@ -30,34 +31,64 @@ class Login extends Component {
     const { history } = this.props
 
     axios
-      .post(`${apiURL}/customer/login`, {
-        Username: this.state.Username,
+      .post(`${apiURL}/student/login`, {
+        UserName: this.state.UserName,
         password: this.state.password
       })
       .then(res => {
         console.warn("res", res);
         localStorage.setItem("currentUser", res.data.token);
-        let jwt1 = getInfo().data.Worker;
-        if (jwt1 === true) {
-          console.log("this.props.history:", this.props);       
-          this.props.history.push("/WorkerHeader");
-          Swal.fire(`welcome ${getInfo().data.Username}`,"",'success');
-          
-        } else if (jwt1 === false) {
-          console.log("B:", jwt1);
-          this.props.history.push("/CustomerHeader");
-          Swal.fire(`welcome ${getInfo().data.Username}`,"",'success');
+        let jwt1 = getInfo().data.UserType;
+        if (jwt1 === "Students") {
+          history.push("/StudentHeader");
+          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
 
         } else if (jwt1 === undefined) {
           console.log("b: ", jwt1);
-          this.props.history.push("/");
-          Swal.fire(` ${jwt1}`,"",'error');
+          history.push("/");
+          Swal.fire(` ${jwt1}`, "", 'error');
         }
         return res;
       })
       .catch(error => {
         console.log("ERROR: ", error);
-        Swal.fire(` Invalid Username or Password`,"",'error');
+        Swal.fire(` Invalid UserName or Password`, "", 'error');
+
+      });
+  }
+
+  handelSubmit(e) {
+    e.preventDefault();
+    const { history } = this.props
+    axios
+      .post(`${apiURL}/instructor/login`, {
+        UserName: this.state.UserName,
+        password: this.state.password
+      })
+      .then(res => {
+        console.warn("res", res);
+        localStorage.setItem("currentUser", res.data.token);
+        let jwt2 = getInfo().data.InstructorRole;
+        console.log("b: ", jwt2);
+        if (jwt2 === "Instructors") {
+          history.push("/TrainerHeader");
+          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
+        }
+        else if (jwt2 === "Manager") {
+          history.push("/ManagerHeader");
+          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
+
+        }
+        else if (jwt2 === undefined) {
+          console.log("b: ", jwt2);
+          history.push("/homathon_test");
+          Swal.fire(` ${jwt2}`, "", 'error');
+        }
+        return res;
+      })
+      .catch(error => {
+        console.log("ERROR: ", error);
+        Swal.fire(` Invalid UserName or Password`, "", 'error');
 
       });
   }
@@ -66,14 +97,15 @@ class Login extends Component {
 
     return (
       <BrowserRouter>
-      <div>
-    
-        <form className="login" onSubmit={e => this.submit(e)} >     
-        <input
+        <div>
+
+          <form className="login" >
+            <input
               type="text"
-              name="Username"
+              name="UserName"
+              placeholder="UserName"
               onChange={e => this.change(e)}
-              value={this.state.Username}
+              value={this.state.UserName}
             />
             <input
               type="password"
@@ -82,21 +114,23 @@ class Login extends Component {
               onChange={e => this.change(e)}
               value={this.state.password}
             />
-          <button
-            type="submit" >Login</button>
+            <button
+              onClick={e => this.submit(e)}>تسجيل الدخول للمرتادين</button>
+        <button
+              onClick={e => this.handelSubmit(e)}>تسجيل الدخول للمدربين</button>
             <br></br>
             <button><Link to="/register">Register </Link> </button>
-            
-        
-             
-             
-        </form>
-        <h2>&nbsp;</h2>
 
-      </div>
-      <Route
+
+
+
+          </form>
+          <h2>&nbsp;</h2>
+
+        </div>
+        <Route
           path="/register"
-          render={() => <Register  history={this.props.history}  />}
+          render={() => <Register history={this.props.history} />}
         />
       </BrowserRouter>
     );
