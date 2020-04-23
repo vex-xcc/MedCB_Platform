@@ -12,16 +12,25 @@ export default class ActivitiesFinshed extends React.Component {
   componentDidMount() {
     // Mack API call 
                 //   let mId = getInfo().data._id
-                let mId = "5ea013831e516f617f059475"
+                let mId = "5ea1ebd46ce9fa8b98255f9c";
+
     getAllActivityFinshedList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
-        this.setState({ finished_activities: reponse.data })
+        let data = reponse.data
+        this.setState({ finished_activities: data })
+        // this.set(reponse.data)
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
   }
+
+  set = data =>{
+    this.setState({ finished_activities: data })
+  }
+
+
   render() {
     let allServices 
     if (this.state.finished_activities.length > 0) {

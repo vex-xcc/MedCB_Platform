@@ -16,11 +16,15 @@ export default class ActivitiesOnProgress extends React.Component {
     getAllActivityList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
-        this.setState({ reg_activities: reponse.data })
+        this.set(reponse.data)
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
+  }
+
+  set = data =>{
+    this.setState({ reg_activities: data })
   }
   render() {
     let allServices 
