@@ -34,30 +34,14 @@ export default class ActivitiesOnProgress extends React.Component {
           <div class="cell" data-title="ActivityType">
           {Services.ActivityType}
           </div>
-          <div class="cell" data-title="ActivityDescription">
+          <div class="cell" data-title="Occupation">
           {Services.ActivityDescription}
           </div>
           <div class="cell" data-title="ActivityState">
           {Services.ActivityState}
           </div>
-          <div class="cell" data-title="ClubName">
-          {Services.ClubName}
-          </div>
-          <div class="cell" data-title="TargetAge">
-          {Services.TargetAge}
-          </div>
-          <div class="cell" data-title="ActivityLocation">
-          {Services.ActivityLocation}
-          </div>
-          <div class="cell" data-title="StartDate">
-          {Services.StartDate}
-          </div>
-          <div class="cell" data-title="EndDate">
-          {Services.EndDate}
-          </div>
-          <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
-          </div>
+       
+         
       </div>
         );
       })
@@ -67,34 +51,16 @@ export default class ActivitiesOnProgress extends React.Component {
         <div class="table">
           <div class="row head head1">
             <div class="cell">
-            اسم الدورة
+            اسم النشاط
               </div>
             <div class="cell">
-            نوع الدورة
+            نوع النشاط
               </div>
             <div class="cell">
-            وصف الدورة
+            وصف النشاط
               </div>
             <div class="cell">
-            حالة الدورة
-              </div>
-              <div class="cell">
-              اسم النادي
-              </div>
-              <div class="cell">
-              العمر المستهدف
-              </div>
-              <div class="cell">
-              مكان الدورة
-              </div>
-              <div class="cell">
-              تاريخ البدء
-              </div>
-              <div class="cell">
-              تاريخ الانتهاء
-              </div>
-              <div class="cell">
-              منشئ النشاط
+            حالة النشاط
               </div>
           </div>
           {allServices}

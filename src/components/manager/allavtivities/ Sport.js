@@ -50,47 +50,22 @@ export default class Sport extends React.Component {
       allServices = this.state.sport_activities.map((Services, index) => {
         return (
       <div class="row">
+         <div class="cell" data-title="ActivityCreator">
+          {Services.ActivityCreator}
+          </div>
          <div class="cell" data-title="ActivityName">
           {Services.ActivityName}
           </div>
           <div class="cell" data-title="ActivityType">
           {Services.ActivityType}
           </div>
-          <div class="cell" data-title="ActivityDescription">
-          {Services.ActivityDescription}
-          </div>
           <div class="cell" data-title="ActivityState">
           {Services.ActivityState}
           </div>
-          <div class="cell" data-title="ClubName">
-          {Services.ClubName}
-          </div>
-          <div class="cell" data-title="TargetAge">
-          {Services.TargetAge}
-          </div>
-          <div class="cell" data-title="ActivityLocation">
-          {Services.ActivityLocation}
-          </div>
-          <div class="cell" data-title="StartDate">
-          {Services.StartDate}
-          </div>
-          <div class="cell" data-title="EndDate">
-          {Services.EndDate}
-          </div>
-          <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
-          </div>
+         
+         
       </div>
    
-          // <RequestService
-          //   id={Services._id}
-          //   ServiceType={Services.ServiceType}
-          //   ServiceState={Services.ServiceState}
-          //   ServiceDescription={Services.ServiceDescription}
-          //   AllPrice={Services.AllPrice}
-          //   workerId={Services.AllPrice[0]}
-          //   ProgressService={this.changeStateToProgressService}
-          //   key={index} />
         );
       })
     }
@@ -101,47 +76,25 @@ export default class Sport extends React.Component {
         <div class="table">
 
           <div class="row head">
-            <div class="cell">
-            اسم الدورة
-              </div>
-            <div class="cell">
-            نوع الدورة
-              </div>
-            <div class="cell">
-            وصف الدورة
-              </div>
-            <div class="cell">
-            حالة الدورة
-              </div>
-              <div class="cell">
-              اسم النادي
-              </div>
-              <div class="cell">
-              العمر المستهدف
-              </div>
-              <div class="cell">
-              مكان الدورة
-              </div>
-              <div class="cell">
-              تاريخ البدء
-              </div>
-              <div class="cell">
-              تاريخ الانتهاء
-              </div>
-              <div class="cell">
+
+          <div class="cell">
               منشئ النشاط
               </div>
+            <div class="cell">
+            اسم النشاط
+              </div>  
+            <div class="cell">
+            نوع النشاط
+              </div>
+            <div class="cell">
+            حالة النشاط
+              </div>
+          
           </div>
           {allServices}
         </div>
 
 </div>
-
-
-
-      //  <div className="allServices">
-      //      {allServices}
-      // </div>
 
 
 

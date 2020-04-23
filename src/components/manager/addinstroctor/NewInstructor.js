@@ -39,7 +39,7 @@ addInstructor = instructor => {
     const newInstructor = this.state;
      console.log(newInstructor, " NewInstructor");
     e.preventDefault();
-    this.props.history.push("/ManagerHeader/Home");
+    // this.props.history.push("/ManagerHeader/Home");
     this.addInstructor(newInstructor);
    };
   render() {
@@ -74,6 +74,7 @@ addInstructor = instructor => {
                 type="InstructorUserName"
                 placeholder="اسم المستخدم"
                 onChange={this.handleChange}
+                
               />
             </div>
             <div>
