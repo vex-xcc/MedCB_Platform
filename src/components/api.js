@@ -34,6 +34,18 @@ export const FinishedActivities = (id ,req) => {
   })
   } 
 
+  export const StudentsRegisteredInActivity = (StudentID , ActivityID) => {
+    return axios({
+      method: 'patch',
+      url: apiURL + `/PassActivity/${ActivityID}`,
+      data:{
+        isRegistered: true,
+        StudentsRegistered: StudentID
+      }
+      
+    })
+  }
+
 //---------------The DELETE Request-------------------   
 
 

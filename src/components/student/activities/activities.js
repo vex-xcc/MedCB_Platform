@@ -1,6 +1,6 @@
 import React from 'react';
 import "./activities.css"
-import { getAllActivityType } from '../../api';
+import { getAllActivityType , StudentsRegisteredInActivity } from '../../api';
 // import { getInfo } from '../login/decodeToken'
 
 export default class Activities extends React.Component {
@@ -28,26 +28,29 @@ export default class Activities extends React.Component {
 
 
 
-    register = (id) => {
+    register = (activitieID) => {
+        //   // get the id of curretn user
+        //   let studentID = getInfo().data._id
+
         // Make an API Call to register a service
 
-        // console.log( `Make an API Call to register a service the ${id} `)
-        // registerOneService(id)
-        //    .then((res) => {
-        //        const History = this.state.History.filter((History) => {
-        //            return History._id !== id; 
-        //        });
-        //        Swal.fire(`The Service registerd`,"",'success')
-        //        this.setState({ History});
-        //    })
-        //    .catch((err) => {
-        //    })
+        console.log( `Make an API Call to register a service the ${activitieID} `)
+        // StudentsRegisteredInActivity(activitieID , studentID )
+           .then((res) => {
+               const Activities = this.state.Activities.filter((Activities) => {
+                   return Activities._id !== activitieID; 
+               });
+            //    Swal.fire(`The student registerd`,"",'success')
+               this.setState({ Activities});
+           })
+           .catch((err) => {
+           })
    }
 
     registerClick = (e) => {
         // e.preventDefault();
-        // console.log( `the ${this.props.id}Service  delet Click `)
-        // this.props.deletOneSerives(this.props.id);
+        console.log( `the student register Click `)
+        this.register(this.props.id);
       }
 
     render() {
@@ -56,21 +59,21 @@ export default class Activities extends React.Component {
         let allActivities = <h3> لايوجد حاليا </h3>
         // if condtion to check the array is greater than zero return and pass the data to ReceivedService components 
         if (this.state.Activities.length > 0) {
-            allActivities = this.state.Activities.map((Services, index) => {
+            allActivities = this.state.Activities.map((activitie, index) => {
                 return (
                     <li className='work'>
                         <input className='radio' id={`work${index}`} name='works' type='radio'></input>
 
                         <div className="relative">
-                            <label htmlFor={`work${index}`} >{Services.ActivityName}</label>
-                            <span className='date'>{Services.StartDate}</span>
+                            <label htmlFor={`work${index}`} >{activitie.ActivityName}</label>
+                            <span className='date'>{activitie.StartDate}</span>
                             <span className='circle'></span>
                         </div>
 
                         <div className='contents'>
-                            <p> {Services.ClubName} </p>
-                            <p> {Services.ActivityDescription} </p>
-                            <p onClick={this.registerClick}> اشتراك</p>
+                            <p> {activitie.ClubName} </p>
+                            <p> {activitie.ActivityDescription} </p>
+                            <p onClick={this.registerClick(activitie._id)}> اشتراك</p>
                         </div>
                     </li>
                 );
