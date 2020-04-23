@@ -24,8 +24,15 @@ export const getAllStudentActivity = (id) =>{
 
 //---------------The PATCH Request-------------------  
 
-
-
+export const FinishedActivities = (id ,req) => {
+  return axios({
+    method: 'patch',
+    url: apiURL + `/UpdateActivity/${id}`,
+    data:{
+      ServiceState: 'Finished',
+    }
+  })
+  } 
 
 //---------------The DELETE Request-------------------   
 
@@ -55,6 +62,24 @@ export const getAllStudentActivity = (id) =>{
   }
   
   export const AddNewStudent = req => {
+    return axios({
+      method: 'POST',
+      url: apiURL + '/student/register',
+      data:{
+        FullName: req.FullName,
+        StudentUserName: req.StudentUserName,
+        password: req.password,
+        Email:req.Email,
+        Phone: req.Phone,
+        UserType: req.UserType,
+        ClubName: req.ClubName,
+        NationalId: req.NationalId,
+      }
+      
+    })
+  }
+
+  export const AddNewActivitie = req => {
     return axios({
       method: 'POST',
       url: apiURL + '/student/register',

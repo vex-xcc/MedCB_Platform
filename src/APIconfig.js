@@ -3,7 +3,7 @@ let apiURL ;
 
 const expressPort = 5000;
 const apiUrls = {
-    development:`http://localhost:${expressPort}/api`,
+    // development:`http://localhost:${expressPort}/api`,
     production:`https://vncplatform.herokuapp.com/api`,
 } 
 

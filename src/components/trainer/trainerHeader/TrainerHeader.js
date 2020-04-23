@@ -4,6 +4,7 @@ import "../../student/StudentHeader/header.css";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import NewActivitie from "../addActivitie/NewActivitie";
+import TrainerProfile from "../trainerProfile/TrainerProfile"
 
 import TrainerHome from '../TrainerHome/TrainerHome'
 export default class TrainerHeader extends React.Component{
@@ -23,7 +24,9 @@ export default class TrainerHeader extends React.Component{
       <Nav.Link href="<NewActivitie/>">اضافة نشاط</Nav.Link>
       </Link>
       <NavDropdown  title="المزيد" id="collasible-nav-dropdown">
-      <NavDropdown.Item href="#action/3.1">معلوماتي</NavDropdown.Item>
+      <Link to="/TrainerHeader/TrainerProfile">
+      <NavDropdown.Item href="<TrainerProfile/>">معلوماتي</NavDropdown.Item>
+      </Link>
         <NavDropdown.Divider/>
         <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
       </NavDropdown>
@@ -36,6 +39,7 @@ export default class TrainerHeader extends React.Component{
       <Switch>
           <Route exact={true} path="/TrainerHeader/Home" component={TrainerHome} ></Route>
            <Route path="/TrainerHeader/NewActivitie" component={NewActivitie}  ></Route>
+           <Route exact={true} path="/TrainerHeader/TrainerProfile" component={TrainerProfile} ></Route>
         </Switch>
       </BrowserRouter>
 
