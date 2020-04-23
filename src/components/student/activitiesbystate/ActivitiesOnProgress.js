@@ -1,21 +1,18 @@
 import React from 'react';
-import { getAllStudentActivity } from '../../api';
+import { getAllActivityList } from '../../api';
 import { getInfo } from '../../login/decodeToken';
 import '../../manager/allTrainers/allTrainers.css';
 export default class ActivitiesOnProgress extends React.Component {
-
   constructor(props) {
     super(props)
-
     this.state = {
       reg_activities:[],
-
     };
   }
-
   componentDidMount() {
     // Mack API call 
-    getAllStudentActivity()
+    let mId = getInfo().data._id
+    getAllActivityList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
         const regActivities = reponse.data.filter((Service) => {
@@ -29,23 +26,8 @@ export default class ActivitiesOnProgress extends React.Component {
         console.log(' API error: ', error);
       })
   }
-
-
-//   changeStateToProgressService = (id) => {
-//     // Make an API Call to onprogress a service
-//     OnProgressService(id)
-//     console.log(`Make an API Call to onprogress a service the ${id} `)
-
-//     const newList = this.state.cus_RequestServices.filter((Service) => {
-//       return Service._id !== id;
-//     })
-//     this.setState({ cus_RequestServices: newList });
-
-//   }
-
   render() {
     let allServices = <h3> No Services! :( </h3>
-
     if (this.state.reg_activities.length > 0) {
       allServices = this.state.reg_activities.map((Services, index) => {
         return (
@@ -81,25 +63,12 @@ export default class ActivitiesOnProgress extends React.Component {
           {Services.ActivityCreator}
           </div>
       </div>
-   
-          // <RequestService
-          //   id={Services._id}
-          //   ServiceType={Services.ServiceType}
-          //   ServiceState={Services.ServiceState}
-          //   ServiceDescription={Services.ServiceDescription}
-          //   AllPrice={Services.AllPrice}
-          //   workerId={Services.AllPrice[0]}
-          //   ProgressService={this.changeStateToProgressService}
-          //   key={index} />
         );
       })
     }
-
     return (
       <div class="wrapper">
-
         <div class="table">
-
           <div class="row head head1">
             <div class="cell">
             اسم الدورة
@@ -134,18 +103,7 @@ export default class ActivitiesOnProgress extends React.Component {
           </div>
           {allServices}
         </div>
-
 </div>
-
-
-
-      //  <div className="allServices">
-      //      {allServices}
-      // </div>
-
-
-
     );
   }
-
 }

@@ -1,29 +1,25 @@
 import apiURL from'../APIconfig';
 import axios from 'axios';
-
-
-
 //---------------The GET Request-------------------
-
 // Find all activity depend on WorkerId and if the ActivityState is open
 export const getAllActivity = () =>{
     return axios.get(`${apiURL}/all/Activity`);
   }
-
 export const getAllinstructor = () =>{
     return axios.get(`${apiURL}/all/instructor`);
   }
-
 export const getAllActivityType = (type) =>{
     return axios.get(`${apiURL}/api/activity/${type}`);
   }  
-  
-export const getAllStudentActivity = (id) =>{
-    return axios.get(`${apiURL}/api/activity/${id}`);
-  } 
-
+// Get all Activity depend on StudentId and if the ActivityState is Finshed
+export const getAllActivityFinshedList = (id) => {
+  return axios.get(`${apiURL}/Find/All/Finished/Activity/Student/${id}`);
+}
+// Get all Activity depend on StudentId 
+export const getAllActivityList = (id) => {
+  return axios.get(`${apiURL}/Find/All/Activity/Student/${id}`);
+}
 //---------------The PATCH Request-------------------  
-
 export const FinishedActivities = (id ,req) => {
   return axios({
     method: 'patch',
@@ -33,7 +29,6 @@ export const FinishedActivities = (id ,req) => {
     }
   })
   } 
-
   export const StudentsRegisteredInActivity = (StudentID , ActivityID) => {
     return axios({
       method: 'patch',
@@ -42,16 +37,9 @@ export const FinishedActivities = (id ,req) => {
         isRegistered: true,
         StudentsRegistered: StudentID
       }
-      
     })
   }
-
 //---------------The DELETE Request-------------------   
-
-
-
-
-
 //---------------The POST Request-------------------  
   //Add new Instructor
   export const AddNewInstructor = req => {
@@ -69,10 +57,8 @@ export const FinishedActivities = (id ,req) => {
         InstructorRole:req.InstructorRole,
         InstructorsType:req.InstructorsType
       }
-      
     })
   }
-  
   export const AddNewStudent = req => {
     return axios({
       method: 'POST',
@@ -87,10 +73,8 @@ export const FinishedActivities = (id ,req) => {
         ClubName: req.ClubName,
         NationalId: req.NationalId,
       }
-      
     })
   }
-
   export const AddNewActivitie = req => {
     return axios({
       method: 'POST',
@@ -105,6 +89,5 @@ export const FinishedActivities = (id ,req) => {
         ClubName: req.ClubName,
         NationalId: req.NationalId,
       }
-      
     })
   }
