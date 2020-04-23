@@ -15,7 +15,7 @@ export default class TrainerProfile extends React.Component {
 
     {/* <!-- the username --> */}
     <h1>
-            الاسم
+            {info.FullName}
     </h1>
 
   </header>
@@ -24,11 +24,11 @@ export default class TrainerProfile extends React.Component {
   <div className="profile-bio">
 
     <p>
-     رقم الجوال
+     {info.Phone}
     </p>
 
     <p>
-     الايميل
+     {info.Email}
     </p>
 
   </div>
