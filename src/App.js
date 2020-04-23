@@ -31,9 +31,15 @@ export default class App extends React.Component {
     <InstructorsAuthenticatedComponent>
     <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
     <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
+
     </InstructorsAuthenticatedComponent> 
 
+
+    <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
+
+
         </Switch>
+
       </BrowserRouter>
 
     );

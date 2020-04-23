@@ -21,6 +21,7 @@ addInstructor = instructor => {
     // Make an axios request
     console.log(instructor,"add");
     AddNewInstructor(instructor)
+    
       .then(response => {
         console.log(
           `The instructor ${instructor.FullName} has been added successfully.`
@@ -38,7 +39,7 @@ addInstructor = instructor => {
     const newInstructor = this.state;
      console.log(newInstructor, " NewInstructor");
     e.preventDefault();
-    this.props.history.push("/ManagerHeader/Home");
+    // this.props.history.push("/ManagerHeader/Home");
     this.addInstructor(newInstructor);
    };
   render() {
@@ -73,6 +74,7 @@ addInstructor = instructor => {
                 type="InstructorUserName"
                 placeholder="اسم المستخدم"
                 onChange={this.handleChange}
+                
               />
             </div>
             <div>
@@ -155,9 +157,12 @@ addInstructor = instructor => {
                 type="text"
                 onChange={this.handleChange}
               >
-               <option className="dropdown-content" value="Entertaining">الترفيهية</option>
-               <option className="dropdown-content" value="Educational">التعليمية</option>
-               <option className="dropdown-content" value="Athletic">الرياضية</option>
+               <option className="dropdown-content">إختر المجال</option>
+               <option className="dropdown-content" value="Entertainment">الترفيهي</option>
+               <option className="dropdown-content" value="Cultural">الثقافي</option>
+               <option className="dropdown-content" value="Education">التعليمي</option>
+               <option className="dropdown-content" value="Sport">الرياضي</option>
+
                 </select>
              </div>
           <br/>

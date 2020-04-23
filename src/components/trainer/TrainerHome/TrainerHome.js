@@ -46,10 +46,10 @@ export default class TrainerHome extends React.Component {
     FinishedActivities(id)
     console.log(`Make an API Call to Finished a activitie the ${id} `)
 
-    const newList = this.state.regActivities.filter((activitie) => {
+    const newList = this.state.reg_activities.filter((activitie) => {
       return activitie._id !== id;
     })
-    this.setState({ regActivities: newList });
+    this.setState({ reg_activities: newList });
 
   }
 

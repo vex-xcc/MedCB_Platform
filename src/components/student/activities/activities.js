@@ -1,8 +1,8 @@
 import React from 'react';
 import "./activities.css"
 import { getAllActivityType , StudentsRegisteredInActivity } from '../../api';
-// import { getInfo } from '../login/decodeToken'
-
+import { getInfo } from '../../login/decodeToken'
+import OneActivitie from "./OneActivitie"
 export default class Activities extends React.Component {
 
     constructor(props) {
@@ -31,11 +31,11 @@ export default class Activities extends React.Component {
     register = (activitieID) => {
         //   // get the id of curretn user
         //   let studentID = getInfo().data._id
-
+        let studentID = "5ea1ebd46ce9fa8b98255f9c"
         // Make an API Call to register a service
-
-        console.log( `Make an API Call to register a service the ${activitieID} `)
-        // StudentsRegisteredInActivity(activitieID , studentID )
+        console.log( `studentID ====> ${studentID} `)
+        console.log( `Make an API Call to register a service the ===> ${activitieID} `)
+        StudentsRegisteredInActivity( studentID ,activitieID)
            .then((res) => {
                const Activities = this.state.Activities.filter((Activities) => {
                    return Activities._id !== activitieID; 
@@ -47,12 +47,6 @@ export default class Activities extends React.Component {
            })
    }
 
-    registerClick = (e) => {
-        // e.preventDefault();
-        console.log( `the student register Click `)
-        this.register(this.props.id);
-      }
-
     render() {
 
         // variable to show when there no Services in the array 
@@ -61,21 +55,13 @@ export default class Activities extends React.Component {
         if (this.state.Activities.length > 0) {
             allActivities = this.state.Activities.map((activitie, index) => {
                 return (
-                    <li className='work'>
-                        <input className='radio' id={`work${index}`} name='works' type='radio'></input>
-
-                        <div className="relative">
-                            <label htmlFor={`work${index}`} >{activitie.ActivityName}</label>
-                            <span className='date'>{activitie.StartDate}</span>
-                            <span className='circle'></span>
-                        </div>
-
-                        <div className='contents'>
-                            <p> {activitie.ClubName} </p>
-                            <p> {activitie.ActivityDescription} </p>
-                            <p onClick={this.registerClick(activitie._id)}> اشتراك</p>
-                        </div>
-                    </li>
+                    <OneActivitie
+                    id={activitie._id}
+                    ActivityName={activitie.ActivityName}
+                    ClubName={activitie.ClubName}
+                    ActivityDescription={activitie.ActivityDescription}
+                    registerOnActivitie={this.register}
+                    key={index} /> 
                 );
             })
         }
