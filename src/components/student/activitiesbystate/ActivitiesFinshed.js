@@ -11,7 +11,8 @@ export default class ActivitiesFinshed extends React.Component {
   }
   componentDidMount() {
     // Mack API call 
-    let mId = getInfo().data._id
+                //   let mId = getInfo().data._id
+                let mId = "5ea013831e516f617f059475"
     getAllActivityFinshedList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
@@ -22,7 +23,7 @@ export default class ActivitiesFinshed extends React.Component {
       })
   }
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices 
     if (this.state.finished_activities.length > 0) {
       allServices = this.state.finished_activities.map((Services, index) => {
         return (

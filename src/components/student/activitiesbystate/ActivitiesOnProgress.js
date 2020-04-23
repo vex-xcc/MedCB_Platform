@@ -11,23 +11,19 @@ export default class ActivitiesOnProgress extends React.Component {
   }
   componentDidMount() {
     // Mack API call 
-    let mId = getInfo().data._id
+            //   let mId = getInfo().data._id
+            let mId = "5ea1ebd46ce9fa8b98255f9c"
     getAllActivityList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
-        const regActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityState === 'Registration' || Service.ActivityState === 'OnProgress') {
-            return reponse.data
-          }
-        });
-        this.setState({ reg_activities: regActivities })
+        this.setState({ reg_activities: reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
   }
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices 
     if (this.state.reg_activities.length > 0) {
       allServices = this.state.reg_activities.map((Services, index) => {
         return (

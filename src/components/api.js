@@ -34,8 +34,11 @@ export const FinishedActivities = (id ,req) => {
       method: 'patch',
       url: apiURL + `/PassActivity/${ActivityID}`,
       data:{
-        isRegistered: true,
-        StudentsRegistered: StudentID
+        StudentsRegistered:StudentID,
+        isRegistered:true
+
+        // isRegistered: true,
+        // StudentsRegistered: StudentID
       }
     })
   }
