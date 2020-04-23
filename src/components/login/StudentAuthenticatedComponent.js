@@ -3,49 +3,45 @@ import { getJwt } from "./helper";
 import { getInfo } from "./decodeToken";
 import { withRouter } from "react-router-dom";
 
-class AuthenticatedComponent extends Component {
+class StudentAuthenticatedComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      admin: undefined,
-      user: undefined
+      user: null,
     };
   }
 
   componentDidMount() {
     const jwt = getJwt();
-    let jwt1 = getInfo().data.Worker;
+    let jwt1 = getInfo().data.UserType;
     // this function is responsible to check if the
     // token is equal to employee or adamant after
     // decrypting that token
     if (!jwt) {
       this.setState({
-        user: null,
-        admin: null
+        Customer: null,
+        user: null
       });
       return;
-    } else if (jwt1 === true) {
-      this.setState({
-        admin: jwt
-      });
-    } else if (jwt1 === false) {
+    } else if (jwt1 === "Students") {
       this.setState({
         user: jwt
       });
-    }
+    } 
   }
   render() {
     return (
       <div>
-        {/* check if the state the admin doesn't equal undefined 
+        {/* check if the state the Worker doesn't equal undefined 
       then the permission we'll go to the second child   */}
-        {this.state.admin !== undefined
-          ? this.props.children[1]
-          : this.props.children[0]}
+        {this.state.user !== null
+          ? this.props.children[0]
+          : ""}
       </div>
     );
   }
 }
 
-export default withRouter(AuthenticatedComponent);
+export default withRouter(StudentAuthenticatedComponent);
+

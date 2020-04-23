@@ -1,13 +1,15 @@
 import React from 'react';
-import apiURL from'./APIconfig';
 
 // Components
-import AuthComponent from './components/login/AuthenticatedComponent';
+import StudentAuthenticatedComponent from './components/login/StudentAuthenticatedComponent';
+import InstructorsAuthenticatedComponent from './components/login/InstructorsAuthenticatedComponent'
 // import Register from './components/login/Register'
 // import Login from './components/login/Login'
 import StudentHeader from './components/student/StudentHeader/StudentHeader'
 import ManagerHeader from './components/manager/managerHeader/ManagerHeader';
 import TrainerHeader from './components/trainer/trainerHeader/TrainerHeader';
+import Login from './components/login/Login'
+import Register from './components/login/Register'
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
 
@@ -18,13 +20,24 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
      <Switch>
-      {/* <Route path={'/'} exact component={Login}/>  */}
-      {/* <Route path="/register" render={() => <Register  history={this.props.history}  />} /> */}
-    {/* <AuthComponent> */}
+      <Route path={'/homathon_test'} exact component={Login}/> 
+
+      <Route path="/register" render={() => <Register  history={this.props.history}  />} />
+
+    <StudentAuthenticatedComponent>
     <Route path={'/StudentHeader'} component={StudentHeader}/> 
-    <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
+    </StudentAuthenticatedComponent>
+
+    <InstructorsAuthenticatedComponent>
     <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
-      {/* </AuthComponent> */}
+    <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
+
+    </InstructorsAuthenticatedComponent> 
+
+
+    <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
+
+
         </Switch>
 
       </BrowserRouter>
