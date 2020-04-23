@@ -1,24 +1,25 @@
 import React from "react";
 import "../../manager/addinstroctor/addinstructor.css";
 import {AddNewActivitie}from '../../api';
-import { getInfo } from "../../login/decodeToken";
+// import { getInfo } from "../../login/decodeToken";
 
 class NewActivitie extends React.Component {
 
   constructor() {
-    let info = getInfo().data;
+    // let info = getInfo().data;
+    
     super();
     this.state = {
         TargetAge: null,
         ClubName: "",
         ActivityDescription: "",
         ActivityName: "",
-        ActivityType: info.InstructorsType,
+        // ActivityType: info.InstructorsType,
         ActivityState: "Registration",
         ActivityLocation: "",
         StartDate: "",
         EndDate: "",
-        ActivityCreator: info._id
+        // ActivityCreator: info._id
     };
     this.addActivitie = this.addActivitie.bind(this);
 }
@@ -56,32 +57,7 @@ addActivitie = Activitie => {
         <form className="parent-wrappe" >
           <h3>إضــافــة مـدرب</h3>
           <div className="subscribe-wrappe">
-            <div >
-              <br />
-              <input
-                className="subscribe-input"
-                required
-                name="TargetAge"
-                value={TargetAge}
-                type="TargetAge"
-                placeholder="العمر"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <br />
-              <br />
-              <input
-                className="subscribe-input"
-                required
-                name="ClubName"
-                value={ClubName}
-                type="ClubName"
-                placeholder="النادي"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
+          <div>
               <br />
               <br />
               <input
@@ -93,7 +69,19 @@ addActivitie = Activitie => {
                 placeholder="اسم الفالية"
                 onChange={this.handleChange}
               />
-            </div>            
+            </div>  
+            <div >
+              <br />
+              <input
+                className="subscribe-input"
+                required
+                name="TargetAge"
+                value={TargetAge}
+                type="TargetAge"
+                placeholder="العمر"
+                onChange={this.handleChange}
+              />
+            </div>          
             <div>
               <br />
               <br />

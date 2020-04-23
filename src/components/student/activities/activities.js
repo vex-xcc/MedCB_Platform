@@ -1,7 +1,7 @@
 import React from 'react';
 import "./activities.css"
 import { getAllActivityType , StudentsRegisteredInActivity } from '../../api';
-// import { getInfo } from '../login/decodeToken'
+import { getInfo } from '../../login/decodeToken'
 
 export default class Activities extends React.Component {
 
@@ -30,12 +30,12 @@ export default class Activities extends React.Component {
 
     register = (activitieID) => {
         //   // get the id of curretn user
-        //   let studentID = getInfo().data._id
+          let studentID = getInfo().data._id
 
         // Make an API Call to register a service
 
         console.log( `Make an API Call to register a service the ${activitieID} `)
-        // StudentsRegisteredInActivity(activitieID , studentID )
+        StudentsRegisteredInActivity(activitieID , studentID )
            .then((res) => {
                const Activities = this.state.Activities.filter((Activities) => {
                    return Activities._id !== activitieID; 
@@ -73,7 +73,7 @@ export default class Activities extends React.Component {
                         <div className='contents'>
                             <p> {activitie.ClubName} </p>
                             <p> {activitie.ActivityDescription} </p>
-                            <p onClick={this.registerClick(activitie._id)}> اشتراك</p>
+                            {/* <p onClick={this.registerClick(activitie._id)}> اشتراك</p> */}
                         </div>
                     </li>
                 );

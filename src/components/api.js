@@ -9,7 +9,7 @@ export const getAllinstructor = () =>{
     return axios.get(`${apiURL}/all/instructor`);
   }
 export const getAllActivityType = (type) =>{
-    return axios.get(`${apiURL}/api/activity/${type}`);
+    return axios.get(`${apiURL}/activity/${type}`);
   }  
 // Get all Activity depend on StudentId and if the ActivityState is Finshed
 export const getAllActivityFinshedList = (id) => {

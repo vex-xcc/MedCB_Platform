@@ -23,6 +23,7 @@ export default class App extends React.Component {
     {/* <AuthComponent> */}
     <Route path={'/StudentHeader'} component={StudentHeader}/> 
     <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
+    <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
       {/* </AuthComponent> */}
         </Switch>
       </BrowserRouter>
