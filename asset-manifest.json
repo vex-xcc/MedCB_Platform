@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/homathon_test/static/css/main.064259ec.chunk.css",
+    "main.js": "/homathon_test/static/js/main.5065a982.chunk.js",
+    "main.js.map": "/homathon_test/static/js/main.5065a982.chunk.js.map",
+    "runtime-main.js": "/homathon_test/static/js/runtime-main.1199e71d.js",
+    "runtime-main.js.map": "/homathon_test/static/js/runtime-main.1199e71d.js.map",
+    "static/css/2.74189dbb.chunk.css": "/homathon_test/static/css/2.74189dbb.chunk.css",
+    "static/js/2.4f724f26.chunk.js": "/homathon_test/static/js/2.4f724f26.chunk.js",
+    "static/js/2.4f724f26.chunk.js.map": "/homathon_test/static/js/2.4f724f26.chunk.js.map",
+    "index.html": "/homathon_test/index.html",
+    "precache-manifest.0196195b364a15294a2460253e1800c2.js": "/homathon_test/precache-manifest.0196195b364a15294a2460253e1800c2.js",
+    "service-worker.js": "/homathon_test/service-worker.js",
+    "static/css/2.74189dbb.chunk.css.map": "/homathon_test/static/css/2.74189dbb.chunk.css.map",
+    "static/css/main.064259ec.chunk.css.map": "/homathon_test/static/css/main.064259ec.chunk.css.map",
+    "static/js/2.4f724f26.chunk.js.LICENSE.txt": "/homathon_test/static/js/2.4f724f26.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1199e71d.js",
+    "static/css/2.74189dbb.chunk.css",
+    "static/js/2.4f724f26.chunk.js",
+    "static/css/main.064259ec.chunk.css",
+    "static/js/main.5065a982.chunk.js"
+  ]
+}
