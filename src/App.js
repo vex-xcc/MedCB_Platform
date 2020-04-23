@@ -18,15 +18,11 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
      <Switch>
-      {/* <Route path={'/'} exact component={Login}/> 
-      <Route
-          path="/register"
-          render={() => <Register  history={this.props.history}  />}
-        /> */}
+      {/* <Route path={'/'} exact component={Login}/>  */}
+      {/* <Route path="/register" render={() => <Register  history={this.props.history}  />} /> */}
     {/* <AuthComponent> */}
-    {/* <Route path={'/StudentHeader'} component={StudentHeader}/> 
-    <Route path={'/TrainerHeader'} component={TrainerHeader}/>  */}
-    <StudentHeader/>
+    <Route path={'/StudentHeader'} component={StudentHeader}/> 
+    <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
       {/* </AuthComponent> */}
         </Switch>
       </BrowserRouter>

@@ -9,10 +9,18 @@ import axios from 'axios';
 export const getAllActivity = () =>{
     return axios.get(`${apiURL}/all/Activity`);
   }
-  export const getAllinstructor = () =>{
+
+export const getAllinstructor = () =>{
     return axios.get(`${apiURL}/all/instructor`);
   }
 
+export const getAllActivityType = (type) =>{
+    return axios.get(`${apiURL}/api/activity/${type}`);
+  }  
+  
+export const getAllStudentActivity = (id) =>{
+    return axios.get(`${apiURL}/api/activity/${id}`);
+  } 
 
 //---------------The PATCH Request-------------------  
 

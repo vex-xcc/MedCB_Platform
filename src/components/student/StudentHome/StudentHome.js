@@ -8,6 +8,7 @@ export default class StudentHome extends Component {
       this.state = {
          toggle: false,
          type: "",
+         ActivityType:"",
       };
    }
    togglehandler() {
@@ -16,9 +17,10 @@ export default class StudentHome extends Component {
          toggle: !this.state.toggle
       })
    }
-   typehandler(type) {
+   typehandler(type , ActivityType) {
       this.setState({
-         type: type
+         type: type,
+         ActivityType: ActivityType,
       })
       this.togglehandler()
    }
@@ -42,32 +44,32 @@ export default class StudentHome extends Component {
             {this.state.toggle === false?
             <div className="contener">
 
-               <div className="card" onClick= {()=>this.typehandler("التعليم") }>
+               <div className="card" onClick= {()=>this.typehandler("التعليم" , "Education") }>
                   <div className="icon"><i className="material-icons md-36">local_library</i></div>
                   <p className="title">التعليم</p>
                   <p className="text">Click to see or edit your profile page.</p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الثقافة") }>
+               <div className="card" onClick= {()=>this.typehandler("الثقافة" , "Cultural") }>
                   <div className="icon"><i className="material-icons md-36">emoji_objects</i></div>
                   <p className="title">الثقافة</p>
                   <p className="text">Check all your favourites in one place.</p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الترفيه") }>
+               <div className="card" onClick= {()=>this.typehandler("الترفيه" , "Entertainment") }>
                   <div className="icon"><i className="material-icons md-36">sentiment_very_satisfied</i></div>
                   <p className="title">الترفيه</p>
                   <p className="text">Add or change your contacts and links.</p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الرياضة") }>
+               <div className="card" onClick= {()=>this.typehandler("الرياضة" , "Sport") }>
                   <div className="icon"><i className="material-icons md-36">directions_run</i></div>
                   <p className="title">الرياضة</p>
                   <p className="text">Add or change your contacts and links.</p>
                </div>
             </div>
             : 
-            <Activities tog={e=>this.togglehandler(e)}  type={this.state.type } />
+            <Activities tog={e=>this.togglehandler(e)}  type={this.state.type} ActivityType={this.state.ActivityType} />
             }
          </>
       )

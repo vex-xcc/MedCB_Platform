@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllActivity } from '../../api';
+import { getAllStudentActivity } from '../../api';
 import { getInfo } from '../../login/decodeToken';
 import '../../manager/allTrainers/allTrainers.css';
 export default class ActivitiesOnProgress extends React.Component {
@@ -15,11 +15,11 @@ export default class ActivitiesOnProgress extends React.Component {
 
   componentDidMount() {
     // Mack API call 
-    getAllActivity()
+    getAllStudentActivity()
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
         const regActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityState === 'Registration' && Service.ActivityState === 'OnProgress') {
+          if (Service.ActivityState === 'Registration' || Service.ActivityState === 'OnProgress') {
             return reponse.data
           }
         });
