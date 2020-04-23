@@ -24,9 +24,9 @@ export default class App extends React.Component {
           render={() => <Register  history={this.props.history}  />}
         /> */}
     {/* <AuthComponent> */}
-    <Route path={'/StudentHeader'} component={StudentHeader}/> 
-    <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
-    {/* <StudentHeader/> */}
+    {/* <Route path={'/StudentHeader'} component={StudentHeader}/> 
+    <Route path={'/TrainerHeader'} component={TrainerHeader}/>  */}
+    <StudentHeader/>
       {/* </AuthComponent> */}
         </Switch>
       </BrowserRouter>

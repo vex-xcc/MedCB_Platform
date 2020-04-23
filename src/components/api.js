@@ -26,7 +26,7 @@ export const getAllActivity = () =>{
 
 
 //---------------The POST Request-------------------  
-  //Add new Employee
+  //Add new Instructor
   export const AddNewInstructor = req => {
     return axios({
       method: 'POST',
@@ -41,6 +41,24 @@ export const getAllActivity = () =>{
         ClubName:req.ClubName,
         InstructorRole:req.InstructorRole,
         InstructorsType:req.InstructorsType
+      }
+      
+    })
+  }
+  
+  export const AddNewStudent = req => {
+    return axios({
+      method: 'POST',
+      url: apiURL + '/student/register',
+      data:{
+        FullName: req.FullName,
+        StudentUserName: req.StudentUserName,
+        password: req.password,
+        Email:req.Email,
+        Phone: req.Phone,
+        UserType: req.UserType,
+        ClubName: req.ClubName,
+        NationalId: req.NationalId,
       }
       
     })

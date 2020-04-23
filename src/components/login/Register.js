@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AddNewCustomer } from '../api';
+import { AddNewStudent } from '../api';
 import Back from "./Back";
 import "./login.css";
 import Swal from "sweetalert2";
@@ -9,14 +9,13 @@ export default class Register extends Component {
 
         this.state = {
             FullName: "",
-            Username: "",
+            StudentUserName: "",
             password: "",
             Email: "",
             Phone: "",
             UserType: "Students",
-            SchoolName: '',
+            ClubName: '',
             NationalId: '',
-            Worker: false,
         };
 
         this.change = this.handleChange.bind(this);
@@ -29,15 +28,15 @@ export default class Register extends Component {
         });
     }
     // Function to set data in ServiceDescription state
-    addCustomer = Customer => {
+    addStudent = Student => {
 
         // Make an api call request to add a new user 
-        AddNewCustomer(Customer)
+        AddNewStudent(Student)
             .then(response => {
                 if (response.data.success === false) {
                     Swal.fire(` ${response.data.message} `, "", 'error');
                 } else if (response.data.success === true) {
-                    Swal.fire(`The User ${Customer.Username} has been added successfully.`, "", 'success');
+                    Swal.fire(`The User ${Student.StudentUserName} has been added successfully.`, "", 'success');
                 }
             })
             .catch(error => {
@@ -49,9 +48,9 @@ export default class Register extends Component {
 
     formSubmit = e => {
         // set the object of new user data 
-        const newCustomer = this.state;
+        const newStudent = this.state;
         e.preventDefault();
-        this.addCustomer(newCustomer);
+        this.addStudent(newStudent);
     };
 
     render() {
@@ -61,49 +60,49 @@ export default class Register extends Component {
                 <form className="login" onSubmit={e => this.submit(e)}>
                     <input
                         type="text"
-                        placeholder="FullName"
+                        placeholder="الأسم الكامل"
                         name="FullName"
                         onChange={e => this.change(e)}
                         value={this.state.FullName}
                     />
                     <input
                         type="text"
-                        placeholder="NationalId"
+                        placeholder="رقم الهوية الوطنية"
                         name="NationalId"
                         onChange={e => this.change(e)}
                         value={this.state.NationalId}
                     />
                     <input
                         type="text"
-                        placeholder="Username"
+                        placeholder="اسم المستخدم"
                         name="Username"
                         onChange={e => this.change(e)}
                         value={this.state.Username}
                     />
                     <input
                         type="text"
-                        placeholder="Email"
+                        placeholder="البريد الإلكتروني"
                         name="Email"
                         onChange={e => this.change(e)}
                         value={this.state.Email}
                     />
                     <input
                         type="password"
-                        placeholder="password"
+                        placeholder="الرقم السري"
                         name="password"
                         onChange={e => this.change(e)}
                         value={this.state.password}
                     />
                     <input
                         type="text"
-                        placeholder="Phone Number"
+                        placeholder="رقم الجوال"
                         name="Phone"
                         onChange={e => this.change(e)}
                         value={this.state.Phone}
                     />
                     <input
                         type="text"
-                        placeholder="School Name"
+                        placeholder="اسم النادي"
                         name="SchoolName"
                         onChange={e => this.change(e)}
                         value={this.state.SchoolName}
