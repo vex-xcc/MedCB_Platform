@@ -99,6 +99,7 @@ export default class TrainerHome extends React.Component {
       allFinished_activities = this.state.finished_activities.map((activitie, index) => {
         return (
       <div className="row">
+
          <div className="cell" data-title="ActivityName">
           {activitie.ActivityName}
           </div>
@@ -111,6 +112,7 @@ export default class TrainerHome extends React.Component {
           <div className="cell" data-title="ActivityState">
           {activitie.ActivityState}
           </div>
+
       </div>
 
         );})      
@@ -147,6 +149,7 @@ export default class TrainerHome extends React.Component {
 
   <div className="table">
   <div className="row head"> 
+
   <div className="cell">
         اسم الفعالية
       </div>
@@ -160,9 +163,9 @@ export default class TrainerHome extends React.Component {
         الحالة
       </div>
   </div>
-    </div> 
+    
     {allFinished_activities}
-
+</div> 
 </div>
 
     );}

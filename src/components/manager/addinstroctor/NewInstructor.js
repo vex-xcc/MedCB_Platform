@@ -6,7 +6,7 @@ class NewInstructor extends React.Component {
     super();
     this.state = {
         FullName: "",
-        InstructorUserName: "",
+        UserName: "",
         NationalId: "",
         Email: "",
         Phone: "",
@@ -39,11 +39,11 @@ addInstructor = instructor => {
     const newInstructor = this.state;
      console.log(newInstructor, " NewInstructor");
     e.preventDefault();
-    // this.props.history.push("/ManagerHeader/Home");
+    this.props.history.push("/ManagerHeader/Home");
     this.addInstructor(newInstructor);
    };
   render() {
-    const { FullName,InstructorUserName,NationalId,Email ,Phone ,password , ClubName, InstructorRole , InstructorsType} = this.state;
+    const { FullName,UserName,NationalId,Email ,Phone ,password , ClubName , InstructorsType} = this.state;
     return (
       <div>
         <form className="parent-wrappe" >
@@ -69,9 +69,9 @@ addInstructor = instructor => {
               <input
                 className="subscribe-input"
                 required
-                name="InstructorUserName"
-                value={InstructorUserName}
-                type="InstructorUserName"
+                name="UserName"
+                value={UserName}
+                type="text"
                 placeholder="اسم المستخدم"
                 onChange={this.handleChange}
                 
