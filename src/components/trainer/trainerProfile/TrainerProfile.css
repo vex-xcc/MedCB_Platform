@@ -401,7 +401,7 @@ body:before {
   @media screen and (min-aspect-ratio: 4/3) {
     body {
       background-size: cover;
-      transform: translate(-53%, -23%)
+   
     }
     body:before {
       width: 0px;
