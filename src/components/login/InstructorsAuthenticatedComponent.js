@@ -9,7 +9,8 @@ import { withRouter } from "react-router-dom";
     
         this.state = {
           Instructors: undefined,
-          Manager: undefined
+          Manager: undefined,
+          user:undefined
         };
       }
     
@@ -21,8 +22,9 @@ import { withRouter } from "react-router-dom";
         // decrypting that token
         if (!jwt) {
           this.setState({
-            Manager: null,
-            Instructors: null
+            Manager: undefined,
+            Instructors: undefined,
+            user:undefined
           });
           return;
         } else if (jwt1 === "Instructors") {
@@ -33,18 +35,29 @@ import { withRouter } from "react-router-dom";
           this.setState({
             Manager: jwt
           });
+        } else if (jwt1 === "Students") {
+          this.setState({
+            user: jwt
+          });
         }
       }
       render() {
-        return (
-          <div>
-            {/* check if the state the Instructors doesn't equal undefined 
-          then the permission we'll go to the second child   */}
-            {this.state.Instructors !== undefined
+        if(this.state.Manager !== undefined){
+          return <> {this.props.children[0]}</>
+        }else {
+          return <>{this.state.Instructors !== undefined? this.props.children[1] : this.props.children[2]}</>
+        }
+        
+       // return (
+          // <div>
+            /* check if the state the Instructors doesn't equal undefined 
+          then the permission we'll go to the second child   */
+            /* {this.state.Instructors !== undefined
               ? this.props.children[1]
-              : this.props.children[0]}
-          </div>
-        );
+              : this.props.children[0]
+              }
+          </div> */
+       // );
       }
     }
 export default withRouter(InstructorsAuthenticatedComponent);
