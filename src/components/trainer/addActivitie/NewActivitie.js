@@ -42,12 +42,15 @@ addActivitie = Activitie => {
       [event.target.name]: event.target.value
     });
 
+  Home = () =>{
+    this.props.history.push("/TrainerHeader/Home");
+  }
   formSubmit = e => {
     const newActivitie = this.state;
      console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
-    this.props.history.push("/TrainerHeader");
+    this.Home()
    };
    
   render() {
@@ -137,7 +140,7 @@ addActivitie = Activitie => {
             <div className="submit-btn" onClick={e => this.formSubmit(e)}>
               إضــافــة
             </div>
-            <a href="/TrainerHeader"><i className="material-icons"> arrow_back </i></a>
+            <a onClick={this.Home}><i className="material-icons"> arrow_back </i></a>
           </div>
         </form>
       </div>

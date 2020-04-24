@@ -3,6 +3,8 @@ import "./activities.css"
 import { getAllActivityType , StudentsRegisteredInActivity } from '../../api';
 import { getInfo } from '../../login/decodeToken'
 import OneActivitie from "./OneActivitie"
+import Swal from "sweetalert2";
+
 export default class Activities extends React.Component {
 
     constructor(props) {
@@ -14,9 +16,6 @@ export default class Activities extends React.Component {
     }
 
     componentDidMount() {
-        // get the id of curretn user
-        // let ID = getInfo().data._id
-
         // Mack API call 
         getAllActivityType(this.props.ActivityType)
             .then((reponse) => {
@@ -25,6 +24,10 @@ export default class Activities extends React.Component {
             .catch((error) => {
             })
     }
+
+    Home = () =>{
+        this.props.tog()
+      }
 
 
 
@@ -39,7 +42,7 @@ export default class Activities extends React.Component {
                const Activities = this.state.Activities.filter((Activities) => {
                    return Activities._id !== activitieID; 
                });
-            //    Swal.fire(`The student registerd`,"",'success')
+               Swal.fire(`The student registerd`,"",'success')
                this.setState({ Activities});
            })
            .catch((err) => {
@@ -49,6 +52,7 @@ export default class Activities extends React.Component {
     render() {
 
         // variable to show when there no Services in the array 
+
         let allActivities = <h3> لايوجد حاليا </h3>
         // if condtion to check the array is greater than zero return and pass the data to ReceivedService components 
         if (this.state.Activities.length > 0) {
@@ -69,6 +73,7 @@ export default class Activities extends React.Component {
         return (
             <>
             <div className='allActivities'>
+            <a onClick={this.Home} ><i className="material-icons"> arrow_back </i></a>
                 <p> {`أنشطة ${this.props.type} القادمة`} </p>
             </div>
 
