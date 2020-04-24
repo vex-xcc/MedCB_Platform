@@ -64,7 +64,7 @@ export const FinishedActivities = (id ,req) => {
       url: apiURL + '/instructor/register',
       data:{
         FullName:req.FullName,
-        InstructorUserName:req.InstructorUserName,
+        UserName:req.UserName,
         NationalId:req.NationalId,
         Email:req.Email,
         Phone:req.Phone,
@@ -81,7 +81,7 @@ export const FinishedActivities = (id ,req) => {
       url: apiURL + '/student/register',
       data:{
         FullName: req.FullName,
-        StudentUserName: req.StudentUserName,
+        UserName: req.UserName,
         password: req.password,
         Email:req.Email,
         Phone: req.Phone,

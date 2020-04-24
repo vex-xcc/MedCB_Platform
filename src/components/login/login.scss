@@ -12,11 +12,11 @@ $base-font-family-fallback: sans-serif;
 
 
 .login{
-body {
+  margin-top: 50px;
+
   background-color: $base-bgcolor;
   color: $base-color;
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family, $base-font-family-fallback;
-  margin-top: 50px;
   min-height: 100%;
 }
 
@@ -149,5 +149,4 @@ a {
     }
 
   }
-}
 }
