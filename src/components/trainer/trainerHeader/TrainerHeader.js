@@ -8,6 +8,13 @@ import TrainerProfile from "../trainerProfile/TrainerProfile"
 
 import TrainerHome from '../TrainerHome/TrainerHome'
 export default class TrainerHeader extends React.Component{
+
+  logOut = (e) => {
+    e.preventDefault();
+    this.props.history.push("/homathon_test");
+    localStorage.clear("currentUser");
+  };
+  
   render(){
     return(
       <BrowserRouter>
@@ -28,7 +35,7 @@ export default class TrainerHeader extends React.Component{
       <NavDropdown.Item href="<TrainerProfile/>">معلوماتي</NavDropdown.Item>
       </Link>
         <NavDropdown.Divider/>
-        <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
+        <NavDropdown.Item onClick={e=> this.logOut(e)}>تسجيل الخروج</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
