@@ -54,7 +54,7 @@ addActivitie = Activitie => {
    };
    
   render() {
-    const { TargetAge,ClubName,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
+    const { TargetAge,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
     return (
       <div>
         <form className="parent-wrappe" >
