@@ -101,36 +101,37 @@ class Login extends Component {
         <div className="login">
 
 
-        <title>Sign Up</title>
+     
 
 
-<div class="align">
-  <div class="grid align__item">
-   <div class="register">
+<div className="align">
+  <div className="grid align__item">
+   <div className="register">
+ 
       <h2>تسجيل الدخول</h2>
-      <form action="" method="post" class="form">
-        <div class="form__field">
+      <form action="" method="post" className="form">
+        <div className="form__field">
           <input type="text"
               name="UserName"
               placeholder="UserName"
               onChange={e => this.change(e)}
               value={this.state.UserName}/>
         </div>
-        <div class="form__field">
+        <div className="form__field">
           <input               type="password"
              placeholder="••••••••••••"
               name="password"
               onChange={e => this.change(e)}
               value={this.state.password}/>
         </div>
-        <div class="form__field"  onClick={e => this.submit(e)}> 
+        <div className="form__field"  onClick={e => this.submit(e)}> 
           <input type="submit" value="تسجيل الدخول للمرتادين"/>
         </div>
-        <div class="form__field"   onClick={e => this.handelSubmit(e)}> 
+        <div className="form__field"   onClick={e => this.handelSubmit(e)}> 
           <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
         </div>
       </form>
-      <p><Link to="/register">تسجيل  جديد</Link> </p>
+      <p onClick={() => window.location.reload(false)}><Link to="/register">Register </Link> </p>
     </div>
   </div>
   </div>

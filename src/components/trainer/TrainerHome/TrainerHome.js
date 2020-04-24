@@ -23,8 +23,8 @@ export default class TrainerHome extends React.Component {
 // ---------------------------------------------------
   AllActivityFinshedList = () =>{
           // Mack API call 
-                //   let mId = getInfo().data._id
-                let mId = "5ea1ebe66ce9fa8b98255f9d";
+                  let mId = getInfo().data._id
+                // let mId = "5ea1ebe66ce9fa8b98255f9d";
 
       getAllActivityFinshedListInstructor(mId)
       .then((reponse) => {
@@ -40,8 +40,8 @@ export default class TrainerHome extends React.Component {
 // ---------------------------------------------------
   AllActivityList = () =>{
       // Mack API call 
-            //   let mId = getInfo().data._id
-            let mId = "5ea1ebe66ce9fa8b98255f9d"
+              let mId = getInfo().data._id
+            // let mId = "5ea1ebe66ce9fa8b98255f9d"
     getAllActivityListInstructor(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
