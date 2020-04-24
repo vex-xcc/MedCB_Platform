@@ -31,15 +31,17 @@ class StudentAuthenticatedComponent extends Component {
     } 
   }
   render() {
-    return (
-      <div>
-        {/* check if the state the Worker doesn't equal undefined 
-      then the permission we'll go to the second child   */}
-        {this.state.user !== null
-          ? this.props.children[0]
-          : ""}
-      </div>
-    );
+    if(this.state.user !== undefined){
+      return this.props.children[1]
+    }
+   // return (
+      // <div>
+        /* check if the state the Worker doesn't equal undefined 
+      then the permission we'll go to the second child   */
+        /* {this.state.user !== undefined :this.props.children[0]}
+      </div> */
+
+ //   );
   }
 }
 

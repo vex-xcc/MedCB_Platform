@@ -3,7 +3,7 @@ import axios from "axios";
 import apiURL from '../../APIconfig';
 import { getInfo } from "./decodeToken";
 import { Route, BrowserRouter, Link } from "react-router-dom";
-import "./login.css";
+import "./login.scss";
 import Register from './Register'
 import Swal from "sweetalert2";
 class Login extends Component {
@@ -40,12 +40,12 @@ class Login extends Component {
         localStorage.setItem("currentUser", res.data.token);
         let jwt1 = getInfo().data.UserType;
         if (jwt1 === "Students") {
-          history.push("/StudentHeader");
+          this.props.history.push("/StudentHeader");
           Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
 
         } else if (jwt1 === undefined) {
           console.log("b: ", jwt1);
-          history.push("/");
+          this.props.history.push("/");
           Swal.fire(` ${jwt1}`, "", 'error');
         }
         return res;
@@ -71,17 +71,17 @@ class Login extends Component {
         let jwt2 = getInfo().data.InstructorRole;
         console.log("b: ", jwt2);
         if (jwt2 === "Instructors") {
-          history.push("/TrainerHeader");
+          this.props.history.push("/TrainerHeader");
           Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
         }
         else if (jwt2 === "Manager") {
-          history.push("/ManagerHeader");
+          this.props.history.push("/ManagerHeader");
           Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
 
         }
         else if (jwt2 === undefined) {
           console.log("b: ", jwt2);
-          history.push("/homathon_test");
+          this.props.history.push("/homathon_test");
           Swal.fire(` ${jwt2}`, "", 'error');
         }
         return res;
@@ -97,42 +97,68 @@ class Login extends Component {
 
     return (
       <BrowserRouter>
-        <div>
 
-          <form className="login" >
-            <input
-              type="text"
+        <div className="login">
+        <title>Daily UI | #001 - Sign Up</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<div class="align">
+
+  <div class="grid align__item">
+
+    <div class="register">
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="site__logo" width="56" height="84" viewBox="77.7 214.9 274.7 412"><defs><linearGradient id="a" x1="0%" y1="0%" y2="0%"><stop offset="0%" stop-color="#8ceabb"/><stop offset="100%" stop-color="#378f7b"/></linearGradient></defs><path fill="url(#a)" d="M215 214.9c-83.6 123.5-137.3 200.8-137.3 275.9 0 75.2 61.4 136.1 137.3 136.1s137.3-60.9 137.3-136.1c0-75.1-53.7-152.4-137.3-275.9z"/></svg>
+
+      <h2>Sign Up</h2>
+
+      <form action="" method="post" class="form">
+
+        <div class="form__field">
+          <input type="text"
               name="UserName"
               placeholder="UserName"
               onChange={e => this.change(e)}
-              value={this.state.UserName}
-            />
-            <input
-              type="password"
-              placeholder="password"
+              value={this.state.UserName}/>
+        </div>
+
+        <div class="form__field">
+          <input               type="password"
+             placeholder="••••••••••••"
               name="password"
               onChange={e => this.change(e)}
-              value={this.state.password}
-            />
-            <button
-              onClick={e => this.submit(e)}>تسجيل الدخول للمرتادين</button>
-        <button
-              onClick={e => this.handelSubmit(e)}>تسجيل الدخول للمدربين</button>
-            <br></br>
-            <button><Link to="/register">Register </Link> </button>
-
-
-
-
-          </form>
-          <h2>&nbsp;</h2>
-
+              value={this.state.password}/>
         </div>
+
+        <div class="form__field"  onClick={e => this.submit(e)}> 
+          <input type="submit" value="تسجيل الدخول للمرتادين"/>
+        </div>
+        <div class="form__field"   onClick={e => this.handelSubmit(e)}> 
+          <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
+        </div>
+
+      </form>
+
+      <p>Already have an accout? <a href="#">Log in</a></p>
+
+    </div>
+
+  </div>
+  </div>
+</div>
+
+
+
+   
+        <button><Link to="/register">Register </Link></button>
         <Route
           path="/register"
           render={() => <Register history={this.props.history} />}
         />
       </BrowserRouter>
+
     );
   }
 }
