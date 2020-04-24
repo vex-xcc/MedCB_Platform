@@ -1,7 +1,6 @@
 import React from 'react';
 import "./allTrainers.css"
-import { getRequestService, getAllinstructor } from '../../api';
-// import { getInfo } from '../login/decodeToken'
+import {getAllinstructor } from '../../api';
 export default class allTrainers extends React.Component {
 
   constructor(props) {
@@ -25,18 +24,6 @@ export default class allTrainers extends React.Component {
   }
 
 
-  // changeStateToProgressService = (id) => {
-  //   // Make an API Call to onprogress a service
-  //   OnProgressService(id)
-  //   console.log(`Make an API Call to onprogress a service the ${id} `)
-
-  //   const newList = this.state.cus_RequestServices.filter((Service) => {
-  //     return Service._id !== id;
-  //   })
-  //   this.setState({ cus_RequestServices: newList });
-
-  // }
-
   render() {
     let allServices = <h3> No Services! :( </h3>
 
@@ -57,15 +44,6 @@ export default class allTrainers extends React.Component {
           {Services.Phone}
           </div>
       </div>
-          // <RequestService
-          //   id={Services._id}
-          //   ServiceType={Services.ServiceType}
-          //   ServiceState={Services.ServiceState}
-          //   ServiceDescription={Services.ServiceDescription}
-          //   AllPrice={Services.AllPrice}
-          //   workerId={Services.AllPrice[0]}
-          //   ProgressService={this.changeStateToProgressService}
-          //   key={index} />
         );
       })
     }
@@ -92,12 +70,6 @@ export default class allTrainers extends React.Component {
           {allServices}
         </div>
       </div>
-
-
-      //  <div className="allServices">
-      //      {allServices}
-      // </div>
-
 
 
     );

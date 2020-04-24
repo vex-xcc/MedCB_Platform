@@ -1,33 +1,48 @@
 import React from 'react';
-import { getAllActivity } from '../../api';
+import { getAllActivityType , userInfo} from '../../api';
 import { getInfo } from '../../login/decodeToken'
 import '../allTrainers/allTrainers.css'
 export default class Sport extends React.Component {
 
   constructor(props) {
+    
     super(props)
-
     this.state = {
       sport_activities:[],
-
+      TrainerData:null
     };
   }
 
   componentDidMount() {
     // Mack API call 
-    getAllActivity()
+    getAllActivityType('Sport')
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
-        const sportActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityType === 'Sport') {
-            return reponse.data
-          }
-        });
-        this.setState({ sport_activities: sportActivities })
+        console.log('.ActivityCreator.FullName   .data', reponse.data)
+        // const sportActivities = reponse.data.filter((Service) => {
+        //   if (Service.ActivityType === 'Sport') {
+        //     return reponse.data
+        //   }
+        // });
+        this.setState({ sport_activities: reponse.data })
+        // this.getTrainerDataByID(this.props.ActivityCreator.FullName)
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
+  }
+
+  getTrainerDataByID = (id) => {
+    let info = getInfo().data;
+
+    // Make an API Call to onprogress a service
+    userInfo(info._id)
+          .then( (reponse)=>{
+              console.log('TrainerData ==> reponse.data ===> ' , reponse.data )
+              this.setState( {TrainerData: reponse.data} )
+          })
+          .catch( (error)=>{
+              console.log(' API error: ',error );
+          })
   }
 
 
