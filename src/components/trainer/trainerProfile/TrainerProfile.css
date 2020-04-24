@@ -401,6 +401,7 @@ body:before {
   @media screen and (min-aspect-ratio: 4/3) {
     body {
       background-size: cover;
+      transform: translate(-53%, -23%)
     }
     body:before {
       width: 0px;
@@ -435,6 +436,7 @@ body:before {
   
   @media screen and (min-height: 480px) {
     .profile-card header {
+    
       width: auto;
       height: auto;
       padding: 30px 20px;
@@ -489,5 +491,6 @@ body:before {
     .profile-card {
         margin-top: 170px;
         top: 80%;
-    }
+        transform: translate(-53%, -3%);
+          }
   }
