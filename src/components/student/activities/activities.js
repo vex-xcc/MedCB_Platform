@@ -60,6 +60,7 @@ export default class Activities extends React.Component {
                     ClubName={activitie.ClubName}
                     ActivityDescription={activitie.ActivityDescription}
                     registerOnActivitie={this.register}
+                    tog={this.togglehandler}
                     index={index} /> 
                 );
             })
