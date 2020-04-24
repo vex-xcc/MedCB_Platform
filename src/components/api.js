@@ -38,7 +38,7 @@ export const FinishedActivities = (id ,req) => {
     method: 'patch',
     url: apiURL + `/UpdateActivity/${id}`,
     data:{
-      ServiceState: 'Finished',
+      ActivityState: 'Finished',
     }
   })
   } 

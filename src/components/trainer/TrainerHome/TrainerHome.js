@@ -1,7 +1,10 @@
 import React from 'react';
 import { getAllActivityListInstructor, getAllActivityFinshedListInstructor , FinishedActivities} from '../../api';
 import { getInfo } from '../../login/decodeToken'
+import FinishedOneActivities from "./FinishedOneActivities"
 import '../../manager/allTrainers/allTrainers.css'
+import Swal from "sweetalert2";
+
 export default class TrainerHome extends React.Component {
 
   constructor(props) {
@@ -23,8 +26,8 @@ export default class TrainerHome extends React.Component {
 // ---------------------------------------------------
   AllActivityFinshedList = () =>{
           // Mack API call 
-                //   let mId = getInfo().data._id
-                let mId = "5ea1ebe66ce9fa8b98255f9d";
+                  let mId = getInfo().data._id
+                // let mId = "5ea1ebe66ce9fa8b98255f9d";
 
       getAllActivityFinshedListInstructor(mId)
       .then((reponse) => {
@@ -40,8 +43,8 @@ export default class TrainerHome extends React.Component {
 // ---------------------------------------------------
   AllActivityList = () =>{
       // Mack API call 
-            //   let mId = getInfo().data._id
-            let mId = "5ea1ebe66ce9fa8b98255f9d"
+              let mId = getInfo().data._id
+            // let mId = "5ea1ebe66ce9fa8b98255f9d"
     getAllActivityListInstructor(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
@@ -56,18 +59,22 @@ export default class TrainerHome extends React.Component {
     this.setState({ reg_activities: data })
   }
 
-
-  changeStateToFinished = (id) => {
-    // // Make an API Call to Finished a activitie
-    // FinishedActivities(id)
-    // console.log(`Make an API Call to Finished a activitie the ${id} `)
-
-    // const newList = this.state.reg_activities.filter((activitie) => {
-    //   return activitie._id !== id;
-    // })
-    // this.setState({ reg_activities: newList });
-
-  }
+  
+  changeStateToFinished = (activitieID) => {
+    //   // get the id of curretn user
+      let studentID = getInfo().data._id
+    // Make an API Call to register a service
+    FinishedActivities(activitieID)
+       .then((res) => {
+           const reg_activities = this.state.reg_activities.filter((reg_activities) => {
+               return reg_activities._id !== activitieID; 
+           });
+           Swal.fire(`The activitie finished`,"",'success')
+           this.setState({ reg_activities});
+       })
+       .catch((err) => {
+       })
+}
 
   render() {
     let allReg_activities 
@@ -75,24 +82,15 @@ export default class TrainerHome extends React.Component {
     if (this.state.reg_activities.length > 0) {
       allReg_activities = this.state.reg_activities.map((activitie, index) => {
         return (
-      <div className="row">
-         <div className="cell" data-title="ActivityName">
-          {activitie.ActivityName}
-          </div>
-          <div className="cell" data-title="ActivityDescription">
-          {activitie.ActivityDescription}
-          </div>
-          <div className="cell" data-title="ActivityLocation">
-          {activitie.ActivityLocation}
-          </div>
-          <div className="cell" data-title="ActivityState">
-          {activitie.ActivityState}
-          </div>
-          <div className="cell" data-title="Finished" onClick={this.changeStateToFinished(activitie._id)} >
-          إنهاء
-          </div>
-      </div>
-
+          <FinishedOneActivities
+          id={activitie._id}
+          ActivityName={activitie.ActivityName}
+          ActivityLocation={activitie.ActivityLocation}
+          ActivityDescription={activitie.ActivityDescription}
+          ActivityState={activitie.ActivityState}
+          changeStateToFinished={this.changeStateToFinished}
+          AllActivityFinshedList={this.AllActivityFinshedList}
+          index={index} /> 
         );})      
     }
 
