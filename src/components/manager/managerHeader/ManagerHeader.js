@@ -15,7 +15,7 @@ export default class ManagerHeader extends React.Component{
 
   logOut = (e) => {
     e.preventDefault();
-    this.props.history.push("/");
+    this.props.history.push("/homathon_test");
     localStorage.clear("currentUser");
   };
   render(){
@@ -43,9 +43,9 @@ export default class ManagerHeader extends React.Component{
           <NavDropdown.Item href="<NewInstructor/>">اضافة مدرب</NavDropdown.Item>
           </Link>
         <NavDropdown.Divider/>
-        <Link onClick={(e) => this.logOut(e)}>
-        <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
-        </Link>
+      
+        <NavDropdown.Item onClick={(e) => this.logOut(e)} >تسجيل الخروج</NavDropdown.Item>
+      
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>

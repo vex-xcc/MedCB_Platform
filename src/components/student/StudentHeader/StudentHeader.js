@@ -12,16 +12,17 @@ export default class StudentHeader extends React.Component {
     this.state = {};
   }
 
+
   logOut = (e) => {
     e.preventDefault();
-    this.props.history.push("/");
+    this.props.history.push("/homathon_test");
     localStorage.clear("currentUser");
   };
   render() {
     return (
       <BrowserRouter>
         <div>
-        <Navbar  collapseOnSelect expand="lg" variant="dark">
+          <Navbar collapseOnSelect expand="lg" variant="dark">
             <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,16 +31,14 @@ export default class StudentHeader extends React.Component {
                   <Nav.Link href="<StudentHome/>">الرئيسية</Nav.Link>
                 </Link>
                 <Link to="/StudentHeader/StudentActivities">
-                <Nav.Link href="#<DisplayTable/>">دوراتي</Nav.Link>
+                  <Nav.Link href="#<DisplayTable/>">دوراتي</Nav.Link>
                 </Link>
                 <NavDropdown title="المزيد" id="collasible-nav-dropdown">
-                <Link to="/StudentHeader/StudentProfile">
-                  <NavDropdown.Item href="<StudentProfile/>">معلوماتي</NavDropdown.Item>
+                  <Link to="/StudentHeader/StudentProfile">
+                    <NavDropdown.Item href="<StudentProfile/>">معلوماتي</NavDropdown.Item>
                   </Link>
                   <NavDropdown.Divider />
-                  <Link onClick={(e) => this.logOut(e)}>
-                  <NavDropdown.Item href="#action/3.2">تسجيل الخروج</NavDropdown.Item>
-                  </Link>
+                  <NavDropdown.Item onClick={(e) => this.logOut(e)}>تسجيل الخروج</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -51,7 +50,7 @@ export default class StudentHeader extends React.Component {
             path="/StudentHeader/Home"
             component={StudentHome}
           ></Route>
-             <Route
+          <Route
             path="/StudentHeader/StudentProfile"
             component={StudentProfile}
           ></Route>
