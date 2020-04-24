@@ -30,8 +30,7 @@ export default class Activities extends React.Component {
 
     register = (activitieID) => {
         //   // get the id of curretn user
-        //   let studentID = getInfo().data._id
-        let studentID = "5ea1ebd46ce9fa8b98255f9c"
+          let studentID = getInfo().data._id
         // Make an API Call to register a service
         console.log( `studentID ====> ${studentID} `)
         console.log( `Make an API Call to register a service the ===> ${activitieID} `)
@@ -61,7 +60,7 @@ export default class Activities extends React.Component {
                     ClubName={activitie.ClubName}
                     ActivityDescription={activitie.ActivityDescription}
                     registerOnActivitie={this.register}
-                    key={index} /> 
+                    index={index} /> 
                 );
             })
         }

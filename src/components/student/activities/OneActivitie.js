@@ -12,10 +12,10 @@ export default class OneActivitie extends React.Component {
     render(){
             return(
                     <li className='work'>
-                        <input className='radio' id={`work${this.props.key}`} name='works' type='radio'></input>
+                        <input className='radio' id={`work${this.props.index}`} name='works' type='radio'></input>
 
                         <div className="relative">
-                            <label htmlFor={`work${this.props.key}`} >{this.props.ActivityName}</label>
+                            <label htmlFor={`work${this.props.index}`} >{this.props.ActivityName}</label>
                             <span className='circle'></span>
                         </div>
 
