@@ -21,7 +21,10 @@ export default class App extends React.Component {
       <BrowserRouter>
      <Switch>
       <Route path={'/homathon_test'} exact component={Login}/> 
-      <Route path="/register" render={() => <Register  history={this.props.history}  />} />
+      <Route
+              path="/register"
+              render={() => <Register history={this.props.history} />}
+            />
 
 
 
@@ -31,12 +34,6 @@ export default class App extends React.Component {
     <Route path={'/StudentHeader'} component={StudentHeader}/> 
     </InstructorsAuthenticatedComponent> 
 
-
-    {/* <StudentAuthenticatedComponent>
-    <Route path={'/StudentHeader'} component={StudentHeader}/> 
-    </StudentAuthenticatedComponent> */}
-
-    {/* <Route path={'/ManagerHeader'} component={ManagerHeader}/>  */}
 
 
         </Switch>
