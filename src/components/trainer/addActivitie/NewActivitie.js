@@ -11,22 +11,25 @@ class NewActivitie extends React.Component {
     super();
     this.state = {
         TargetAge: null,
-        ClubName: "",
+        ClubName: "الرواد",
+        // ActivityType: info.ClubName,
         ActivityDescription: "",
         ActivityName: "",
+        ActivityType:"Sport",
         // ActivityType: info.InstructorsType,
         ActivityState: "Registration",
         ActivityLocation: "",
         StartDate: "",
         EndDate: "",
-        // ActivityCreator: info._id
     };
     this.addActivitie = this.addActivitie.bind(this);
 }
 
 addActivitie = Activitie => {
+                  //   let Id = getInfo().data._id
+                  let Id = "5ea1ebe66ce9fa8b98255f9d";
     // Make an axios request
-    AddNewActivitie(Activitie)
+    AddNewActivitie(Activitie , Id)
       .then(response => {
         console.log(
           `Has been added successfully.`
@@ -47,7 +50,7 @@ addActivitie = Activitie => {
      console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
-    this.props.history.push("/TrainerHeader/Home");
+    this.props.history.push("/TrainerHeader");
    };
    
   render() {
@@ -55,7 +58,7 @@ addActivitie = Activitie => {
     return (
       <div>
         <form className="parent-wrappe" >
-          <h3>إضــافــة مـدرب</h3>
+          <h3> إضــافــة نشاط </h3>
           <div className="subscribe-wrappe">
           <div>
               <br />
@@ -77,7 +80,7 @@ addActivitie = Activitie => {
                 required
                 name="TargetAge"
                 value={TargetAge}
-                type="TargetAge"
+                type="number"
                 placeholder="العمر"
                 onChange={this.handleChange}
               />
@@ -113,22 +116,9 @@ addActivitie = Activitie => {
               <input
                 className="subscribe-input"
                 required
-                name="ClubName"
-                value={ClubName}
-                type="ClubName"
-                placeholder="اسم النادي"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <br />
-              <br />
-              <input
-                className="subscribe-input"
-                required
                 name="StartDate"
                 value={StartDate}
-                type="StartDate"
+                type="date"
                 placeholder="تاريج البداية"
                 onChange={this.handleChange}
               />
@@ -141,7 +131,7 @@ addActivitie = Activitie => {
                 required
                 name="EndDate"
                 value={EndDate}
-                type="EndDate"
+                type="date"
                 placeholder="تاريج النهاية"
                 onChange={this.handleChange}
               />

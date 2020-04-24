@@ -19,6 +19,19 @@ export const getAllActivityFinshedList = (id) => {
 export const getAllActivityList = (id) => {
   return axios.get(`${apiURL}/Find/All/Activity/Student/${id}`);
 }
+
+
+// Get all Activity depend on Instructor and if the ActivityState is Finshed
+export const getAllActivityFinshedListInstructor = (id) => {
+  return axios.get(`${apiURL}/Find/All/Finished/Activity/${id}`);
+}
+// Get all Activity depend on Instructor 
+export const getAllActivityListInstructor = (id) => {
+  return axios.get(`${apiURL}/Find/All/Instructor/Activity/${id}`);
+}
+
+
+
 //---------------The PATCH Request-------------------  
 export const FinishedActivities = (id ,req) => {
   return axios({
@@ -78,19 +91,21 @@ export const FinishedActivities = (id ,req) => {
       }
     })
   }
-  export const AddNewActivitie = req => {
+  export const AddNewActivitie = (req,Id) => {
     return axios({
       method: 'POST',
-      url: apiURL + '/student/register',
+      url: `${apiURL}/${Id}`,
       data:{
-        FullName: req.FullName,
-        StudentUserName: req.StudentUserName,
-        password: req.password,
-        Email:req.Email,
-        Phone: req.Phone,
-        UserType: req.UserType,
+        TargetAge: req.TargetAge,
         ClubName: req.ClubName,
-        NationalId: req.NationalId,
+        ActivityDescription: req.ActivityDescription,
+        ActivityName:req.ActivityName,
+        ActivityType: req.ActivityType,
+        ActivityState: req.ActivityState,
+        ActivityLocation: req.ActivityLocation,
+        // ActivityCreator: Id,
+        StartDate: req.StartDate,
+        EndDate: req.EndDate,
       }
     })
   }

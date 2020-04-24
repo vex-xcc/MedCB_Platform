@@ -25,11 +25,11 @@ export default class App extends React.Component {
 
 
 
-    <InstructorsAuthenticatedComponent>
+    {/* <InstructorsAuthenticatedComponent> */}
     <Route path={'/ManagerHeader'} component={ManagerHeader}/> 
     <Route path={'/TrainerHeader'} component={TrainerHeader}/> 
     <Route path={'/StudentHeader'} component={StudentHeader}/> 
-    </InstructorsAuthenticatedComponent> 
+    {/* </InstructorsAuthenticatedComponent>  */}
 
 
     {/* <StudentAuthenticatedComponent>

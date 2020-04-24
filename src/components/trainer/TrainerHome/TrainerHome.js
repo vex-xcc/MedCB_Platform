@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllActivity, FinishedActivities} from '../../api';
+import { getAllActivityListInstructor, getAllActivityFinshedListInstructor , FinishedActivities} from '../../api';
 import { getInfo } from '../../login/decodeToken'
 import '../../manager/allTrainers/allTrainers.css'
 export default class TrainerHome extends React.Component {
@@ -13,43 +13,59 @@ export default class TrainerHome extends React.Component {
 
     };
   }
-
+// ---------------------------------------------------
   componentDidMount() {
-    // Mack API call 
-    getAllActivity()
+
+    this.AllActivityFinshedList()
+    this.AllActivityList()
+
+  }
+// ---------------------------------------------------
+  AllActivityFinshedList = () =>{
+          // Mack API call 
+                //   let mId = getInfo().data._id
+                let mId = "5ea1ebe66ce9fa8b98255f9d";
+
+      getAllActivityFinshedListInstructor(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
-        const finishedActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityState === 'Finished') {
-            return reponse.data
-          }
-        });
-        const regActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityState === 'Registration' || Service.ActivityState === 'OnProgress') {
-            return reponse.data
-          }
-        });
-        this.setState({ 
-          finished_activities: finishedActivities,
-          reg_activities: regActivities })
+        let data = reponse.data
+        this.setState({ finished_activities: data })
+        // this.set(reponse.data)
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
-
-    
+  }
+// ---------------------------------------------------
+  AllActivityList = () =>{
+      // Mack API call 
+            //   let mId = getInfo().data._id
+            let mId = "5ea1ebe66ce9fa8b98255f9d"
+    getAllActivityListInstructor(mId)
+      .then((reponse) => {
+        console.log('reponse.data', reponse.data)
+        this.set(reponse.data)
+      })
+      .catch((error) => {
+        console.log(' API error: ', error);
+      })
+  }
+// ---------------------------------------------------
+  set = data =>{
+    this.setState({ reg_activities: data })
   }
 
 
   changeStateToFinished = (id) => {
-    // Make an API Call to Finished a activitie
-    FinishedActivities(id)
-    console.log(`Make an API Call to Finished a activitie the ${id} `)
+    // // Make an API Call to Finished a activitie
+    // FinishedActivities(id)
+    // console.log(`Make an API Call to Finished a activitie the ${id} `)
 
-    const newList = this.state.reg_activities.filter((activitie) => {
-      return activitie._id !== id;
-    })
-    this.setState({ reg_activities: newList });
+    // const newList = this.state.reg_activities.filter((activitie) => {
+    //   return activitie._id !== id;
+    // })
+    // this.setState({ reg_activities: newList });
 
   }
 
