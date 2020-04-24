@@ -41,7 +41,7 @@ class Login extends Component {
         let jwt1 = getInfo().data.UserType;
         if (jwt1 === "Students") {
           this.props.history.push("/StudentHeader");
-          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
+          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
 
         } else if (jwt1 === undefined) {
           console.log("b: ", jwt1);
@@ -52,7 +52,7 @@ class Login extends Component {
       })
       .catch(error => {
         console.log("ERROR: ", error);
-        Swal.fire(` Invalid UserName or Password`, "", 'error');
+        Swal.fire(` اسم المستخدم او الرقم السري غير صحيح`, "", 'error');
 
       });
   }
@@ -72,11 +72,11 @@ class Login extends Component {
         console.log("b: ", jwt2);
         if (jwt2 === "Instructors") {
           this.props.history.push("/TrainerHeader");
-          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
+          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
         }
         else if (jwt2 === "Manager") {
           this.props.history.push("/ManagerHeader");
-          Swal.fire(`welcome ${getInfo().data.UserName}`, "", 'success');
+          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
 
         }
         else if (jwt2 === undefined) {
@@ -88,7 +88,7 @@ class Login extends Component {
       })
       .catch(error => {
         console.log("ERROR: ", error);
-        Swal.fire(` Invalid UserName or Password`, "", 'error');
+        Swal.fire(` اسم المستخدم او الرقم السري غير صحيح`, "", 'error');
 
       });
   }
