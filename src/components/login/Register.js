@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { AddNewStudent } from '../api';
 import Back from "./Back";
-import "./login.css";
+import "./login.scss";
 import Swal from "sweetalert2";
 export default class Register extends Component {
     constructor(props) {

@@ -22,6 +22,8 @@ export default class ManagerHeader extends React.Component{
     return(
       <BrowserRouter>
       <div>
+
+        
 <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
 <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
