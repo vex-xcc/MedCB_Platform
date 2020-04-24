@@ -1,22 +1,20 @@
 import React from "react";
 import "../../manager/addinstroctor/addinstructor.css";
 import {AddNewActivitie}from '../../api';
-// import { getInfo } from "../../login/decodeToken";
+import { getInfo } from "../../login/decodeToken";
 
 class NewActivitie extends React.Component {
 
   constructor() {
-    // let info = getInfo().data;
+    let info = getInfo().data;
     
     super();
     this.state = {
         TargetAge: null,
-        ClubName: "الرواد",
-        // ActivityType: info.ClubName,
+        ClubName: info.ClubName,
         ActivityDescription: "",
         ActivityName: "",
-        ActivityType:"Sport",
-        // ActivityType: info.InstructorsType,
+        ActivityType: info.InstructorsType,
         ActivityState: "Registration",
         ActivityLocation: "",
         StartDate: "",
@@ -26,8 +24,7 @@ class NewActivitie extends React.Component {
 }
 
 addActivitie = Activitie => {
-                  //   let Id = getInfo().data._id
-                  let Id = "5ea1ebe66ce9fa8b98255f9d";
+                    let Id = getInfo().data._id
     // Make an axios request
     AddNewActivitie(Activitie , Id)
       .then(response => {
@@ -54,7 +51,7 @@ addActivitie = Activitie => {
    };
    
   render() {
-    const { TargetAge,ClubName,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
+    const { TargetAge,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
     return (
       <div>
         <form className="parent-wrappe" >

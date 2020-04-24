@@ -11,8 +11,8 @@ export default class ActivitiesFinshed extends React.Component {
   }
   componentDidMount() {
     // Mack API call 
-                //   let mId = getInfo().data._id
-                let mId = "5ea1ebd46ce9fa8b98255f9c";
+                  let mId = getInfo().data._id
+                // let mId = "5ea1ebd46ce9fa8b98255f9c";
 
     getAllActivityFinshedList(mId)
       .then((reponse) => {
