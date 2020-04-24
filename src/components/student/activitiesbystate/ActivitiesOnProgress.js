@@ -11,8 +11,8 @@ export default class ActivitiesOnProgress extends React.Component {
   }
   componentDidMount() {
     // Mack API call 
-            //   let mId = getInfo().data._id
-            let mId = "5ea1ebd46ce9fa8b98255f9c"
+              let mId = getInfo().data._id
+            // let mId = "5ea1ebd46ce9fa8b98255f9c"
     getAllActivityList(mId)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
