@@ -6,15 +6,15 @@ $base-line-height: 1.5;
 $base-font-family: Helvetica Neue;
 $base-font-family-fallback: sans-serif;
 
-
+* {
+  box-sizing: border-box;
+}
 
 
 .login{
-  
-  * {
-  box-sizing: border-box;
-}
   margin-top: 50px;
+
+  color: $base-color;
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family, $base-font-family-fallback;
   min-height: 100%;
 }
