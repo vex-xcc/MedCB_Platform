@@ -69,7 +69,7 @@ export default class TrainerHome extends React.Component {
            const reg_activities = this.state.reg_activities.filter((reg_activities) => {
                return reg_activities._id !== activitieID; 
            });
-           Swal.fire(`The activitie finished`,"",'success')
+           Swal.fire(` ${activitieID.ActivityName} تم انهاء النشاط `, "", 'success');
            this.setState({ reg_activities});
        })
        .catch((err) => {

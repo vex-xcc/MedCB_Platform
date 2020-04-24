@@ -1,6 +1,7 @@
 import React from "react";
 import "./addinstructor.css";
 import {AddNewInstructor}from '../../api';
+import Swal from "sweetalert2";
 class NewInstructor extends React.Component {
   constructor() {
     super();
@@ -23,9 +24,8 @@ addInstructor = instructor => {
     AddNewInstructor(instructor)
     
       .then(response => {
-        console.log(
-          `The instructor ${instructor.FullName} has been added successfully.`
-        );
+        Swal.fire(` ${instructor.FullName} تم إضافة مدرب `, "", 'success');
+
           })
       .catch(error => {
         console.log("API ERROR: ", error);
