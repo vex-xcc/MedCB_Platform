@@ -42,6 +42,7 @@ import { withRouter } from "react-router-dom";
         }
       }
       render() {
+        
         if(this.state.Manager !== undefined){
           return <> {this.props.children[0]}</>
         }else {
