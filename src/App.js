@@ -21,7 +21,7 @@ export default class App extends React.Component {
         <Switch>
           <Route path={'/homathon_test'} exact component={Login} />
           <Route
-            path="/register"
+            path={'/register'}
             render={() => <Register history={this.props.history} />}
           />
           <InstructorsAuthenticatedComponent>

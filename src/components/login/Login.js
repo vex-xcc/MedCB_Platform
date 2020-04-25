@@ -96,7 +96,7 @@ class Login extends Component {
   render() {
 
     return (
-      <BrowserRouter>
+  
 
         <div className="login">
 
@@ -131,18 +131,15 @@ class Login extends Component {
           <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
         </div>
       </form>
-      <p onClick={() => window.location.reload(false)}><Link to="/homathon_test/register">Register </Link> </p>
+      <p  onClick={() => this.props.history.push("/register")}>Register</p>
     </div>
   </div>
   </div>
 </div>
 
      
-       <Route
-          path="/register"
-          render={() => <Register  history={this.props.history}  />}
-        />
-      </BrowserRouter>
+
+
 
     );
   }
