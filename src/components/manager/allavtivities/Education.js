@@ -26,7 +26,7 @@ export default class Education extends React.Component {
 
 
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices =  <h1>لايوجد نشاطات متاحة</h1>
 
     if (this.state.education_activities.length > 0) {
       allServices = this.state.education_activities.map((Services, index) => {

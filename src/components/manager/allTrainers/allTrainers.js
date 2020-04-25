@@ -28,7 +28,7 @@ export default class allTrainers extends React.Component {
 
 
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices = <h1>لايوجد  مدربون حاليا</h1>
 
     if (this.state.all_instroctor.length > 0) {
       allServices = this.state.all_instroctor.map((Services, index) => {

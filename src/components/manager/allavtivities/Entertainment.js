@@ -26,7 +26,7 @@ export default class Entertainment extends React.Component {
   }
 
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices =  <h1>لايوجد نشاطات متاحة</h1>
 
     if (this.state.entertainment_activities.length > 0) {
       allServices = this.state.entertainment_activities.map((Services, index) => {

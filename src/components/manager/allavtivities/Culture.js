@@ -24,7 +24,12 @@ export default class Culture extends React.Component {
   }
 
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices =   <div className="main-container">
+
+    <div className="first-container share">
+          <h1>لايوجد نشاطات متاحة</h1></div>
+              </div>
+
 
     if (this.state.culture_activities.length > 0) {
       allServices = this.state.culture_activities.map((Services, index) => {
