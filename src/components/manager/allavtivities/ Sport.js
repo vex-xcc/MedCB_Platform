@@ -17,44 +17,22 @@ export default class Sport extends React.Component {
     // Mack API call 
     getAllActivityType('Sport')
       .then((reponse) => {
-        console.log('.ActivityCreator.FullName   .data', reponse.data)
-        // const sportActivities = reponse.data.filter((Service) => {
-        //   if (Service.ActivityType === 'Sport') {
-        //     return reponse.data
-        //   }
-        // });
         this.setState({ sport_activities: reponse.data })
-        // this.getTrainerDataByID(this.props.ActivityCreator.FullName)
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
   }
 
-  getTrainerDataByID = (id) => {
-    let info = getInfo().data;
-
-    // Make an API Call to onprogress a service
-    userInfo(info._id)
-          .then( (reponse)=>{
-              console.log('TrainerData ==> reponse.data ===> ' , reponse.data )
-              this.setState( {TrainerData: reponse.data} )
-          })
-          .catch( (error)=>{
-              console.log(' API error: ',error );
-          })
-  }
-
-
   render() {
     let allServices = <h3> No Services! :( </h3>
-
+    
     if (this.state.sport_activities.length > 0) {
       allServices = this.state.sport_activities.map((Services, index) => {
         return (
       <div class="row">
          <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
+        {Services.ActivityCreator.FullName}
           </div>
          <div class="cell" data-title="ActivityName">
           {Services.ActivityName}
