@@ -1,7 +1,8 @@
 import React from 'react';
 import "./allTrainers.css"
+import { getInfo } from '../../login/decodeToken'
+
 import { getRequestService, getAllinstructor } from '../../api';
-// import { getInfo } from '../login/decodeToken'
 export default class allTrainers extends React.Component {
 
   constructor(props) {
@@ -13,7 +14,8 @@ export default class allTrainers extends React.Component {
   }
 
   componentDidMount() {
-    getAllinstructor()
+    let ID = getInfo().data._id
+    getAllinstructor(ID)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
        
