@@ -33,7 +33,7 @@ export default class Education extends React.Component {
         return (
       <div class="row">
          <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
+         {Services.ActivityCreator.FullName}
           </div>
          <div class="cell" data-title="ActivityName">
           {Services.ActivityName}
