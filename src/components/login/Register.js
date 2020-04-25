@@ -60,7 +60,7 @@ export default class Register extends Component {
                 <div className="login">
 
 
-         
+
 
 
 
@@ -126,7 +126,7 @@ export default class Register extends Component {
                                     <div className="form__field">
                                         <input
                                             type="password"
-                                            placeholder="الرقم السري"
+                                            placeholder="كلمة المرور"
                                             name="password"
                                             onChange={e => this.change(e)}
                                             value={this.state.password}

@@ -118,8 +118,9 @@ class Login extends Component {
               value={this.state.UserName}/>
         </div>
         <div className="form__field">
-          <input               type="password"
-             placeholder="••••••••••••"
+          <input              
+             type="password"
+             placeholder="كلمة المرور"
               name="password"
               onChange={e => this.change(e)}
               value={this.state.password}/>
