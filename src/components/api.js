@@ -13,7 +13,7 @@ export const getAllActivity = () =>{
     return axios.get(`${apiURL}/all/Activity`);
   }
 export const getAllinstructor = (id) =>{
-    return axios.get(`${apiURL}/Instructor/${id}`);
+    return axios.get(`${apiURL}/find/all/emp/${id}`);
   }
 export const getAllActivityType = (type) =>{
     return axios.get(`${apiURL}/activity/${type}`);
