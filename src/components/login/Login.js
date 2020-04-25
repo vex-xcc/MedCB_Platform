@@ -131,14 +131,14 @@ class Login extends Component {
           <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
         </div>
       </form>
-      <p onClick={() => window.location.reload(false)}><Link to="/register">Register </Link> </p>
+      <p><Link to="/register">Register </Link> </p>
     </div>
   </div>
   </div>
 </div>
 
      
-<Route
+       <Route
           path="/register"
           render={() => <Register  history={this.props.history}  />}
         />
