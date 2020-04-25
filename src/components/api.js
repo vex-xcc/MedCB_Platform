@@ -1,6 +1,13 @@
 import apiURL from'../APIconfig';
 import axios from 'axios';
 //---------------The GET Request-------------------
+
+// Find all User info depend on Id
+export const userInfo = (id) =>{
+  return axios.get(`${apiURL}/user/${id}`);
+}  
+
+
 // Find all activity depend on WorkerId and if the ActivityState is open
 export const getAllActivity = () =>{
     return axios.get(`${apiURL}/all/Activity`);
@@ -49,13 +56,12 @@ export const FinishedActivities = (id ,req) => {
       data:{
         StudentsRegistered:StudentID,
         isRegistered:true
-
-        // isRegistered: true,
-        // StudentsRegistered: StudentID
       }
     })
   }
-//---------------The DELETE Request-------------------   
+
+
+
 //---------------The POST Request-------------------  
   //Add new Instructor
   export const AddNewInstructor = req => {
@@ -103,7 +109,6 @@ export const FinishedActivities = (id ,req) => {
         ActivityType: req.ActivityType,
         ActivityState: req.ActivityState,
         ActivityLocation: req.ActivityLocation,
-        // ActivityCreator: Id,
         StartDate: req.StartDate,
         EndDate: req.EndDate,
       }

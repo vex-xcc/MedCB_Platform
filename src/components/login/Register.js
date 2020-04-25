@@ -36,7 +36,7 @@ export default class Register extends Component {
                 if (response.data.success === false) {
                     Swal.fire(` ${response.data.message} `, "", 'error');
                 } else if (response.data.success === true) {
-                    Swal.fire(`The User ${Student.UserName} has been added successfully.`, "", 'success');
+                    Swal.fire(` بنجاح ${Student.UserName} تم إضاقة المستخدم`, "", 'success');
                 }
             })
             .catch(error => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getRequestService, OnProgressService,getAllActivity } from '../../api';
+import { getAllActivityType } from '../../api';
 import { getInfo } from '../../login/decodeToken'
 import '../allTrainers/allTrainers.css'
 export default class Education extends React.Component {
@@ -14,33 +14,16 @@ export default class Education extends React.Component {
   }
 
   componentDidMount() {
-    getAllActivity()
+    // Mack API call 
+    getAllActivityType('Education')
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
-        const educationActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityType === 'Education' ) {
-            return reponse.data
-          }
-        });
-        this.setState({ education_activities: educationActivities })
+        this.setState({ education_activities: reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
   }
 
-
-//   changeStateToProgressService = (id) => {
-//     // Make an API Call to onprogress a service
-//     OnProgressService(id)
-//     console.log(`Make an API Call to onprogress a service the ${id} `)
-
-//     const newList = this.state.cus_RequestServices.filter((Service) => {
-//       return Service._id !== id;
-//     })
-//     this.setState({ cus_RequestServices: newList });
-
-//   }
 
   render() {
     let allServices = <h3> No Services! :( </h3>
@@ -50,7 +33,7 @@ export default class Education extends React.Component {
         return (
       <div class="row">
          <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
+         {Services.ActivityCreator.FullName}
           </div>
          <div class="cell" data-title="ActivityName">
           {Services.ActivityName}

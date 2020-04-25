@@ -1,5 +1,5 @@
 import React from 'react';
-import { getRequestService, OnProgressService,getAllActivity } from '../../api';
+import { getAllActivityType } from '../../api';
 import { getInfo } from '../../login/decodeToken'
 import '../allTrainers/allTrainers.css'
 export default class Culture extends React.Component {
@@ -12,37 +12,16 @@ export default class Culture extends React.Component {
 
     };
   }
-
   componentDidMount() {
     // Mack API call 
-    getAllActivity()
+    getAllActivityType('Culture')
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
-        const cultureActivities = reponse.data.filter((Service) => {
-          if (Service.ActivityType === 'Culture') {
-            return reponse.data
-          }
-        });
-        this.setState({ culture_activities: cultureActivities })
+        this.setState({ culture_activities: reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
   }
-
-
-//   changeStateToProgressService = (id) => {
-//     // Make an API Call to onprogress a service
-//     OnProgressService(id)
-//     console.log(`Make an API Call to onprogress a service the ${id} `)
-
-//     const newList = this.state.cus_RequestServices.filter((Service) => {
-//       return Service._id !== id;
-//     })
-//     this.setState({ cus_RequestServices: newList });
-
-//   }
-
 
   render() {
     let allServices = <h3> No Services! :( </h3>
@@ -52,7 +31,7 @@ export default class Culture extends React.Component {
         return (
       <div class="row">
           <div class="cell" data-title="ActivityCreator">
-          {Services.ActivityCreator}
+          {Services.ActivityCreator.FullName}
           </div>
          <div class="cell" data-title="ActivityName">
           {Services.ActivityName}
