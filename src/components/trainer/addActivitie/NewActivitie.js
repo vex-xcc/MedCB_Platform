@@ -2,7 +2,7 @@ import React from "react";
 import "../../manager/addinstroctor/addinstructor.css";
 import {AddNewActivitie}from '../../api';
 import { getInfo } from "../../login/decodeToken";
-
+import Swal from "sweetalert2";
 class NewActivitie extends React.Component {
 
   constructor() {
@@ -28,9 +28,9 @@ addActivitie = Activitie => {
     // Make an axios request
     AddNewActivitie(Activitie , Id)
       .then(response => {
-        console.log(
-          `Has been added successfully.`
-        );
+        Swal.fire(` ${getInfo().dataِِ.ActivityName} تم إضافة نشاط `, "", 'success');
+
+
           })
       .catch(error => {
         console.log("API ERROR: ", error);
