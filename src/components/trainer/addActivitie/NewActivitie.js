@@ -50,7 +50,8 @@ addActivitie = Activitie => {
      console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
-    window.location.reload(false);
+    this.Home()
+    // window.location.reload(false);
    };
    
   render() {
@@ -68,7 +69,7 @@ addActivitie = Activitie => {
                 required
                 name="ActivityName"
                 value={ActivityName}
-                type="ActivityName"
+                type="text"
                 placeholder="اسم الفالية"
                 onChange={this.handleChange}
               />
@@ -105,7 +106,7 @@ addActivitie = Activitie => {
                 required
                 name="ActivityLocation"
                 value={ActivityLocation}
-                type="ActivityLocation"
+                type="text"
                 placeholder="موقع الفالية"
                 onChange={this.handleChange}
               />
