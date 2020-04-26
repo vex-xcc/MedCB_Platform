@@ -43,14 +43,13 @@ addActivitie = Activitie => {
     });
 
   Home = () =>{
-    this.props.history.push("/TrainerHeader");  
+    this.props.history.push("/TrainerHeader/Home");  
   }
   formSubmit = e => {
     const newActivitie = this.state;
      console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
-    this.props.history.push("/TrainerHeader");  
     window.location.reload(false);
    };
    
