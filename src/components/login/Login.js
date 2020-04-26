@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import apiURL from '../../APIconfig';
 import { getInfo } from "./decodeToken";
-import { Route, BrowserRouter, Link } from "react-router-dom";
 import "./login.scss";
-import Register from './Register'
 import Swal from "sweetalert2";
 class Login extends Component {
   constructor(props) {
@@ -109,7 +107,7 @@ class Login extends Component {
    <div className="register">
  
       <h2>تسجيل الدخول</h2>
-      <form action="" method="post" className="form">
+      <form className="form">
         <div className="form__field">
           <input type="text"
               name="UserName"

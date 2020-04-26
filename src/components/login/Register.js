@@ -73,7 +73,7 @@ export default class Register extends Component {
 
                                 <h2>تسجيل حساب جديد</h2>
 
-                                <form action="" method="post" className="form" onSubmit={e => this.submit(e)}>
+                                <form className="form" onSubmit={e => this.submit(e)}>
 
                                     <div className="form__field">
                                         <input
