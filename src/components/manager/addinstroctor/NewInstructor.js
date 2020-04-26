@@ -2,6 +2,8 @@ import React from "react";
 import "./addinstructor.css";
 import {AddNewInstructor}from '../../api';
 import Swal from "sweetalert2";
+import { getInfo } from '../../login/decodeToken'
+
 class NewInstructor extends React.Component {
   constructor() {
     super();
@@ -12,7 +14,6 @@ class NewInstructor extends React.Component {
         Email: "",
         Phone: "",
         password: "",
-        ClubName: "",
         InstructorRole: "Instructors",
         InstructorsType: ""
     };
@@ -21,11 +22,11 @@ class NewInstructor extends React.Component {
 addInstructor = instructor => {
     // Make an axios request
     console.log(instructor,"add");
-    AddNewInstructor(instructor)
+    let ID = getInfo().data._id
+    AddNewInstructor(ID,instructor)
     
       .then(response => {
-        Swal.fire(` ${instructor.FullName} تم إضافة مدرب `, "", 'success');
-
+        Swal.fire(` تم إضافة المدرب  ${instructor.FullName}  بنجاح `, "", 'success');
           })
       .catch(error => {
         console.log("API ERROR: ", error);
@@ -43,7 +44,7 @@ addInstructor = instructor => {
     this.addInstructor(newInstructor);
    };
   render() {
-    const { FullName,UserName,NationalId,Email ,Phone ,password , ClubName , InstructorsType} = this.state;
+    const { FullName,UserName,NationalId,Email ,Phone ,password  , InstructorsType} = this.state;
     return (
       <div>
         <form className="parent-wrappe" >
@@ -129,20 +130,6 @@ addInstructor = instructor => {
                 value={password}
                 type="password"
                 placeholder="الرقم السري"
-                onChange={this.handleChange}
-              />
-            </div>
-            <div>
-              <br />
-              {/* <label>ClubName</label> */}
-              <br />
-              <input
-                className="subscribe-input"
-                required
-                name="ClubName"
-                value={ClubName}
-                type="ClubName"
-                placeholder="اسم النادي"
                 onChange={this.handleChange}
               />
             </div>

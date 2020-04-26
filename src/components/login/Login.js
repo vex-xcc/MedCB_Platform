@@ -39,7 +39,7 @@ class Login extends Component {
         let jwt1 = getInfo().data.UserType;
         if (jwt1 === "Students") {
           this.props.history.push("/StudentHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
 
         } else if (jwt1 === undefined) {
           console.log("b: ", jwt1);
@@ -70,11 +70,11 @@ class Login extends Component {
         console.log("b: ", jwt2);
         if (jwt2 === "Instructors") {
           this.props.history.push("/TrainerHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
         }
         else if (jwt2 === "Manager") {
           this.props.history.push("/ManagerHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
 
         }
         else if (jwt2 === undefined) {

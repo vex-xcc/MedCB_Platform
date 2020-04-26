@@ -28,7 +28,7 @@ addActivitie = Activitie => {
     // Make an axios request
     AddNewActivitie(Activitie , Id)
       .then(response => {
-        Swal.fire(` ${getInfo().dataِِ.ActivityName} تم إضافة نشاط `, "", 'success');
+        Swal.fire(`  تم إضافة نشاط  ${getInfo().dataِِ.ActivityName}   بنجاح`, "", 'success');
 
 
           })

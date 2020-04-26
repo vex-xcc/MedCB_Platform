@@ -43,7 +43,7 @@ export default class Activities extends React.Component {
                    return Activities._id !== activitieID; 
                });
                
-               Swal.fire(`${getInfo().data.ActivityName}تم الاشتراك في النشاط`,"",'success')
+               Swal.fire(`تم الاشتراك في النشاط   ${getInfo().data.ActivityName}   بنجاح`,"",'success')
                this.setState({ Activities});
            })
            .catch((err) => {
