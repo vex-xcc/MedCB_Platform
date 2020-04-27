@@ -11,13 +11,13 @@ export default class TrainerHeader extends React.Component{
 
   logOut = (e) => {
     e.preventDefault();
-    this.props.history.push("/homathon_test");
+    this.props.history.push("/");
     localStorage.clear("currentUser");
   };
   
   render(){
     return(
-      <BrowserRouter>
+      <BrowserRouter  basename="/homathon_test">
       <div>
 <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
 <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
