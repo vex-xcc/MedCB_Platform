@@ -15,12 +15,12 @@ export default class ManagerHeader extends React.Component{
 
   logOut = (e) => {
     e.preventDefault();
-    this.props.history.push("/homathon_test");
+    this.props.history.push("/");
     localStorage.clear("currentUser");
   };
   render(){
     return(
-      <BrowserRouter>
+      <BrowserRouter basename="/homathon_test">
       <div>
 
         

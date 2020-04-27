@@ -17,9 +17,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter  basename="/homathon_test">
         <Switch>
-          <Route path={'/homathon_test'} exact component={Login} />
+          <Route path={'/'} exact component={Login} />
           <Route
             path={'/register'}
             render={() => <Register history={this.props.history} />}
