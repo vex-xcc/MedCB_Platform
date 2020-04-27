@@ -51,7 +51,7 @@ addActivitie = Activitie => {
     e.preventDefault();
     this.addActivitie(newActivitie);
     this.Home()
-    // window.location.reload(false);
+    window.location.reload(false);
    };
    
   render() {

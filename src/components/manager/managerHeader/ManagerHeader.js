@@ -20,7 +20,7 @@ export default class ManagerHeader extends React.Component{
   };
   render(){
     return(
-      <HashRouter basename="/homathon_test">
+      <HashRouter>
       <div>
 
         
