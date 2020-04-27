@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../student/StudentHeader/header.css";
 import ManagerHome from '../managerHome/ManagerHome';
-import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
+import { Route, HashRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import allTrainers from "../allTrainers/allTrainers";
 import NewInstructor from '../addinstroctor/NewInstructor';
@@ -20,7 +20,7 @@ export default class ManagerHeader extends React.Component{
   };
   render(){
     return(
-      <BrowserRouter basename="/homathon_test">
+      <HashRouter basename="/homathon_test">
       <div>
 
         
@@ -75,7 +75,7 @@ export default class ManagerHeader extends React.Component{
             component={ManagerProfile}
           ></Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
 
     );
   }

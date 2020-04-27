@@ -9,7 +9,7 @@ import ManagerHeader from './components/manager/managerHeader/ManagerHeader';
 import TrainerHeader from './components/trainer/trainerHeader/TrainerHeader';
 import Login from './components/login/Login'
 import Register from './components/login/Register'
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { Route, HashRouter, Switch } from "react-router-dom";
 
 
 export default class App extends React.Component {
@@ -17,7 +17,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter  basename="/homathon_test">
+      <HashRouter  basename="/homathon_test">
         <Switch>
           <Route path={'/'} exact component={Login} />
           <Route
@@ -30,7 +30,7 @@ export default class App extends React.Component {
             <Route path={'/StudentHeader'} component={StudentHeader} />
           </InstructorsAuthenticatedComponent>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
 
     );
   }

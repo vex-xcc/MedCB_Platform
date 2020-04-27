@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./header.css";
 import StudentHome from "../StudentHome/StudentHome.js";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
-import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
+import { Route, HashRouter, Link, Switch } from "react-router-dom";
 import StudentProfile from '../StudentProfile/StudentProfile';
 import DisplayTable from "../activitiesbystate/DisplayTable";
 export default class StudentHeader extends React.Component {
@@ -20,7 +20,7 @@ export default class StudentHeader extends React.Component {
   };
   render() {
     return (
-      <BrowserRouter  basename="/homathon_test">
+      <HashRouter>
         <div>
           <Navbar collapseOnSelect expand="lg" variant="dark">
             <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
@@ -63,7 +63,7 @@ export default class StudentHeader extends React.Component {
             component={DisplayTable}
           ></Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
