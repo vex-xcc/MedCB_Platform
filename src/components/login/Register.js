@@ -36,7 +36,7 @@ export default class Register extends Component {
                 if (response.data.success === false) {
                     Swal.fire(` ${response.data.message} `, "", 'error');
                 } else if (response.data.success === true) {
-                    Swal.fire(` بنجاح ${Student.UserName} تم إضاقة المستخدم`, "", 'success');
+                    Swal.fire(` تم إضاقة المستخدم  ${Student.UserName}  بنجاح `, "", 'success');
                 }
             })
             .catch(error => {
@@ -57,10 +57,11 @@ export default class Register extends Component {
         return (
 
             <div>
+                   <div class="hero">
                 <div className="login">
 
 
-         
+
 
 
 
@@ -73,7 +74,7 @@ export default class Register extends Component {
 
                                 <h2>تسجيل حساب جديد</h2>
 
-                                <form action="" method="post" className="form" onSubmit={e => this.submit(e)}>
+                                <form className="form" onSubmit={e => this.submit(e)}>
 
                                     <div className="form__field">
                                         <input
@@ -126,7 +127,7 @@ export default class Register extends Component {
                                     <div className="form__field">
                                         <input
                                             type="password"
-                                            placeholder="الرقم السري"
+                                            placeholder="كلمة المرور"
                                             name="password"
                                             onChange={e => this.change(e)}
                                             value={this.state.password}
@@ -144,7 +145,16 @@ export default class Register extends Component {
 
 
 
-            </div>
+                <div class="diagonal-hero-bg">
+            <div className="stars">
+            <div className="small"></div>
+            <div className="medium"></div>
+            <div className="big"></div>
+
+          </div>
+       </div>
+    </div>
+    </div>
 
         );
     }

@@ -28,9 +28,17 @@ addActivitie = Activitie => {
     // Make an axios request
     AddNewActivitie(Activitie , Id)
       .then(response => {
-        Swal.fire(` ${getInfo().dataِِ.ActivityName} تم إضافة نشاط `, "", 'success');
 
-
+        Swal.fire({
+          title:`  تم إضافة نشاط  ${this.state.ActivityName}   بنجاح`,
+          icon: 'success',
+          confirmButtonText: 'موافق',
+          showCancelButton: false,
+        }).then((result) => {
+          if (result.value) {
+            this.props.history.push("/TrainerHeader/Home");  
+            window.location.reload(false);
+          }})
           })
       .catch(error => {
         console.log("API ERROR: ", error);
@@ -43,24 +51,21 @@ addActivitie = Activitie => {
     });
 
   Home = () =>{
-    this.props.history.push("/TrainerHeader/Home");
-    
-
+    this.props.history.push("/TrainerHeader/Home");  
+    window.location.reload(false);
   }
   formSubmit = e => {
     const newActivitie = this.state;
      console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
-    this.Home();
-    window.location.reload(false);
    };
    
   render() {
     const { TargetAge,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
     return (
       <div>
-        <form className="parent-wrappe" >
+        <form className="parent-wrappe" onSubmit={e=> this.formSubmit(e)}>
           <h3> إضــافــة نشاط </h3>
           <div className="subscribe-wrappe">
           <div>
@@ -71,7 +76,7 @@ addActivitie = Activitie => {
                 required
                 name="ActivityName"
                 value={ActivityName}
-                type="ActivityName"
+                type="text"
                 placeholder="اسم الفالية"
                 onChange={this.handleChange}
               />
@@ -108,7 +113,7 @@ addActivitie = Activitie => {
                 required
                 name="ActivityLocation"
                 value={ActivityLocation}
-                type="ActivityLocation"
+                type="text"
                 placeholder="موقع الفالية"
                 onChange={this.handleChange}
               />
@@ -140,7 +145,7 @@ addActivitie = Activitie => {
               />
             </div>
            
-            <div className="submit-btn" onClick={e => this.formSubmit(e)}>
+            <div className="submit-btn" type="submit" onClick={e => this.formSubmit(e)}>
               إضــافــة
             </div>
             <a onClick={this.Home}><i className="material-icons"> arrow_back </i></a>

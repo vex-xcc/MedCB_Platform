@@ -12,8 +12,8 @@ export const userInfo = (id) =>{
 export const getAllActivity = () =>{
     return axios.get(`${apiURL}/all/Activity`);
   }
-export const getAllinstructor = () =>{
-    return axios.get(`${apiURL}/all/instructor`);
+export const getAllinstructor = (id) =>{
+    return axios.get(`${apiURL}/find/all/emp/${id}`);
   }
 export const getAllActivityType = (type) =>{
     return axios.get(`${apiURL}/activity/${type}`);
@@ -64,10 +64,10 @@ export const FinishedActivities = (id ,req) => {
 
 //---------------The POST Request-------------------  
   //Add new Instructor
-  export const AddNewInstructor = req => {
+  export const AddNewInstructor = (id,req) => {
     return axios({
       method: 'POST',
-      url: apiURL + '/instructor/register',
+      url: apiURL + `/instructor/register/${id}`,
       data:{
         FullName:req.FullName,
         UserName:req.UserName,

@@ -1,6 +1,8 @@
 import React from 'react';
 import "./allTrainers.css"
-import {getAllinstructor } from '../../api';
+import { getInfo } from '../../login/decodeToken'
+
+import { getAllinstructor } from '../../api';
 export default class allTrainers extends React.Component {
 
   constructor(props) {
@@ -12,7 +14,8 @@ export default class allTrainers extends React.Component {
   }
 
   componentDidMount() {
-    getAllinstructor()
+    let ID = getInfo().data._id
+    getAllinstructor(ID)
       .then((reponse) => {
         console.log('reponse.data', reponse.data)
        
@@ -25,7 +28,7 @@ export default class allTrainers extends React.Component {
 
 
   render() {
-    let allServices = <h3> No Services! :( </h3>
+    let allServices = <h1>لايوجد  مدربون حاليا</h1>
 
     if (this.state.all_instroctor.length > 0) {
       allServices = this.state.all_instroctor.map((Services, index) => {

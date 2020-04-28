@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../student/StudentHeader/header.css";
-import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
+import { Route, HashRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import NewActivitie from "../addActivitie/NewActivitie";
 import TrainerProfile from "../trainerProfile/TrainerProfile"
@@ -11,13 +11,13 @@ export default class TrainerHeader extends React.Component{
 
   logOut = (e) => {
     e.preventDefault();
-    this.props.history.push("/homathon_test");
+    this.props.history.push("/");
     localStorage.clear("currentUser");
   };
   
   render(){
     return(
-      <BrowserRouter>
+      <HashRouter>
       <div>
 <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
 <Navbar.Brand href="#home">مـ نـ صـ ـة  الأنــديــة</Navbar.Brand>
@@ -48,7 +48,7 @@ export default class TrainerHeader extends React.Component{
            <Route path="/TrainerHeader/NewActivitie" component={NewActivitie}  ></Route>
            <Route exact={true} path="/TrainerHeader/TrainerProfile" component={TrainerProfile} ></Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
 
     );
   }

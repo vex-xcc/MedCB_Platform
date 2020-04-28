@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import apiURL from '../../APIconfig';
 import { getInfo } from "./decodeToken";
-import { Route, BrowserRouter, Link } from "react-router-dom";
 import "./login.scss";
-import Register from './Register'
 import Swal from "sweetalert2";
 class Login extends Component {
   constructor(props) {
@@ -41,7 +39,7 @@ class Login extends Component {
         let jwt1 = getInfo().data.UserType;
         if (jwt1 === "Students") {
           this.props.history.push("/StudentHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
 
         } else if (jwt1 === undefined) {
           console.log("b: ", jwt1);
@@ -72,11 +70,11 @@ class Login extends Component {
         console.log("b: ", jwt2);
         if (jwt2 === "Instructors") {
           this.props.history.push("/TrainerHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
         }
         else if (jwt2 === "Manager") {
           this.props.history.push("/ManagerHeader");
-          Swal.fire(` ${getInfo().data.UserName} مرحبا`, "", 'success');
+          Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
 
         }
         else if (jwt2 === undefined) {
@@ -96,10 +94,19 @@ class Login extends Component {
   render() {
 
     return (
-      <BrowserRouter>
+      <div class="hero">
+<div class="diagonal-hero-bg">
 
+
+<div className="stars">
+            <div className="small"></div>
+            <div className="medium"></div>
+            <div className="big"></div>
+
+            </div>
+       </div>
         <div className="login">
-
+       
 
      
 
@@ -109,7 +116,7 @@ class Login extends Component {
    <div className="register">
  
       <h2>تسجيل الدخول</h2>
-      <form action="" method="post" className="form">
+      <form className="form">
         <div className="form__field">
           <input type="text"
               name="UserName"
@@ -118,8 +125,9 @@ class Login extends Component {
               value={this.state.UserName}/>
         </div>
         <div className="form__field">
-          <input               type="password"
-             placeholder="••••••••••••"
+          <input              
+             type="password"
+             placeholder="كلمة المرور"
               name="password"
               onChange={e => this.change(e)}
               value={this.state.password}/>
@@ -131,18 +139,15 @@ class Login extends Component {
           <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
         </div>
       </form>
-      <p onClick={() => window.location.reload(false)}><Link to="/register">Register </Link> </p>
+      <p  className="pointer" onClick={() => this.props.history.push("/register")}>تسجيل حساب جديد </p>
     </div>
   </div>
   </div>
 </div>
 
      
-<Route
-          path="/register"
-          render={() => <Register  history={this.props.history}  />}
-        />
-      </BrowserRouter>
+
+    </div>
 
     );
   }
