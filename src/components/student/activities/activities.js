@@ -72,7 +72,7 @@ export default class Activities extends React.Component {
         return (
             <>
             <div className='allActivities'>
-            <a onClick={this.Home} ><i className="material-icons"> arrow_back </i></a>
+           <div className="pointer" > <i onClick={this.Home} className="material-icons"> arrow_back </i></div>
                 <p> {`أنشطة ${this.props.type} القادمة`} </p>
             </div>
 

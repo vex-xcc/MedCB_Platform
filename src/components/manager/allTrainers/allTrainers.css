@@ -57,13 +57,13 @@
       padding: 0;
       height: 6px;
     }
-    .row.head .cell {
+    .row.head .cell or .cellfinish:before{
       display: none;
     }
-    .row .cell {
+    .row .cell or .cellfinish:before{
       margin-bottom: 10px;
     }
-    .row .cell:before {
+    .row  .cell:before or .cellfinish:before{
       margin-bottom: 3px;
       content: attr(data-title);
       min-width: 98px;
@@ -79,6 +79,11 @@
   .cell {
     padding: 6px 12px;
     display: table-cell;
+  }
+  .cellfinish{
+    padding: 6px 12px;
+    display: table-cell;
+    cursor: pointer;
   }
   @media screen and (max-width: 580px) {
     .cell {

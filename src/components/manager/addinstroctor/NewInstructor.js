@@ -40,8 +40,9 @@ addInstructor = instructor => {
     const newInstructor = this.state;
      console.log(newInstructor, " NewInstructor");
     e.preventDefault();
-    this.props.history.push("/ManagerHeader/Home");
+    this.props.history.push("/ManagerHeader/trainers");
     this.addInstructor(newInstructor);
+    window.location.reload(false);
    };
   render() {
     const { FullName,UserName,NationalId,Email ,Phone ,password  , InstructorsType} = this.state;

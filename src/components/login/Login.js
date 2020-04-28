@@ -130,7 +130,7 @@ class Login extends Component {
           <input className="reg"  type="submit" value="تسجيل الدخول للمدربين"/>
         </div>
       </form>
-      <p  onClick={() => this.props.history.push("/register")}>Register</p>
+      <p  className="pointer" onClick={() => this.props.history.push("/register")}>تسجيل حساب جديد </p>
     </div>
   </div>
   </div>

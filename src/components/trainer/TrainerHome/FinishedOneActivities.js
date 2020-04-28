@@ -26,7 +26,7 @@ export default class FinishedOneActivities extends React.Component {
                  <div className="cell" data-title="ActivityState">
                  {this.props.ActivityState}
                  </div>
-                 <div className="cell " data-title="Finished" onClick={this.FinishedClick} >
+                 <div className="cellfinish " data-title="Finished" onClick={this.FinishedClick} >
                  إنهاء
                  </div>
              </div>

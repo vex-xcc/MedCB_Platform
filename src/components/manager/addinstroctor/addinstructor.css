@@ -129,3 +129,5 @@ float: right;
   
   .parent-wrappe .material-icons{
 margin-top: 50px; }
+
+.pointer {cursor: pointer;}
