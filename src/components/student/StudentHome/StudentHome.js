@@ -28,18 +28,6 @@ export default class StudentHome extends Component {
       return (
          <>
 
-            <div className="about">
-               <a className="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links logo"></a>
-            </div>
 
             {this.state.toggle === false?
             <div className="contener">
