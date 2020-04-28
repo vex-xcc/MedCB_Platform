@@ -57,6 +57,7 @@ export default class Register extends Component {
         return (
 
             <div>
+                   <div class="hero">
                 <div className="login">
 
 
@@ -144,7 +145,16 @@ export default class Register extends Component {
 
 
 
-            </div>
+                <div class="diagonal-hero-bg">
+            <div className="stars">
+            <div className="small"></div>
+            <div className="medium"></div>
+            <div className="big"></div>
+
+          </div>
+       </div>
+    </div>
+    </div>
 
         );
     }

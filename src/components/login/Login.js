@@ -94,10 +94,19 @@ class Login extends Component {
   render() {
 
     return (
-  
+      <div class="hero">
+<div class="diagonal-hero-bg">
 
+
+<div className="stars">
+            <div className="small"></div>
+            <div className="medium"></div>
+            <div className="big"></div>
+
+            </div>
+       </div>
         <div className="login">
-
+       
 
      
 
@@ -138,7 +147,7 @@ class Login extends Component {
 
      
 
-
+    </div>
 
     );
   }
