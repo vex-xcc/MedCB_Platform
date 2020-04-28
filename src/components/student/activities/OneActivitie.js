@@ -1,6 +1,7 @@
 // One Activitie
 
 import React from "react";
+import Swal from "sweetalert2";
 export default class OneActivitie extends React.Component {
 
 
@@ -8,7 +9,9 @@ export default class OneActivitie extends React.Component {
         e.preventDefault();
         console.log( `student click register in ${this.props.id}`)
         this.props.registerOnActivitie(this.props.id);
+        Swal.fire(` تم الاشتراك في النشاط   ${this.props.ActivityName}  بنجاح `,"",'success')
       }
+      
     render(){
             return(
                     <li className='work'>

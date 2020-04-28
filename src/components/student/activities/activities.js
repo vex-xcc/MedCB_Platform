@@ -41,9 +41,7 @@ export default class Activities extends React.Component {
            .then((res) => {
                const Activities = this.state.Activities.filter((Activities) => {
                    return Activities._id !== activitieID; 
-               });
-               
-               Swal.fire(`تم الاشتراك في النشاط   ${getInfo().data.ActivityName}   بنجاح`,"",'success')
+               });               
                this.setState({ Activities});
            })
            .catch((err) => {
