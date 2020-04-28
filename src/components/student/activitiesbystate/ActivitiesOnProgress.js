@@ -15,7 +15,6 @@ export default class ActivitiesOnProgress extends React.Component {
             // let mId = "5ea1ebd46ce9fa8b98255f9c"
     getAllActivityList(mId)
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
         this.set(reponse.data)
       })
       .catch((error) => {

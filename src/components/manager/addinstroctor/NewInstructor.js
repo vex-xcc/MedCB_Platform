@@ -1,6 +1,6 @@
 import React from "react";
 import "./addinstructor.css";
-import {AddNewInstructor}from '../../api';
+import { AddNewInstructor } from '../../api';
 import Swal from "sweetalert2";
 import { getInfo } from '../../login/decodeToken'
 
@@ -8,28 +8,27 @@ class NewInstructor extends React.Component {
   constructor() {
     super();
     this.state = {
-        FullName: "",
-        UserName: "",
-        NationalId: "",
-        Email: "",
-        Phone: "",
-        password: "",
-        InstructorRole: "Instructors",
-        InstructorsType: ""
+      FullName: "",
+      UserName: "",
+      NationalId: "",
+      Email: "",
+      Phone: "",
+      password: "",
+      InstructorRole: "Instructors",
+      InstructorsType: ""
     };
     this.addInstructor = this.addInstructor.bind(this);
-}
-addInstructor = instructor => {
+  }
+  addInstructor = instructor => {
     // Make an axios request
-    console.log(instructor,"add");
+
     let ID = getInfo().data._id
-    AddNewInstructor(ID,instructor)
-    
+    AddNewInstructor(ID, instructor)
       .then(response => {
         Swal.fire(` تم إضافة المدرب  ${instructor.FullName}  بنجاح `, "", 'success');
-          })
+      })
       .catch(error => {
-        console.log("API ERROR: ", error);
+
       });
   };
   handleChange = event =>
@@ -38,14 +37,13 @@ addInstructor = instructor => {
     });
   formSubmit = e => {
     const newInstructor = this.state;
-     console.log(newInstructor, " NewInstructor");
     e.preventDefault();
     this.props.history.push("/ManagerHeader/trainers");
     this.addInstructor(newInstructor);
     window.location.reload(false);
-   };
+  };
   render() {
-    const { FullName,UserName,NationalId,Email ,Phone ,password  , InstructorsType} = this.state;
+    const { FullName, UserName, NationalId, Email, Phone, password, InstructorsType } = this.state;
     return (
       <div>
         <form className="parent-wrappe" >
@@ -76,7 +74,7 @@ addInstructor = instructor => {
                 type="text"
                 placeholder="اسم المستخدم"
                 onChange={this.handleChange}
-                
+
               />
             </div>
             <div>
@@ -135,7 +133,7 @@ addInstructor = instructor => {
               />
             </div>
             <div>
-              <br /><br/>
+              <br /><br />
               <label className="to-the-right">مجال التدريب:</label>
               <select
                 className="subscribe-input"
@@ -145,16 +143,16 @@ addInstructor = instructor => {
                 type="text"
                 onChange={this.handleChange}
               >
-               <option className="dropdown-content">إختر المجال</option>
-               <option className="dropdown-content" value="Entertainment">الترفيهي</option>
-               <option className="dropdown-content" value="Cultural">الثقافي</option>
-               <option className="dropdown-content" value="Education">التعليمي</option>
-               <option className="dropdown-content" value="Sport">الرياضي</option>
+                <option className="dropdown-content">إختر المجال</option>
+                <option className="dropdown-content" value="Entertainment">الترفيهي</option>
+                <option className="dropdown-content" value="Cultural">الثقافي</option>
+                <option className="dropdown-content" value="Education">التعليمي</option>
+                <option className="dropdown-content" value="Sport">الرياضي</option>
 
-                </select>
-             </div>
-          <br/>
-           
+              </select>
+            </div>
+            <br />
+
             <div className="submit-btn" onClick={e => this.formSubmit(e)}>
               Add
             </div>

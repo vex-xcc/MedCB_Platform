@@ -16,7 +16,6 @@ export default class ActivitiesFinshed extends React.Component {
 
     getAllActivityFinshedList(mId)
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
         let data = reponse.data
         this.setState({ finished_activities: data })
         // this.set(reponse.data)

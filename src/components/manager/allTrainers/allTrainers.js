@@ -17,9 +17,7 @@ export default class allTrainers extends React.Component {
     let ID = getInfo().data._id
     getAllinstructor(ID)
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
-       
-        this.setState({ all_instroctor:reponse.data })
+        this.setState({ all_instroctor: reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
@@ -33,20 +31,20 @@ export default class allTrainers extends React.Component {
     if (this.state.all_instroctor.length > 0) {
       allServices = this.state.all_instroctor.map((Services, index) => {
         return (
-      <div class="row">
-         <div class="cell" data-title="FullName">
-          {Services.FullName}
+          <div class="row">
+            <div class="cell" data-title="FullName">
+              {Services.FullName}
+            </div>
+            <div class="cell" data-title="NationalId">
+              {Services.NationalId}
+            </div>
+            <div class="cell" data-title="Email">
+              {Services.Email}
+            </div>
+            <div class="cell" data-title="Phone">
+              {Services.Phone}
+            </div>
           </div>
-          <div class="cell" data-title="NationalId">
-          {Services.NationalId}
-          </div>
-          <div class="cell" data-title="Email">
-          {Services.Email}
-          </div>
-          <div class="cell" data-title="Phone">
-          {Services.Phone}
-          </div>
-      </div>
         );
       })
     }
@@ -58,16 +56,16 @@ export default class allTrainers extends React.Component {
 
           <div class="row head">
             <div class="cell">
-            اسم المدرب
+              اسم المدرب
               </div>
             <div class="cell">
-            رقم الهوية
+              رقم الهوية
               </div>
             <div class="cell">
-            البريد الإلكتروني
+              البريد الإلكتروني
               </div>
             <div class="cell">
-            رقم الجوال
+              رقم الجوال
               </div>
           </div>
           {allServices}

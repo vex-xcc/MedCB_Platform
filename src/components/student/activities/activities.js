@@ -35,8 +35,6 @@ export default class Activities extends React.Component {
         //   // get the id of curretn user
           let studentID = getInfo().data._id
         // Make an API Call to register a service
-        console.log( `studentID ====> ${studentID} `)
-        console.log( `Make an API Call to register a service the ===> ${activitieID} `)
         StudentsRegisteredInActivity( studentID ,activitieID)
            .then((res) => {
                const Activities = this.state.Activities.filter((Activities) => {

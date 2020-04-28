@@ -7,7 +7,6 @@ export default class OneActivitie extends React.Component {
 
       registerClick = (e) => {
         e.preventDefault();
-        console.log( `student click register in ${this.props.id}`)
         this.props.registerOnActivitie(this.props.id);
         Swal.fire(` تم الاشتراك في النشاط   ${this.props.ActivityName}  بنجاح `,"",'success')
       }

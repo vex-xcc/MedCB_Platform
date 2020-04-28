@@ -56,7 +56,6 @@ addActivitie = Activitie => {
   }
   formSubmit = e => {
     const newActivitie = this.state;
-     console.log(newActivitie, " newActivitie");
     e.preventDefault();
     this.addActivitie(newActivitie);
    };
