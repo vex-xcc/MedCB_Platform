@@ -1,15 +1,19 @@
 import React from 'react';
 import "./allTrainers.css"
 import { getInfo } from '../../login/decodeToken'
-
+import TrainerTable from './TrainerTable'
 import { getAllinstructor } from '../../api';
+import TrainerActivityContainer from './TrainerActivityContainer'
+
+
 export default class allTrainers extends React.Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      all_instroctor: [],
+      all_Instructor: [],
+      toggle: false,
     };
   }
 
@@ -17,63 +21,65 @@ export default class allTrainers extends React.Component {
     let ID = getInfo().data._id
     getAllinstructor(ID)
       .then((reponse) => {
-        this.setState({ all_instroctor: reponse.data })
+        this.setState({ all_Instructor: reponse.data })
       })
       .catch((error) => {
         console.log(' API error: ', error);
       })
+
   }
 
-
+  toggleHandler = (e) => {
+    this.setState({ toggle: !this.state.toggle })
+  }
   render() {
-    let allServices = <h1>لايوجد  مدربون حاليا</h1>
 
-    if (this.state.all_instroctor.length > 0) {
-      allServices = this.state.all_instroctor.map((Services, index) => {
-        return (
-          <div class="row">
-            <div class="cell" data-title="FullName">
-              {Services.FullName}
+    let allInstructor = <h1>لايوجد  مدربون حاليا</h1>
+    if (this.state.toggle === false) {
+      localStorage.removeItem("currentUserInfo");
+      if (this.state.all_Instructor.length > 0) {
+        allInstructor = this.state.all_Instructor.map((Instructor, index) => {
+          return (
+            <TrainerTable
+              key={index}
+              id={Instructor._id}
+              FullName={Instructor.FullName}
+              NationalId={Instructor.NationalId}
+              Email={Instructor.Email}
+              Phone={Instructor.Phone}
+              toggle={this.toggleHandler}
+            />
+          );
+        })
+      }
+
+      return (
+        <div class="wrapper">
+          <div class="table">
+            <div class="row head">
+              <div class="cell">
+                اسم المدرب
+              </div>
+              <div class="cell">
+                رقم الهوية
+              </div>
+              <div class="cell">
+                البريد الإلكتروني
+              </div>
+              <div class="cell">
+                رقم الجوال
+              </div>
             </div>
-            <div class="cell" data-title="NationalId">
-              {Services.NationalId}
-            </div>
-            <div class="cell" data-title="Email">
-              {Services.Email}
-            </div>
-            <div class="cell" data-title="Phone">
-              {Services.Phone}
-            </div>
+            {allInstructor}
           </div>
-        );
-      })
-    }
-
-    return (
-      <div class="wrapper">
-
-        <div class="table">
-
-          <div class="row head">
-            <div class="cell">
-              اسم المدرب
-              </div>
-            <div class="cell">
-              رقم الهوية
-              </div>
-            <div class="cell">
-              البريد الإلكتروني
-              </div>
-            <div class="cell">
-              رقم الجوال
-              </div>
-          </div>
-          {allServices}
         </div>
-      </div>
-
-
-    );
+      );
+    }
+    else {
+          return (
+            <TrainerActivityContainer/>
+          );  
+    }
   }
-
 }
+
