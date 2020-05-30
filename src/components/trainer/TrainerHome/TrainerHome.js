@@ -59,8 +59,6 @@ export default class TrainerHome extends React.Component {
 
   
   changeStateToFinished = (activitieID) => {
-    //   // get the id of curretn user
-      let studentID = getInfo().data._id
     // Make an API Call to register a service
     FinishedActivities(activitieID)
        .then((res) => {

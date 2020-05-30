@@ -18,6 +18,10 @@ export const getAllinstructor = (id) =>{
 export const getAllActivityType = (type) =>{
     return axios.get(`${apiURL}/activity/${type}`);
   }  
+  // Get all Activity depend on Instructor Id and if the ActivityState is OnProgress
+export const getAllActivityOnProgressList = (id) => {
+  return axios.get(`${apiURL}/Find/All/OnProgress/Activity/Instructor/${id}`);
+}
 // Get all Activity depend on StudentId and if the ActivityState is Finshed
 export const getAllActivityFinshedList = (id) => {
   return axios.get(`${apiURL}/Find/All/Finished/Activity/Student/${id}`);
@@ -48,7 +52,16 @@ export const FinishedActivities = (id ,req) => {
       ActivityState: 'Finished',
     }
   })
-  } 
+  }
+  export const ChangeActivitiesToRegistration = (id ,req) => {
+    return axios({
+      method: 'patch',
+      url: apiURL + `/UpdateActivity/${id}`,
+      data:{
+        ActivityState: 'Registration',
+      }
+    })
+    }  
   export const StudentsRegisteredInActivity = (StudentID , ActivityID) => {
     return axios({
       method: 'patch',
