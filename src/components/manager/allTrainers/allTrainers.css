@@ -28,6 +28,7 @@
   }
   
   .row {
+    text-align: center;
     display: table-row;
     background: #f6f6f6;
   }
@@ -35,17 +36,21 @@
     background: #e9e9e9;
   }
   .row.head {
+    text-align: center;
     font-weight: 900;
     color: #ffffff;
     background: #ea6153;
   }
   .row.head1 {
+    text-align: center;
     background: #27ae60;
   }
   .row.head2 {
+    text-align: center;
     background: #2980b9;
   }
   .row.head3 {
+    text-align: center;
     background: #8755af;
   }
   @media screen and (max-width: 580px) {
