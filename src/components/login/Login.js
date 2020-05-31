@@ -96,6 +96,11 @@ class Login extends Component {
 
     return (
       <div class="hero">
+        <h1 class="home-title">
+  <span>      منصة الاندية بالمدينة المنورة
+</span>
+</h1>
+
 <div class="diagonal-hero-bg">
 
 

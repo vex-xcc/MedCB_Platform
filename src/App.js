@@ -17,6 +17,7 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <>
       <HashRouter  basename="/homathon_test">
         <Switch>
           <Route path={'/'} exact component={Login} />
@@ -31,7 +32,7 @@ export default class App extends React.Component {
           </InstructorsAuthenticatedComponent>
         </Switch>
       </HashRouter>
-
+</>
     );
   }
 }
