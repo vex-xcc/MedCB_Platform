@@ -88,7 +88,6 @@ export const FinishedActivities = (id ,req) => {
         Email:req.Email,
         Phone:req.Phone,
         password:req.password,
-        ClubName:req.ClubName,
         InstructorRole:req.InstructorRole,
         InstructorsType:req.InstructorsType
       }
@@ -105,7 +104,6 @@ export const FinishedActivities = (id ,req) => {
         Email:req.Email,
         Phone: req.Phone,
         UserType: req.UserType,
-        ClubName: req.ClubName,
         NationalId: req.NationalId,
       }
     })
@@ -116,7 +114,6 @@ export const FinishedActivities = (id ,req) => {
       url: `${apiURL}/${Id}`,
       data:{
         TargetAge: req.TargetAge,
-        ClubName: req.ClubName,
         ActivityDescription: req.ActivityDescription,
         ActivityName:req.ActivityName,
         ActivityType: req.ActivityType,
