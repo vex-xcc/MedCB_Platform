@@ -80,7 +80,7 @@ export const FinishedActivities = (id ,req) => {
   export const AddNewInstructor = (id,req) => {
     return axios({
       method: 'POST',
-      url: apiURL + `/instructor/register/${id}`,
+      url: apiURL + `/instructor/register`,
       data:{
         FullName:req.FullName,
         UserName:req.UserName,

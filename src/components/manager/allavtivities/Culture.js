@@ -27,7 +27,7 @@ export default class Culture extends React.Component {
     let allServices =   <div className="main-container">
 
     <div className="first-container share">
-          <h1>لايوجد نشاطات متاحة</h1></div>
+          <h1>لايوجد برامج متاحة</h1></div>
               </div>
 
 
@@ -61,16 +61,16 @@ export default class Culture extends React.Component {
 
           <div class="row head head1">
           <div class="cell">
-              منشئ النشاط
+              منشئ البرنامج
               </div>
             <div class="cell">
-            اسم النشاط
+            اسم البرنامج
               </div>  
             <div class="cell">
-            نوع النشاط
+            المجال
               </div>
             <div class="cell">
-            حالة النشاط
+            حالة البرنامج
               </div>
           </div>
           {allServices}

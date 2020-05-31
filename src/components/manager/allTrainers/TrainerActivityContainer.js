@@ -103,13 +103,13 @@ export default class TrainerActivityContainer extends Component {
 
           <div className="row head head1">
             <div className="cell">
-              اسم الفعالية
+              اسم البرنامج
           </div>
             <div className="cell">
-              وصف الفعالية
+              وصف البرنامج
           </div>
             <div className="cell">
-              مكان الفعالية
+              مكان البرنامج
           </div>
             <div className="cell">
               الحالة
@@ -123,13 +123,13 @@ export default class TrainerActivityContainer extends Component {
           <div className="row head">
 
             <div className="cell">
-              اسم الفعالية
+              اسم البرنامج
           </div>
             <div className="cell">
-              وصف الفعالية
+              وصف البرنامج
           </div>
             <div className="cell">
-              مكان الفعالية
+              مكان البرنامج
           </div>
             <div className="cell">
               الحالة
