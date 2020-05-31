@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './StudentHome.css'
 import Activities from "../activities/activities"
-import sport from '../../../images/run.png'
-import ed from '../../../images/ScienceIdeas.jpg'
+import sport from '../../../images/spo.png'
+import ed from '../../../images/edu.png'
 import en from '../../../images/download.jpeg'
-import unn from '../../../images/unnamed.jpg'
+import unn from '../../../images/cl.png'
 export default class StudentHome extends Component {
    constructor(props) {
       super(props);
@@ -50,7 +50,7 @@ export default class StudentHome extends Component {
                <div className="card" style={{backgroundImage: `url(${en})` }} onClick= {()=>this.typehandler("الترفيه" , "Entertainment") }>
                   <div className="icon"><i className="material-icons md-36">sentiment_very_satisfied</i></div>
                   <p className="title">الترفيه</p>
-                  <p className="text">انقر للمزيد من السعادة.</p>
+                  <p className="text"></p>
                </div>
 
                <div className="card" style={{backgroundImage: `url(${sport})` }} onClick= {()=>this.typehandler("الرياضة" , "Sport") }>

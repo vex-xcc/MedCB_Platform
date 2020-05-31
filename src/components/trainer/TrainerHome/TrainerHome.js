@@ -122,19 +122,19 @@ export default class TrainerHome extends React.Component {
     
     <div className="row head head1">
       <div className="cell">
-        اسم الفعالية
+        اسم البرنامج
       </div>
       <div className="cell">
-        وصف الفعالية
+        وصف البرنامج
       </div>
       <div className="cell">
-        مكان الفعالية
+        مكان البرنامج
       </div>
       <div className="cell">
         الحالة
       </div>
       <div className="cell">
-        إنهاء الفعالية
+        إنهاء البرنامج
       </div>
     </div>
     
@@ -147,13 +147,13 @@ export default class TrainerHome extends React.Component {
   <div className="row head"> 
 
   <div className="cell">
-        اسم الفعالية
+        اسم البرنامج
       </div>
       <div className="cell">
-        وصف الفعالية
+        وصف البرنامج
       </div>
       <div className="cell">
-        مكان الفعالية
+        مكان البرنامج
       </div>
       <div className="cell">
         الحالة

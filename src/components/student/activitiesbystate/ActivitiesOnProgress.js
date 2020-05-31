@@ -12,8 +12,7 @@ export default class ActivitiesOnProgress extends React.Component {
   componentDidMount() {
     // Mack API call 
               let mId = getInfo().data._id
-            // let mId = "5ea1ebd46ce9fa8b98255f9c"
-    getAllActivityList(mId)
+              getAllActivityList(mId)
       .then((reponse) => {
         this.set(reponse.data)
       })
@@ -41,7 +40,7 @@ export default class ActivitiesOnProgress extends React.Component {
           {Services.ActivityDescription}
           </div>
           <div class="cell" data-title="ActivityState">
-          {Services.ActivityState}
+          {Services.ActivityLocation}
           </div>
        
          
@@ -54,16 +53,16 @@ export default class ActivitiesOnProgress extends React.Component {
         <div class="table">
           <div class="row head head1">
             <div class="cell">
-            اسم النشاط
+            اسم البرنامج
               </div>
             <div class="cell">
-            نوع النشاط
+              المجال
               </div>
             <div class="cell">
-            وصف النشاط
+            وصف البرنامج
               </div>
             <div class="cell">
-            حالة النشاط
+            موقع البرنامج
               </div>
           </div>
           {allServices}

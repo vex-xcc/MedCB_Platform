@@ -77,7 +77,7 @@ export default class allTrainers extends React.Component {
     }
     else {
           return (
-            <TrainerActivityContainer/>
+            <TrainerActivityContainer goBack={this.toggleHandler}/>
           );  
     }
   }

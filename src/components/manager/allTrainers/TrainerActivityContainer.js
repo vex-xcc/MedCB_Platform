@@ -48,12 +48,15 @@ export default class TrainerActivityContainer extends Component {
     }
   }
 
-  render() {
-    let allReg_activities
 
+  render() {
+
+    let allReg_activities
     if (this.state.reg_activities.length > 0) {
       allReg_activities = this.state.reg_activities.map((activity, index) => {
         return (
+          <>
+
           <TrainerActivity
             id={activity._id}
             ActivityName={activity.ActivityName}
@@ -62,6 +65,7 @@ export default class TrainerActivityContainer extends Component {
             ActivityState={activity.ActivityState}
             AllActivityFinshedList={this.AllActivityFinshedList}
             key={index} />
+            </>
         );
       })
     }
@@ -91,9 +95,10 @@ export default class TrainerActivityContainer extends Component {
     }
 
     return (
+      <>
+          <button className="button" onClick={this.props.goBack}><i className="material-icons"> arrow_back </i></button>
+
       <div className="wrapper">
-
-
         <div className="table">
 
           <div className="row head head1">
@@ -134,7 +139,7 @@ export default class TrainerActivityContainer extends Component {
           {allFinished_activities}
         </div>
       </div>
-
+</>
     );
   }
 

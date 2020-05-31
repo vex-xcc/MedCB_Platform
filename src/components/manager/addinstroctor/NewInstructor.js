@@ -64,7 +64,6 @@ class NewInstructor extends React.Component {
             </div>
             <div>
               <br />
-              {/* <label>اسم المستخدم</label> */}
               <br />
               <input
                 className="subscribe-input"
@@ -79,7 +78,6 @@ class NewInstructor extends React.Component {
             </div>
             <div>
               <br />
-              {/* <label>رقم الهوية</label> */}
               <br />
               <input
                 className="subscribe-input"
@@ -93,7 +91,6 @@ class NewInstructor extends React.Component {
             </div>
             <div>
               <br />
-              {/* <label>البريد الإلكتروني</label> */}
               <br />
               <input
                 className="subscribe-input"
@@ -106,7 +103,6 @@ class NewInstructor extends React.Component {
             </div>
             <div>
               <br />
-              {/* <label>رقم الجوال</label> */}
               <br />
               <input
                 className="subscribe-input"
@@ -120,7 +116,6 @@ class NewInstructor extends React.Component {
             </div>
             <div>
               <br />
-              {/* <label>الرقم السري</label> */}
               <br />
               <input
                 className="subscribe-input"

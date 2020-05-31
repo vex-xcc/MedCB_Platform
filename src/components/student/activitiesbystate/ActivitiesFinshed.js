@@ -46,7 +46,7 @@ export default class ActivitiesFinshed extends React.Component {
           {Services.ActivityDescription}
           </div>
           <div class="cell" data-title="ActivityState">
-          {Services.ActivityState}
+          {Services.ActivityLocation}
           </div>
       </div>
         );
@@ -57,16 +57,16 @@ export default class ActivitiesFinshed extends React.Component {
         <div class="table">
           <div class="row head">
           <div class="cell">
-            اسم النشاط
+            اسم البرنامج
               </div>
             <div class="cell">
-            نوع النشاط
+            المجال
               </div>
             <div class="cell">
-            وصف النشاط
+            وصف البرنامج
               </div>
             <div class="cell">
-            حالة النشاط
+            موقع البرنامج
               </div>
           </div>
           {allServices}

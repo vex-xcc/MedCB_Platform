@@ -30,7 +30,7 @@ addActivitie = Activitie => {
       .then(response => {
 
         Swal.fire({
-          title:`  تم إضافة نشاط  ${this.state.ActivityName}   بنجاح`,
+          title:`  تم إضافة البرنامج  ${this.state.ActivityName}   بنجاح`,
           icon: 'success',
           confirmButtonText: 'موافق',
           showCancelButton: false,
@@ -65,7 +65,7 @@ addActivitie = Activitie => {
     return (
       <div>
         <form className="parent-wrappe" onSubmit={e=> this.formSubmit(e)}>
-          <h3> إضــافــة نشاط </h3>
+          <h3> إضــافــة برنامج </h3>
           <div className="subscribe-wrappe">
           <div>
               <br />
@@ -76,7 +76,7 @@ addActivitie = Activitie => {
                 name="ActivityName"
                 value={ActivityName}
                 type="text"
-                placeholder="اسم الفالية"
+                placeholder="اسم البرنامج"
                 onChange={this.handleChange}
               />
             </div>  
@@ -113,7 +113,7 @@ addActivitie = Activitie => {
                 name="ActivityLocation"
                 value={ActivityLocation}
                 type="text"
-                placeholder="موقع الفالية"
+                placeholder="موقع البرنامج"
                 onChange={this.handleChange}
               />
             </div>

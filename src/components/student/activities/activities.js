@@ -60,6 +60,7 @@ export default class Activities extends React.Component {
                     ActivityName={activitie.ActivityName}
                     ClubName={activitie.ClubName}
                     ActivityDescription={activitie.ActivityDescription}
+                    location={activitie.ActivityLocation}
                     registerOnActivitie={this.register}
                     tog={this.togglehandler}
                     index={index} /> 
@@ -71,7 +72,7 @@ export default class Activities extends React.Component {
             <>
             <div className='allActivities'>
            <div className="pointer" > <i onClick={this.Home} className="material-icons"> arrow_back </i></div>
-                <p> {`أنشطة ${this.props.type} القادمة`} </p>
+                <p> {` ${this.props.type} `} </p>
             </div>
 
                 <ul className='timeline'>

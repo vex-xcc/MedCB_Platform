@@ -15,7 +15,7 @@ export default class TrainerTable extends Component {
             <>
    
              <div className="row">
-                <div  className="cell" data-title="ActivityName" onClick={e=>this.props.toggle(e) + localStorage.setItem("currentUserInfo", this.props.id)+ console.log(this.props.id)}>
+                <div  className="cell" style={{cursor: "pointer"}} data-title="ActivityName" onClick={e=>this.props.toggle(e) + localStorage.setItem("currentUserInfo", this.props.id)+ console.log(this.props.id)}>
                 {this.props.FullName}
                  </div>
                  <div className="cell" data-title="ActivityDescription">
