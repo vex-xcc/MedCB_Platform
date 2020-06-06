@@ -27,7 +27,7 @@ export default class Sport extends React.Component {
   render() {
     let allServices =
     
-    <h1>لايوجد نشاطات متاحة</h1>
+    <h1>لايوجد برامج متاحة</h1>
     
     if (this.state.sport_activities.length > 0) {
       allServices = this.state.sport_activities.map((Services, index) => {
@@ -61,16 +61,16 @@ export default class Sport extends React.Component {
           <div class="row head">
 
           <div class="cell">
-              منشئ النشاط
+              منشئ البرنامج
               </div>
             <div class="cell">
-            اسم النشاط
+            اسم البرنامج
               </div>  
             <div class="cell">
-            نوع النشاط
-              </div>
+            المجال
+               </div>
             <div class="cell">
-            حالة النشاط
+            حالة البرنامج
               </div>
           
           </div>

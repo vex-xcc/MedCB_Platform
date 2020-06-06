@@ -18,6 +18,10 @@ export const getAllinstructor = (id) =>{
 export const getAllActivityType = (type) =>{
     return axios.get(`${apiURL}/activity/${type}`);
   }  
+  // Get all Activity depend on Instructor Id and if the ActivityState is OnProgress
+export const getAllActivityOnProgressList = (id) => {
+  return axios.get(`${apiURL}/Find/All/OnProgress/Activity/Instructor/${id}`);
+}
 // Get all Activity depend on StudentId and if the ActivityState is Finshed
 export const getAllActivityFinshedList = (id) => {
   return axios.get(`${apiURL}/Find/All/Finished/Activity/Student/${id}`);
@@ -48,7 +52,16 @@ export const FinishedActivities = (id ,req) => {
       ActivityState: 'Finished',
     }
   })
-  } 
+  }
+  export const ChangeActivitiesToRegistration = (id ,req) => {
+    return axios({
+      method: 'patch',
+      url: apiURL + `/UpdateActivity/${id}`,
+      data:{
+        ActivityState: 'Registration',
+      }
+    })
+    }  
   export const StudentsRegisteredInActivity = (StudentID , ActivityID) => {
     return axios({
       method: 'patch',
@@ -67,7 +80,7 @@ export const FinishedActivities = (id ,req) => {
   export const AddNewInstructor = (id,req) => {
     return axios({
       method: 'POST',
-      url: apiURL + `/instructor/register/${id}`,
+      url: apiURL + `/instructor/register`,
       data:{
         FullName:req.FullName,
         UserName:req.UserName,
@@ -75,7 +88,6 @@ export const FinishedActivities = (id ,req) => {
         Email:req.Email,
         Phone:req.Phone,
         password:req.password,
-        ClubName:req.ClubName,
         InstructorRole:req.InstructorRole,
         InstructorsType:req.InstructorsType
       }
@@ -92,7 +104,6 @@ export const FinishedActivities = (id ,req) => {
         Email:req.Email,
         Phone: req.Phone,
         UserType: req.UserType,
-        ClubName: req.ClubName,
         NationalId: req.NationalId,
       }
     })
@@ -103,7 +114,6 @@ export const FinishedActivities = (id ,req) => {
       url: `${apiURL}/${Id}`,
       data:{
         TargetAge: req.TargetAge,
-        ClubName: req.ClubName,
         ActivityDescription: req.ActivityDescription,
         ActivityName:req.ActivityName,
         ActivityType: req.ActivityType,

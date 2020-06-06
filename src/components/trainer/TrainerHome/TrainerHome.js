@@ -31,7 +31,6 @@ export default class TrainerHome extends React.Component {
 
       getAllActivityFinshedListInstructor(mId)
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
         let data = reponse.data
         this.setState({ finished_activities: data })
         // this.set(reponse.data)
@@ -47,7 +46,6 @@ export default class TrainerHome extends React.Component {
             // let mId = "5ea1ebe66ce9fa8b98255f9d"
     getAllActivityListInstructor(mId)
       .then((reponse) => {
-        console.log('reponse.data', reponse.data)
         this.set(reponse.data)
       })
       .catch((error) => {
@@ -61,8 +59,6 @@ export default class TrainerHome extends React.Component {
 
   
   changeStateToFinished = (activitieID) => {
-    //   // get the id of curretn user
-      let studentID = getInfo().data._id
     // Make an API Call to register a service
     FinishedActivities(activitieID)
        .then((res) => {
@@ -126,19 +122,19 @@ export default class TrainerHome extends React.Component {
     
     <div className="row head head1">
       <div className="cell">
-        اسم الفعالية
+        اسم البرنامج
       </div>
       <div className="cell">
-        وصف الفعالية
+        وصف البرنامج
       </div>
       <div className="cell">
-        مكان الفعالية
+        مكان البرنامج
       </div>
       <div className="cell">
         الحالة
       </div>
       <div className="cell">
-        إنهاء الفعالية
+        إنهاء البرنامج
       </div>
     </div>
     
@@ -151,13 +147,13 @@ export default class TrainerHome extends React.Component {
   <div className="row head"> 
 
   <div className="cell">
-        اسم الفعالية
+        اسم البرنامج
       </div>
       <div className="cell">
-        وصف الفعالية
+        وصف البرنامج
       </div>
       <div className="cell">
-        مكان الفعالية
+        مكان البرنامج
       </div>
       <div className="cell">
         الحالة

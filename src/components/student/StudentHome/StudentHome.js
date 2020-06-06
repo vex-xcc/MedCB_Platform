@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import './StudentHome.css'
 import Activities from "../activities/activities"
-
+import sport from '../../../images/spo.png'
+import ed from '../../../images/edu.png'
+import en from '../../../images/download.jpeg'
+import unn from '../../../images/cl.png'
 export default class StudentHome extends Component {
    constructor(props) {
       super(props);
@@ -28,41 +31,29 @@ export default class StudentHome extends Component {
       return (
          <>
 
-            <div className="about">
-               <a className="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-                  <span className="icon"></span>
-               </a>
-               <a className="bg_links logo"></a>
-            </div>
 
             {this.state.toggle === false?
             <div className="contener">
 
-               <div className="card" onClick= {()=>this.typehandler("التعليم" , "Education") }>
+               <div className="card" style={{backgroundImage: `url(${ed})` }} onClick= {()=>this.typehandler("التعليم" , "Education") }>
                   <div className="icon"><i className="material-icons md-36">local_library</i></div>
                   <p className="title">التعليم</p>
                   <p className="text"> أطلب من العلوم علماً ينفعك ينفي الأذى والعيب ثم يرفعك</p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الثقافة" , "Cultural") }>
+               <div className="card" style={{backgroundImage: `url(${unn})` }} onClick= {()=>this.typehandler("الثقافة" , "Cultural") }>
                   <div className="icon"><i className="material-icons md-36">emoji_objects</i></div>
                   <p className="title">الثقافة</p>
                   <p className="text">الأمة هوية، والهوية ثقافة، والثقافة دين، ولسان، ووجدان</p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الترفيه" , "Entertainment") }>
+               <div className="card" style={{backgroundImage: `url(${en})` }} onClick= {()=>this.typehandler("الترفيه" , "Entertainment") }>
                   <div className="icon"><i className="material-icons md-36">sentiment_very_satisfied</i></div>
                   <p className="title">الترفيه</p>
-                  <p className="text">انقر للمزيد من السعادة.</p>
+                  <p className="text"></p>
                </div>
 
-               <div className="card" onClick= {()=>this.typehandler("الرياضة" , "Sport") }>
+               <div className="card" style={{backgroundImage: `url(${sport})` }} onClick= {()=>this.typehandler("الرياضة" , "Sport") }>
                   <div className="icon"><i className="material-icons md-36">directions_run</i></div>
                   <p className="title">الرياضة</p>
                   <p className="text"> إن الرياضة مصنع العقلاء .</p>

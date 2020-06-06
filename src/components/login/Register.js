@@ -14,7 +14,6 @@ export default class Register extends Component {
             Email: "",
             Phone: "",
             UserType: "Students",
-            ClubName: '',
             NationalId: '',
         };
 
@@ -115,14 +114,6 @@ export default class Register extends Component {
                                             name="Phone"
                                             onChange={e => this.change(e)}
                                             value={this.state.Phone} />
-                                    </div>
-                                    <div className="form__field">
-                                        <input
-                                            type="text"
-                                            placeholder="اسم النادي"
-                                            name="ClubName"
-                                            onChange={e => this.change(e)}
-                                            value={this.state.ClubName} />
                                     </div>
                                     <div className="form__field">
                                         <input

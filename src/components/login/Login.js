@@ -34,7 +34,7 @@ class Login extends Component {
         password: this.state.password
       })
       .then(res => {
-        console.warn("res", res);
+        
         localStorage.setItem("currentUser", res.data.token);
         let jwt1 = getInfo().data.UserType;
         if (jwt1 === "Students") {
@@ -42,14 +42,14 @@ class Login extends Component {
           Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
 
         } else if (jwt1 === undefined) {
-          console.log("b: ", jwt1);
+          
           this.props.history.push("/");
           Swal.fire(` ${jwt1}`, "", 'error');
         }
         return res;
       })
       .catch(error => {
-        console.log("ERROR: ", error);
+
         Swal.fire(` اسم المستخدم او الرقم السري غير صحيح`, "", 'error');
 
       });
@@ -64,10 +64,10 @@ class Login extends Component {
         password: this.state.password
       })
       .then(res => {
-        console.warn("res", res);
+        
         localStorage.setItem("currentUser", res.data.token);
         let jwt2 = getInfo().data.InstructorRole;
-        console.log("b: ", jwt2);
+        
         if (jwt2 === "Instructors") {
           this.props.history.push("/TrainerHeader");
           Swal.fire(` مرحبا  ${getInfo().data.UserName} `, "", 'success');
@@ -78,14 +78,15 @@ class Login extends Component {
 
         }
         else if (jwt2 === undefined) {
-          console.log("b: ", jwt2);
+          
           this.props.history.push("/homathon_test");
           Swal.fire(` ${jwt2}`, "", 'error');
         }
         return res;
       })
       .catch(error => {
-        console.log("ERROR: ", error);
+        
+        
         Swal.fire(` اسم المستخدم او الرقم السري غير صحيح`, "", 'error');
 
       });
@@ -95,6 +96,11 @@ class Login extends Component {
 
     return (
       <div class="hero">
+        <h1 class="home-title">
+  <span>      منصة الاندية بالمدينة المنورة
+</span>
+</h1>
+
 <div class="diagonal-hero-bg">
 
 

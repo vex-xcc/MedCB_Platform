@@ -26,7 +26,7 @@ export default class Entertainment extends React.Component {
   }
 
   render() {
-    let allServices =  <h1>لايوجد نشاطات متاحة</h1>
+    let allServices =  <h1>لايوجد برمج متاحة</h1>
 
     if (this.state.entertainment_activities.length > 0) {
       allServices = this.state.entertainment_activities.map((Services, index) => {
@@ -58,16 +58,16 @@ export default class Entertainment extends React.Component {
 
           <div class="row head head3">
           <div class="cell">
-              منشئ النشاط
+              منشئ البرنامج
               </div>
             <div class="cell">
-            اسم النشاط
+            اسم البرنامج
               </div>  
             <div class="cell">
-            نوع النشاط
+              المجال 
               </div>
             <div class="cell">
-            حالة النشاط
+            حالة البرنامج
               </div>
           </div>
           {allServices}

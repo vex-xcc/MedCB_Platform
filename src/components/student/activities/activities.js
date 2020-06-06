@@ -35,8 +35,6 @@ export default class Activities extends React.Component {
         //   // get the id of curretn user
           let studentID = getInfo().data._id
         // Make an API Call to register a service
-        console.log( `studentID ====> ${studentID} `)
-        console.log( `Make an API Call to register a service the ===> ${activitieID} `)
         StudentsRegisteredInActivity( studentID ,activitieID)
            .then((res) => {
                const Activities = this.state.Activities.filter((Activities) => {
@@ -62,6 +60,7 @@ export default class Activities extends React.Component {
                     ActivityName={activitie.ActivityName}
                     ClubName={activitie.ClubName}
                     ActivityDescription={activitie.ActivityDescription}
+                    location={activitie.ActivityLocation}
                     registerOnActivitie={this.register}
                     tog={this.togglehandler}
                     index={index} /> 
@@ -73,7 +72,7 @@ export default class Activities extends React.Component {
             <>
             <div className='allActivities'>
            <div className="pointer" > <i onClick={this.Home} className="material-icons"> arrow_back </i></div>
-                <p> {`أنشطة ${this.props.type} القادمة`} </p>
+                <p> {` ${this.props.type} `} </p>
             </div>
 
                 <ul className='timeline'>
