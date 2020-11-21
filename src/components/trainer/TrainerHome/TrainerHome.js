@@ -27,13 +27,11 @@ export default class TrainerHome extends React.Component {
   AllActivityFinshedList = () =>{
           // Mack API call 
                   let mId = getInfo().data._id
-                // let mId = "5ea1ebe66ce9fa8b98255f9d";
 
       getAllActivityFinshedListInstructor(mId)
       .then((reponse) => {
         let data = reponse.data
         this.setState({ finished_activities: data })
-        // this.set(reponse.data)
       })
       .catch((error) => {
         console.log(' API error: ', error);
@@ -43,7 +41,6 @@ export default class TrainerHome extends React.Component {
   AllActivityList = () =>{
       // Mack API call 
               let mId = getInfo().data._id
-            // let mId = "5ea1ebe66ce9fa8b98255f9d"
     getAllActivityListInstructor(mId)
       .then((reponse) => {
         this.set(reponse.data)

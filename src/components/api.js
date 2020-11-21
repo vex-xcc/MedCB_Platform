@@ -113,7 +113,6 @@ export const FinishedActivities = (id ,req) => {
       method: 'POST',
       url: `${apiURL}/${Id}`,
       data:{
-        TargetAge: req.TargetAge,
         ActivityDescription: req.ActivityDescription,
         ActivityName:req.ActivityName,
         ActivityType: req.ActivityType,
@@ -121,6 +120,8 @@ export const FinishedActivities = (id ,req) => {
         ActivityLocation: req.ActivityLocation,
         StartDate: req.StartDate,
         EndDate: req.EndDate,
+        RegistrationStartDate :req.RegistrationStartDate,
+        RegistrationEndDate :req.RegistrationEndDate
       }
     })
   }

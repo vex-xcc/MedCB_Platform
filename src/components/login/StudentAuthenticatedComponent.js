@@ -15,9 +15,8 @@ class StudentAuthenticatedComponent extends Component {
   componentDidMount() {
     const jwt = getJwt();
     let jwt1 = getInfo().data.UserType;
-    // this function is responsible to check if the
-    // token is equal to employee or adamant after
-    // decrypting that token
+    // this function check user role in token if it equal to employee or adamant
+    // after decrypting that token
     if (!jwt) {
       this.setState({
         Customer: null,
