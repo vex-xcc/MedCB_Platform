@@ -2,6 +2,7 @@ import React from "react";
 import "../../manager/addinstroctor/addinstructor.css";
 import {AddNewActivitie}from '../../api';
 import { getInfo } from "../../login/decodeToken";
+import "../../../App.css"
 import Swal from "sweetalert2";
 class NewActivitie extends React.Component {
 
@@ -17,6 +18,8 @@ class NewActivitie extends React.Component {
         ActivityType: info.InstructorsType,
         ActivityState: "Registration",
         ActivityLocation: "",
+        RegistrationStartDate: "",
+        RegistrationEndDate: "",
         StartDate: "",
         EndDate: "",
     };
@@ -61,11 +64,11 @@ addActivitie = Activitie => {
    };
    
   render() {
-    const { TargetAge,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate} = this.state;
+    const { TargetAge,ActivityDescription ,ActivityName ,ActivityLocation , StartDate , EndDate,RegistrationStartDate,RegistrationEndDate} = this.state;
     return (
       <div>
-        <form className="parent-wrappe" onSubmit={e=> this.formSubmit(e)}>
-          <h3> إضــافــة برنامج </h3>
+        <form className="parent-wrappe-activity" onSubmit={e=> this.formSubmit(e)}>
+          <h3 > إضــافــة برنامج </h3>
           <div className="subscribe-wrappe">
           <div>
               <br />
@@ -77,18 +80,6 @@ addActivitie = Activitie => {
                 value={ActivityName}
                 type="text"
                 placeholder="اسم البرنامج"
-                onChange={this.handleChange}
-              />
-            </div>  
-            <div >
-              <br />
-              <input
-                className="subscribe-input"
-                required
-                name="TargetAge"
-                value={TargetAge}
-                type="number"
-                placeholder="العمر"
                 onChange={this.handleChange}
               />
             </div>          
@@ -118,28 +109,57 @@ addActivitie = Activitie => {
               />
             </div>
             <div>
+            <br /> 
+            <br />
               <br />
-              <br />
+              <label>تاريخ  بداية فترت التسجيل</label>
               <input
                 className="subscribe-input"
                 required
-                name="StartDate"
-                value={StartDate}
-                type="date"
-                placeholder="تاريج البداية"
+                name="RegistrationStartDate"
+                value={RegistrationStartDate}
+                type="datetime-local"
+                placeholder="تاريخ بداية فترت التسجيل"
                 onChange={this.handleChange}
               />
             </div>
             <div>
               <br />
               <br />
+              <label>تاريخ  نهاية فترت التسجيل</label>
+              <input
+                className="subscribe-input"
+                required
+                name="RegistrationEndDate"
+                value={RegistrationEndDate}
+                type="datetime-local"
+                placeholder="تاريخ نهاية فترت التسجيل"
+                onChange={this.handleChange}
+              />
+                 <br />
+              <br />
+             <label>تاريخ البداية</label>
+              <input
+                className="subscribe-input"
+                required
+                name="StartDate"
+                value={StartDate}
+                type="datetime-local"
+                placeholder="تاريخ البداية"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <br />
+              <br />
+              <label>تاريخ النهاية</label>
               <input
                 className="subscribe-input"
                 required
                 name="EndDate"
                 value={EndDate}
-                type="date"
-                placeholder="تاريج النهاية"
+                type="datetime-local"
+                placeholder="تاريخ النهاية"
                 onChange={this.handleChange}
               />
             </div>
@@ -147,7 +167,8 @@ addActivitie = Activitie => {
             <div className="submit-btn" type="submit" onClick={e => this.formSubmit(e)}>
               إضــافــة
             </div>
-            <a onClick={this.Home}><i className="material-icons"> arrow_back </i></a>
+
+            <a onClick={this.Home} className="back-arr"><i className="material-icons"> arrow_back </i></a>
           </div>
         </form>
       </div>

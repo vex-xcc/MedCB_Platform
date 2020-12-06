@@ -2,8 +2,6 @@ import React from 'react';
 
 // Components
 import InstructorsAuthenticatedComponent from './components/login/InstructorsAuthenticatedComponent'
-// import Register from './components/login/Register'
-// import Login from './components/login/Login'
 import StudentHeader from './components/student/StudentHeader/StudentHeader'
 import ManagerHeader from './components/manager/managerHeader/ManagerHeader';
 import TrainerHeader from './components/trainer/trainerHeader/TrainerHeader';
@@ -18,6 +16,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
+ 
       <HashRouter  basename="/homathon_test">
         <Switch>
           <Route path={'/'} exact component={Login} />

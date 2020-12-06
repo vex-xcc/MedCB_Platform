@@ -2,16 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./header.css";
 import StudentHome from "../StudentHome/StudentHome.js";
+
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import { Route, HashRouter, Link, Switch } from "react-router-dom";
 import StudentProfile from '../StudentProfile/StudentProfile';
-import DisplayTable from "../activitiesbystate/DisplayTable";
+import displayAllTable from "../../displayAllActivity/DisplayAllTable";
 export default class StudentHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
 
   logOut = (e) => {
     e.preventDefault();
@@ -30,8 +30,8 @@ export default class StudentHeader extends React.Component {
                 <Link to="/StudentHeader/Home">
                   <Nav.Link href="<StudentHome/>">الرئيسية</Nav.Link>
                 </Link>
-                <Link to="/StudentHeader/StudentActivities">
-                  <Nav.Link href="#<DisplayTable/>">دوراتي</Nav.Link>
+                <Link to="/StudentHeader/displayAllTable">
+                  <Nav.Link href="#<displayAllTable/>">دوراتي</Nav.Link>
                 </Link>
                 <NavDropdown title="المزيد" id="collasible-nav-dropdown">
                   <Link to="/StudentHeader/StudentProfile">
@@ -59,8 +59,8 @@ export default class StudentHeader extends React.Component {
             component={StudentHome}
           ></Route>
           <Route
-            path="/StudentHeader/StudentActivities"
-            component={DisplayTable}
+            path="/StudentHeader/displayAllTable"
+            component={displayAllTable}
           ></Route>
         </Switch>
       </HashRouter>

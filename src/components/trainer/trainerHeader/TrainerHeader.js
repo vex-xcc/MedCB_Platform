@@ -5,8 +5,9 @@ import { Route, HashRouter, Link, Switch } from "react-router-dom";
 import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 import NewActivitie from "../addActivitie/NewActivitie";
 import TrainerProfile from "../trainerProfile/TrainerProfile"
+import "../../../App.css"
 
-import TrainerHome from '../TrainerHome/TrainerHome'
+import TrainerHome from '../../displayAllActivity/DisplayAllTable'
 export default class TrainerHeader extends React.Component{
 
   logOut = (e) => {
@@ -19,7 +20,7 @@ export default class TrainerHeader extends React.Component{
     return(
       <HashRouter>
       <div>
-<Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar  className="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
 <Navbar.Brand href="#home">مـ نـ صـ ـة   الأندية بالمدينة المنورة</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -35,13 +36,11 @@ export default class TrainerHeader extends React.Component{
       <NavDropdown.Item href="<TrainerProfile/>">معلوماتي</NavDropdown.Item>
       </Link>
         <NavDropdown.Divider/>
-        <NavDropdown.Item onClick={e=> this.logOut(e)}>تسجيل الخروج</NavDropdown.Item>
+        <NavDropdown.Item className = "dropdown-item" onClick={e=> this.logOut(e)}>تسجيل الخروج</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-
-
       </div>
       <Switch>
           <Route exact={true} path="/TrainerHeader/Home" component={TrainerHome} ></Route>

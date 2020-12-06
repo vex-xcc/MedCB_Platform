@@ -31,7 +31,6 @@ export default class StudentHome extends Component {
       return (
          <>
 
-
             {this.state.toggle === false?
             <div className="contener">
 

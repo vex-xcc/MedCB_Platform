@@ -3,8 +3,8 @@ import "./allTrainers.css"
 import { getInfo } from '../../login/decodeToken'
 import TrainerTable from './TrainerTable'
 import { getAllinstructor } from '../../api';
-import TrainerActivityContainer from './TrainerActivityContainer'
-
+//import TrainerActivityContainer from './TrainerActivityContainer'
+import DisplayAllTable from '../../displayAllActivity/DisplayAllTable'
 
 export default class allTrainers extends React.Component {
 
@@ -77,7 +77,8 @@ export default class allTrainers extends React.Component {
     }
     else {
           return (
-            <TrainerActivityContainer goBack={this.toggleHandler}/>
+            <DisplayAllTable goBack={this.toggleHandler}/>
+
           );  
     }
   }
