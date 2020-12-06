@@ -23,7 +23,7 @@ export const getAllActivityOnProgressList = (id) => {
   return axios.get(`${apiURL}/Find/All/OnProgress/Activity/Instructor/${id}`);
 }
 // Get all Activity depend on StudentId and if the ActivityState is Finshed
-export const getAllActivityFinshedList = (id) => {
+export const getAllActivityFinishedList = (id) => {
   return axios.get(`${apiURL}/Find/All/Finished/Activity/Student/${id}`);
 }
 // Get all Activity depend on StudentId 
@@ -33,14 +33,13 @@ export const getAllActivityList = (id) => {
 
 
 // Get all Activity depend on Instructor and if the ActivityState is Finshed
-export const getAllActivityFinshedListInstructor = (id) => {
+export const getAllActivityFinishedListInstructor = (id) => {
   return axios.get(`${apiURL}/Find/All/Finished/Activity/${id}`);
 }
 // Get all Activity depend on Instructor 
 export const getAllActivityListInstructor = (id) => {
   return axios.get(`${apiURL}/Find/All/Instructor/Activity/${id}`);
 }
-
 
 
 //---------------The PATCH Request-------------------  
@@ -106,6 +105,12 @@ export const FinishedActivities = (id ,req) => {
         UserType: req.UserType,
         NationalId: req.NationalId,
       }
+    })
+  }
+  export const CheckExpired = req =>{
+    return axios({
+      method: 'PUT',
+      url:`${apiURL}/Check/Expired`
     })
   }
   export const AddNewActivitie = (req,Id) => {

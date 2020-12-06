@@ -1,6 +1,9 @@
 .dropdown-item {
 text-align: right;
 }
-.navbar{
-width: max-content;
+h3,  .h3{
+    text-align: center;
 }
+/* .navbar{
+width: max-content;
+} */

@@ -7,7 +7,7 @@ import NewActivitie from "../addActivitie/NewActivitie";
 import TrainerProfile from "../trainerProfile/TrainerProfile"
 import "../../../App.css"
 
-import TrainerHome from '../TrainerHome/TrainerHome'
+import TrainerHome from '../../displayAllActivity/DisplayAllTable'
 export default class TrainerHeader extends React.Component{
 
   logOut = (e) => {
@@ -41,8 +41,6 @@ export default class TrainerHeader extends React.Component{
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-
-
       </div>
       <Switch>
           <Route exact={true} path="/TrainerHeader/Home" component={TrainerHome} ></Route>

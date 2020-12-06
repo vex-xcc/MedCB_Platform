@@ -2,6 +2,7 @@ import React from "react";
 import "../../manager/addinstroctor/addinstructor.css";
 import {AddNewActivitie}from '../../api';
 import { getInfo } from "../../login/decodeToken";
+import "../../../App.css"
 import Swal from "sweetalert2";
 class NewActivitie extends React.Component {
 
@@ -67,7 +68,7 @@ addActivitie = Activitie => {
     return (
       <div>
         <form className="parent-wrappe-activity" onSubmit={e=> this.formSubmit(e)}>
-          <h3> إضــافــة برنامج </h3>
+          <h3 > إضــافــة برنامج </h3>
           <div className="subscribe-wrappe">
           <div>
               <br />
@@ -111,13 +112,13 @@ addActivitie = Activitie => {
             <br /> 
             <br />
               <br />
-              <label>تاريخ  نهاية فترت التسجيل</label>
+              <label>تاريخ  بداية فترت التسجيل</label>
               <input
                 className="subscribe-input"
                 required
                 name="RegistrationStartDate"
                 value={RegistrationStartDate}
-                type="date"
+                type="datetime-local"
                 placeholder="تاريخ بداية فترت التسجيل"
                 onChange={this.handleChange}
               />
@@ -131,7 +132,7 @@ addActivitie = Activitie => {
                 required
                 name="RegistrationEndDate"
                 value={RegistrationEndDate}
-                type="date"
+                type="datetime-local"
                 placeholder="تاريخ نهاية فترت التسجيل"
                 onChange={this.handleChange}
               />
@@ -143,7 +144,7 @@ addActivitie = Activitie => {
                 required
                 name="StartDate"
                 value={StartDate}
-                type="date"
+                type="datetime-local"
                 placeholder="تاريخ البداية"
                 onChange={this.handleChange}
               />
@@ -157,7 +158,7 @@ addActivitie = Activitie => {
                 required
                 name="EndDate"
                 value={EndDate}
-                type="date"
+                type="datetime-local"
                 placeholder="تاريخ النهاية"
                 onChange={this.handleChange}
               />
