@@ -112,11 +112,6 @@ class Login extends Component {
             </div>
        </div>
         <div className="login">
-       
-
-     
-
-
 <div className="align">
   <div className="grid align__item">
    <div className="register">

@@ -17,7 +17,7 @@ export default class App extends React.Component {
     return (
       <>
  
-      <HashRouter  basename="/homathon_test">
+      <HashRouter  basename="/MedCB_Platform">
         <Switch>
           <Route path={'/'} exact component={Login} />
           <Route
