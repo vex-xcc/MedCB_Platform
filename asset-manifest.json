@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/homathon_test/static/css/main.89cfc971.chunk.css",
-    "main.js": "/homathon_test/static/js/main.e1f78c0f.chunk.js",
-    "main.js.map": "/homathon_test/static/js/main.e1f78c0f.chunk.js.map",
-    "runtime-main.js": "/homathon_test/static/js/runtime-main.1199e71d.js",
-    "runtime-main.js.map": "/homathon_test/static/js/runtime-main.1199e71d.js.map",
-    "static/css/2.74189dbb.chunk.css": "/homathon_test/static/css/2.74189dbb.chunk.css",
-    "static/js/2.27a56c2f.chunk.js": "/homathon_test/static/js/2.27a56c2f.chunk.js",
-    "static/js/2.27a56c2f.chunk.js.map": "/homathon_test/static/js/2.27a56c2f.chunk.js.map",
-    "index.html": "/homathon_test/index.html",
-    "precache-manifest.115809c4d36839d77127bb27cda0053a.js": "/homathon_test/precache-manifest.115809c4d36839d77127bb27cda0053a.js",
-    "service-worker.js": "/homathon_test/service-worker.js",
-    "static/css/2.74189dbb.chunk.css.map": "/homathon_test/static/css/2.74189dbb.chunk.css.map",
-    "static/css/main.89cfc971.chunk.css.map": "/homathon_test/static/css/main.89cfc971.chunk.css.map",
-    "static/js/2.27a56c2f.chunk.js.LICENSE.txt": "/homathon_test/static/js/2.27a56c2f.chunk.js.LICENSE.txt",
-    "static/media/cl.png": "/homathon_test/static/media/cl.98ea4825.png",
-    "static/media/download.jpeg": "/homathon_test/static/media/download.3d83aaf3.jpeg",
-    "static/media/edu.png": "/homathon_test/static/media/edu.cd3cfe7a.png",
-    "static/media/spo.png": "/homathon_test/static/media/spo.debd7406.png"
+    "main.css": "/MedCB_Platform/static/css/main.ac54c4c9.chunk.css",
+    "main.js": "/MedCB_Platform/static/js/main.d0f4c280.chunk.js",
+    "main.js.map": "/MedCB_Platform/static/js/main.d0f4c280.chunk.js.map",
+    "runtime-main.js": "/MedCB_Platform/static/js/runtime-main.d0f447b8.js",
+    "runtime-main.js.map": "/MedCB_Platform/static/js/runtime-main.d0f447b8.js.map",
+    "static/css/2.74189dbb.chunk.css": "/MedCB_Platform/static/css/2.74189dbb.chunk.css",
+    "static/js/2.457bdc4c.chunk.js": "/MedCB_Platform/static/js/2.457bdc4c.chunk.js",
+    "static/js/2.457bdc4c.chunk.js.map": "/MedCB_Platform/static/js/2.457bdc4c.chunk.js.map",
+    "index.html": "/MedCB_Platform/index.html",
+    "precache-manifest.dd2ee0e84dcbc1fd1b6c1b2758eefc24.js": "/MedCB_Platform/precache-manifest.dd2ee0e84dcbc1fd1b6c1b2758eefc24.js",
+    "service-worker.js": "/MedCB_Platform/service-worker.js",
+    "static/css/2.74189dbb.chunk.css.map": "/MedCB_Platform/static/css/2.74189dbb.chunk.css.map",
+    "static/css/main.ac54c4c9.chunk.css.map": "/MedCB_Platform/static/css/main.ac54c4c9.chunk.css.map",
+    "static/js/2.457bdc4c.chunk.js.LICENSE.txt": "/MedCB_Platform/static/js/2.457bdc4c.chunk.js.LICENSE.txt",
+    "static/media/cl.png": "/MedCB_Platform/static/media/cl.98ea4825.png",
+    "static/media/download.jpeg": "/MedCB_Platform/static/media/download.3d83aaf3.jpeg",
+    "static/media/edu.png": "/MedCB_Platform/static/media/edu.cd3cfe7a.png",
+    "static/media/spo.png": "/MedCB_Platform/static/media/spo.debd7406.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.1199e71d.js",
+    "static/js/runtime-main.d0f447b8.js",
     "static/css/2.74189dbb.chunk.css",
-    "static/js/2.27a56c2f.chunk.js",
-    "static/css/main.89cfc971.chunk.css",
-    "static/js/main.e1f78c0f.chunk.js"
+    "static/js/2.457bdc4c.chunk.js",
+    "static/css/main.ac54c4c9.chunk.css",
+    "static/js/main.d0f4c280.chunk.js"
   ]
 }
